@@ -1,0 +1,103 @@
+
+.sidebar-section { position: relative; overflow: hidden; width: 100%; float: left; padding: 60px 0 0px; }
+.sidebar-section .sidebar-sec { position: fixed; left:-320px; z-index:10; top: 100px; width: 320px; text-align: right;  transition: all 0.3s linear; }
+.sidebar-section.slide .sidebar-sec { left: calc((100% - 1536px) / 2); }
+.sidebar-section .sidebar-sec h3 { font-size: 24px; line-height: 18px; color: #4D4D4D; margin: 0 0 22px; }
+.sidebar-section .sidebar-sec .hs-menu-flow-horizontal ul { margin: 0; padding: 0; }
+.sidebar-section .sidebar-sec .hs-menu-flow-horizontal ul li { list-style: none; line-height: 0; margin-bottom: 24px; width:100%; display:block;}
+.sidebar-section .sidebar-sec .hs-menu-flow-horizontal ul li a { font-size: 16px; line-height: 23px; font-weight: 400; color: #4D4D4D; display: inline-block; }
+.sidebar-section .sidebar-sec .hs-menu-flow-horizontal ul li a:hover,
+.sidebar-section .sidebar-sec .hs-menu-flow-horizontal ul li a.active:hover{ color: #41ceef; }
+.sidebar-section .sidebar-sec .hs-menu-flow-horizontal ul li:last-child { margin-bottom: 0px; }
+.sidebar-section .sidebar-sec .sidelist { position: relative; background-color: #fff; padding: 20px; display: none; transition: all 0s; max-width:250px; box-shadow:4px 4px 4px #d8d8d8; border-radius:10px;}
+
+.sidebar-section .sidebar-sec a.side-trigger { display: inline-block; background-color:#fff; height: 40px; width: 40px; border: 2px solid #00358d; margin-right: 20px; position: relative; cursor: pointer; }
+.sidebar-section .sidebar-sec a.side-trigger i { position: absolute; width: 24px; background-color: #00358d; top: 50%; transform: translate(-50%, -50%); left: 50%; border: 0px; opacity: 1; transition: all 0.3s linear; border-bottom: 1px solid #00358d; }
+.sidebar-section .sidebar-sec a.side-trigger i:before, .sidebar-section .sidebar-sec a.side-trigger i:after { content: ''; display: inline-block; width: 24px; background-color: #00358d; position: absolute; left: 0; transition: all 0.3s linear; border-bottom: 1px solid #00358d; }
+.sidebar-section .sidebar-sec a.side-trigger i:before { top: -7px; }
+.sidebar-section .sidebar-sec a.side-trigger i:after { top: 7px; }
+.sidebar-section .sidebar-sec a.side-trigger.show i { border: 0px; }
+.sidebar-section .sidebar-sec a.side-trigger.show i:before { transform: rotate(-45deg); top: -1px; height: 1px; }
+.sidebar-section .sidebar-sec a.side-trigger.show i:after { transform: rotate(45deg); top: -1px; height: 1px; }
+.sidebar-section .side-group { width: 100%; float: left; }
+.sidebar-section .side-box { width: 100%; float: left; padding-bottom: 59px; }
+.sidebar-section .side-box:last-child { padding-bottom: 0; }
+.sidebar-section .side-box .bottom-content { width: 100%; float: left; }
+.sidebar-section .side-box .bottom-content .container { max-width: 800px; margin:0 auto;}
+.sidebar-section .side-box .content h2 { font-size: 56px; line-height: 68px; color: #3B3B3B; margin: 0 0 17px; }
+.sidebar-section .side-box .content h5 { font-size: 20px; line-height: 30px; color: #3B3B3B; }
+.sidebar-section .side-box .content p { font-size: 16px; line-height: 28px; color: #3b3b3b; margin: 0; padding: 10px 0; font-weight: 300; }
+.sidebar-section .side-box .content h3, .sidebar-section .side-box .content h4, .sidebar-section .side-box .content h5, .sidebar-section .side-box .content h6 { padding: 10px 0; margin: 0; }
+.sidebar-section .side-box .img-groupwrap { display: block; width: auto; float: none; margin-left: -14px; margin-right: -14px; }
+.sidebar-section .side-box .img-group { width: 100%; text-align: center; padding-top: 6px; }
+.sidebar-section .side-box .img-group .img-box { width: 33.33%; float: none; display: inline-block; vertical-align: top; margin: 0 -2px; padding: 14px; }
+.sidebar-section .side-box .img-group .img-box .img { height: 169px; background-repeat: no-repeat; background-size: cover; background-position: center center; width: 100%; }
+.sidebar-section .side-box .content blockquote { border-left: 1px solid #C4C4C4; padding: 0 0 0 23px; margin: 45px 30px 49px; }
+.sidebar-section .side-box .content blockquote p { font-size: 20px; line-height: 36px; font-weight: 400; }
+.sidebar-section .side-box .content blockquote p:first-child { padding-top: 0; }
+.sidebar-section .side-box .content blockquote p:last-child { padding-bottom: 0; }
+.sidebar-section .side-box .content p a:hover { color: #41ceef; }
+.sidebar-section .side-box .content a.cta_button { display: block; margin: 27px 0; }
+.sidebar-section .side-box .content a.cta_button img { line-height: 0; }
+.sidebar-section .side-box .cont2 { padding-top: 15px; }
+
+
+
+@media (max-width:1550px){
+    .sidebar-section.slide .sidebar-sec {left: calc((100% - 1416px) / 2);}
+}
+@media (max-width:1499px){
+      .sidebar-section.slide .sidebar-sec { left: calc((100% - 1396px) / 2); }
+    .sidebar-section.slide .sidebar-sec { left: 0; }
+    .sidebar-section .sidebar-sec a.side-trigger { margin-right: 120px; }
+    .sidebar-section .side-box .content h2 { font-size: 45px; line-height: 55px; }
+    .sidebar-section .side-box .title-strip { padding: 90px 0; }
+    .sidebar-section .side-box .title-strip h2 { font-size: 45px; line-height: 55px; padding-bottom: 30px; }
+    .sidebar-section .side-box .title-strip h4 { margin-top: 30px; }
+}
+@media (max-width:1199px){
+      .sidebar-section .sidebar-sec { text-align: left; left: 0; transform: translate3d(-320px, 0px, 0px); }
+    .sidebar-section.slide .sidebar-sec { left: 0; transform: translate3d(0px, 0px, 0px); }
+    .sidebar-section .sidebar-sec a.side-trigger { margin-right: 0; margin-left: 15px; }
+    .sidebar-section .sidebar-sec .sidelist { padding: 20px 15px; }
+    .sidebar-section .sidebar-sec .hs-menu-flow-horizontal ul li { margin-bottom: 15px; }
+}
+@media (max-width:991px){
+      .sidebar-section .sidebar-sec { top: 100px; }
+    .sidebar-section .side-box { padding-bottom: 50px; }
+    .sidebar-section .side-box .content h2 { font-size: 34px; line-height: 43px; margin-bottom: 10px; }
+    .sidebar-section .side-box .content ul { padding-left: 10px; margin: 10px 0; }
+    .sidebar-section .side-box .content ul li { padding-left: 15px; }
+    .sidebar-section .side-box .content blockquote { margin: 20px 25px; padding-left: 15px; }
+    .sidebar-section .side-box .content blockquote p { font-size: 18px; line-height: 28px; }
+    .sidebar-section .side-box .content a.cta_button { margin: 10px 0; }
+    .sidebar-section .side-box .img-group { padding-top: 10px; }
+    .sidebar-section .side-box .title-strip { padding: 60px 0; margin-bottom: 35px; }
+    .sidebar-section .side-box .title-strip h2 { font-size: 34px; line-height: 43px; padding-bottom: 25px; }
+    .sidebar-section .side-box .title-strip h4 { font-size: 24px; line-height: 31px; margin-top: 25px; }
+    .sidebar-section .side-box .cont2 { padding-top: 10px; }
+}
+
+
+@media (max-width:767px) {
+      .sidebar-section { padding: 45px 0 30px; }
+    .sidebar-section .sidebar-sec { top:100px; }
+    .sidebar-section .sidebar-sec h3 { font-size: 20px; margin-bottom: 15px; }
+    .sidebar-section .sidebar-sec .hs-menu-flow-horizontal ul { max-height: calc(100vh - 130px); overflow-y: auto; }
+    .sidebar-section .sidebar-sec .hs-menu-flow-horizontal ul li { margin-bottom: 10px; }
+    .sidebar-section .side-box { padding-bottom: 35px; }
+    .sidebar-section .side-box .content h2 { font-size: 26px; line-height: 34px; }
+    .sidebar-section .side-box .content h5 { line-height: 27px; }
+    .sidebar-section .side-box .content ul { padding-left: 0; }
+    .sidebar-section .side-box .img-group .img-box { width: 50%; }
+    .sidebar-section .side-box .img-group .img-box .img { height: auto; padding-bottom: 80.1%; }
+    .sidebar-section .side-box .title-strip { padding: 45px 0; margin-bottom: 30px; }
+    .sidebar-section .side-box .title-strip h2 { font-size: 26px; line-height: 34px; padding-bottom: 20px; }
+    .sidebar-section .side-box .title-strip h2:after { width: 150px; }
+    .sidebar-section .side-box .title-strip h4 { font-size: 20px; line-height: 28px; margin-top: 20px; }
+    .sidebar-section .side-box .content blockquote { margin: 15px 15px; }
+    .sidebar-section .side-box .content blockquote p { font-size: 16px; line-height: 26px; }
+}
+@media (max-width:480px) {
+   .sidebar-section .side-box .img-group .img-box { width: 100%; }
+}

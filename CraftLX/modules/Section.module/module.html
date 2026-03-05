@@ -1,0 +1,101 @@
+<section class="section-base row-fluid"> 
+  
+  {% if module.content_layout == "img_right" %}
+  {# Text Left - Image Right #}
+  <div class="section-row theme-scroll-reveal">
+    <div class="span5 dnd-column">
+      {% inline_rich_text field="richtext_field" value="{{ module.richtext_field }}" %}
+      {% if module.cta_text %}
+      <p>
+        <a class="button" href="{{ module.cta_link }}">{{ module.cta_text }}</a>
+      </p>
+      {% endif %}
+    </div>  
+    <div class="span1 dnd-column column-flex"></div>
+    <div class="span6 dnd-column">
+      {% if module.image_foreground.src %}
+        {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+        {% if module.image_foreground.size_type == 'auto' %}
+          {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+        {% elif module.image_foreground.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image_field.max_width }}px; max-height: {{ module.image_field.max_height }}px"' %}
+        {% endif %}
+          <div class="section-img-container mobile">
+            {% if module.image_background.src %}
+            <img src="{{ module.image_background.src }}" alt="{{ module.image_background.alt }}" class="section-img-behind" loading="">
+            {% endif %}
+            {% if module.image_foreground.src %}
+            <img src="{{ module.image_foreground.src }}" alt="{{ module.image_foreground.alt }}" class="section-img" loading="">
+            {% endif %}
+          </div>
+        <div class="section-img-container">
+          {% if module.image_background.src %}
+          <img src="{{ module.image_background.src }}" alt="{{ module.image_background.alt }}" class="section-img-behind img-parallax-overflow-background" {{ sizeAttrs }} loading="">
+          {% endif %}
+          {% if module.image_foreground.src %}
+          <img src="{{ module.image_foreground.src }}" alt="{{ module.image_foreground.alt }}" class="section-img img-parallax-overflow" {{ sizeAttrs }} loading="">
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="section-background-container">
+            <img class="img-parallax-horiz" src="{{ module.background_image.src }}" alt="{{ module.background_image.alt }}" loading="">
+        </div>
+    </div>
+  </div>
+  {% endif %}
+  
+  {% if module.content_layout == "img_left" %}
+  {# Text Left - Image left #}
+  <div class="section-row theme-scroll-reveal">
+    <div class="span6 dnd-column">
+      {% if module.image_foreground.src %}
+        {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+        {% if module.image_foreground.size_type == 'auto' %}
+          {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+        {% elif module.image_foreground.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image_field.max_width }}px; max-height: {{ module.image_field.max_height }}px"' %}
+        {% endif %}
+          <div class="section-img-container mobile">
+            {% if module.image_background.src %}
+            
+            <img src="{{ module.image_background.src }}" alt="{{ module.image_background.alt }}" class="section-img-behind" loading="">
+            {% endif %}
+            {% if module.image_foreground.src %}
+            
+            <img src="{{ module.image_foreground.src }}" alt="{{ module.image_foreground.alt }}" class="section-img" loading="">
+            {% endif %}
+            
+          </div>
+        <div class="section-img-container">
+            {% if module.image_background.src %}
+          
+          <img src="{{ module.image_background.src }}" alt="{{ module.image_background.alt }}" class="section-img-behind img-parallax-overflow-background" {{ sizeAttrs }} loading="">
+            {% endif %}
+            {% if module.image_foreground.src %}
+          
+          <img src="{{ module.image_foreground.src }}" alt="{{ module.image_foreground.alt }}" class="section-img img-parallax-overflow" {{ sizeAttrs }} loading="">
+            {% endif %}
+            
+      </div>
+        {% endif %}
+        <div class="section-background-container">
+            {% if module.background_image.src %}
+          
+            <img class="img-parallax-horiz" src="{{ module.background_image.src }}" alt="{{ module.background_image.alt }}" loading="">
+            {% endif %}
+          
+        </div>
+    </div>  
+    <div class="span1 dnd-column column-flex"></div>
+    <div class="span5 dnd-column">
+      {% inline_rich_text field="richtext_field" value="{{ module.richtext_field }}" %}
+        {% if module.cta_text %}
+          <a class="button" href="{{ module.cta_link }}">{{ module.cta_text }}</a>
+        {% endif %}
+    </div>
+  </div>
+  
+  {% endif %}
+  
+  
+</section>

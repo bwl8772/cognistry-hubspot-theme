@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "inline_help_text" : "Use to add a menu",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 318399097538,
+  "label" : "Menu Section",
+  "icon" : "../../../Studio-Canvas-Submission/css/images/module-icons/menu.svg",
+  "is_available_for_new_content" : false
+}

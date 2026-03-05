@@ -1,0 +1,47 @@
+{% if module.hero_section_type == "interior" %}
+{% set hero_type = 'interior' %}
+{% else %}
+{% set hero_type = 'home' %}
+{% endif %}
+
+{% if module.hero_section_background_type == "gradient" %}
+{% set hero_overlay = '' %}
+{% else %}
+{% set hero_overlay = 'hero-section-overlay' %}
+{% endif %}
+
+{% if module.hero_bottom_divider_type == "waves" %}
+  {% set bottom_divider_style = 'hero-section-divider-wave-1' %}
+{% elif module.hero_bottom_divider_type == "angle" %}
+  {% set bottom_divider_style = 'hero-section-divider-angle-2' %}
+{% elif module.hero_bottom_divider_type == "flat" %}
+  {% set bottom_divider_style = '' %}
+{% endif %}
+
+<section class="hero-section {{ hero_overlay }} theme-section-styles section-bg-fixed {{ hero_type }}">
+    <div class="hero-content theme-scroll-reveal">
+      <h1 class="mobile-title"  style="color: {{ module.style.hero_text_color.color }};">{{ module.headline_text }}</h1>
+      {{ module.richtext_field }}
+      <p>
+      </p>
+        {% if module.cta_text %}
+          <a class="button hero-btn theme-shadow" href="{{module.cta_link}}">{{ module.cta_text }}</a>
+        {% endif %}
+    </div>
+    <div class="hero-section-background-container">
+      {% if module.hero_section_background_type == 'video' %}
+        
+        <video class="vid-parallax" autoplay loop muted>
+          <source src="{{ module.background_video_source_url }}" type="video/mp4">
+        </video>
+      {% elif module.hero_section_background_type == 'image' %}
+      
+        <img class="img-parallax" src="{{ module.background_image.src }}" alt="{{ module.background_image.alt}}" loading="">
+      {% elif module.hero_section_background_type == 'gradient' %}
+        <div class="module-hero-gradient" style="background: linear-gradient(100.46deg, {{ module.style.background_gradient_color_1.color }} 7.79%, {{ module.style.background_gradient_color_2.color }} 92.21%);"></div>
+      {% endif %}
+      
+  </div>
+    <img src="{{ module.hero_jobbies.src }}" alt="{{ module.hero_jobbies.alt }}" class="section-img hero-section-jobbies-3 img-parallax-overflow" loading="">
+    <div class="{{ bottom_divider_style }}"></div>
+</section>

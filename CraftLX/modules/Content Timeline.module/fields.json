@@ -1,0 +1,187 @@
+[ {
+  "id" : "ec0cb568-d9a3-b34f-8c8a-1c58945da221",
+  "name" : "cta_text",
+  "label" : "CTA Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Get A Demo"
+}, {
+  "id" : "0291cc6e-4919-d2eb-80c8-730efd69639d",
+  "name" : "cta_url",
+  "label" : "CTA URL",
+  "required" : false,
+  "locked" : false,
+  "placeholder" : "",
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "#"
+}, {
+  "id" : "c36bd76e-3154-a3ca-60c9-73844efc36dd",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Our Proven Process"
+}, {
+  "id" : "62ad6919-afb0-b087-c386-4281345acb4c",
+  "name" : "section_subtext",
+  "label" : "Section Subtext",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "ac8929bc-bfed-82ca-5506-f14d446698a3",
+  "name" : "section_dividers",
+  "label" : "Section Dividers",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "wave", "Waves" ], [ "angle", "Angles" ], [ "none", "Flat" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "wave"
+}, {
+  "id" : "606d0bd1-8acc-55fb-2d7d-45447119897f",
+  "name" : "background_type",
+  "label" : "Background Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "image", "Image" ], [ "default", "Default" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+}, {
+  "id" : "ef4ee018-ba09-2fa9-5f9d-9b9dc1f678ae",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "606d0bd1-8acc-55fb-2d7d-45447119897f",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "image",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "disabled"
+  }
+}, {
+  "id" : "4d6bf66e-859a-9d81-ccf7-a6226f9b66f8",
+  "name" : "timeline_content",
+  "label" : "Timeline Content",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 2,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : [ "<h5><span style=\"color: #ffffff;\">STEP 1</span></h5>\n<h2><span style=\"color: #ffffff;\">Wireframing</span></h2>\n<p><span style=\"color: #ffffff;\">Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum. Sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>", "<h5><span style=\"color: #ffffff;\">STEP 1</span></h5>\n<h2><span style=\"color: #ffffff;\">Wireframing</span></h2>\n<p><span style=\"color: #ffffff;\">Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum. Sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>", "<h5><span style=\"color: #ffffff;\">STEP 1</span></h5>\n<h2><span style=\"color: #ffffff;\">Wireframing</span></h2>\n<p><span style=\"color: #ffffff;\">Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum. Sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>", "<h5><span style=\"color: #ffffff;\">STEP 1</span></h5>\n<h2><span style=\"color: #ffffff;\">Wireframing</span></h2>\n<p><span style=\"color: #ffffff;\">Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum. Sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>" ]
+}, {
+  "id" : "3bdb6b8e-b743-9a5d-c746-6541991cbecb",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "5bcabbec-f893-0b21-8334-8e71e43dc279",
+    "name" : "section_header_text_color",
+    "label" : "Section Header Text Color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "section_header_text_color" : [ "section_header_text_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "575bdcea-1455-5cb3-548d-6b1d0503d13f",
+    "name" : "timeline_dot_color",
+    "label" : "Timeline Dot Color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "timeline_dot_color" : [ "timeline_dot_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#6ae5cc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "53a49d8d-ce4f-1735-3e41-270a1e0318f1",
+    "name" : "cta_background_color",
+    "label" : "CTA Background Color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "cta_background_color" : [ "cta_background_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_header_text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "timeline_dot_color" : {
+      "color" : "#6ae5cc",
+      "opacity" : 100
+    },
+    "cta_background_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }
+} ]

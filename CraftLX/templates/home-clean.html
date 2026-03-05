@@ -1,0 +1,504 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Home
+  screenshotPath: ../images/template-previews/ThemeChallengeHome.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<main class="body-container-wrapper">
+  {# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+  {% dnd_area 'dnd_area' class='body-container body-container--home', label='Main section' %}
+
+    {% dnd_section 
+    full_width=TRUE, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Hero Section' 
+          offset=0, 
+          width=12,
+          hero_section_type='home',
+          hero_bottom_divider_type='waves',
+          cta_link='https://preview.hs-sites.com/_hcms/preview/template/multi?domain=undefined&hs_preview_key=KlX2aWtQEOgru0A7tec2MA&portalId=395201&tc_deviceCategory=undefined&template_file_path=theme-challenge/templates/product.html&updated=1605911216571',
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {# New Section Module #}
+
+    {% dnd_section 
+    full_width=false, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Section' offset=0, width=12 %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+  {# Icon Slider Module #}
+
+    {% dnd_section 
+    full_width=true, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      background_linear_gradient={
+        'direction': 'to right',
+        'colors': [
+          '#439DF0',
+          '#2263EE'
+        ]
+      }
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Icon Slider' 
+          offset=0, 
+          width=12,
+          services_slider=[
+            {
+                services_title: "Not Just More, but BETTER Traffic!",
+                services_icon: {
+                  "src": get_asset_url("../images/design-icon-v2.svg"),
+                  "alt":"icon representing design",
+                },
+                icon_description: '<p><span>Good marketers increase their site traffic. Great marketers turn that traffic into sales opportunities!</span></p>'
+            },
+            {
+                services_title: "Skyrocketing Lead Generation",
+                services_icon: {
+                  "src":get_asset_url("../images/marketing-icon-v2.svg"),
+                  "alt":"icon representing marketing",
+                },
+                icon_description: "<p><span>Don't just hit your lead gen goals - shatter them! And bring in not just more leads, but BETTER leads!</span></p>"
+            },
+            {
+                services_title: "Revenue-First Mindset",
+                services_icon: {
+                  "src":get_asset_url("../images/strategy-icon-v2.svg"),
+                  "alt":"icon representing strategy",
+                },
+                icon_description: "<p><span>Stop wasting time on stuff that doesn't work! Create more qualified sales opportunities, then take care of the rest later.</span></p>"
+            }
+          ],
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+  
+  
+  
+  
+  
+  {# New Section Module #}
+
+    {% dnd_section 
+    full_width=false, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Tab Module' 
+          offset=0, 
+          width=12, 
+          tabs=[
+            {
+                tab_title: "You've tried everything and still can't hit your goals",
+                tab_text: "Leo volutpat platea amet in aliquet amet eget convallis integer. Bibendum sed",
+                box_image_video: 'back_img',
+                tab_image: {
+                  "src":get_asset_url("../images/frustrated_both_1.png"),
+                  "alt":"frustrated person on computer",
+                },
+                tab_icon: {
+                  "src":"",
+                }
+            },
+            {
+                tab_title: "The revenue goal you're held to feels impossible",
+                tab_text: "Leo volutpat platea amet in aliquet amet eget convallis integer. Bibendum sed",
+                
+                box_image_video: 'back_img',
+                tab_image: {
+                  "src":get_asset_url("../images/frustrated_both_2.png"),
+                  "alt":"frustrated person on computer",
+                },
+                tab_icon: {
+                  "src":"",
+                }
+            },
+            {
+                tab_title: "You can't prove the ROI of your marketing programs",
+                tab_text: "Leo volutpat platea amet in aliquet amet eget convallis integer. Bibendum sed",
+                box_image_video: 'back_img',
+                tab_image: {
+                  "src":get_asset_url("../images/frustrated_both_3.png"),
+                  "alt":"frustrated person on computer",
+                },
+                tab_icon: {
+                  "src":"",
+                }
+            },
+            {
+                tab_title: "You're overwhelmed and not sure what to do about it",
+                box_image_video: 'back_img',
+                tab_image: {
+                  "src":get_asset_url("../images/frustrated_both_4.png"),
+                  "alt":"frustrated person on computer",
+                },
+                tab_icon: {
+                  "src":"",
+                }
+            }
+          ],
+          %}
+         
+          {% end_dnd_module %}
+          
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+  {# New CONTENT LAYOUT Module #}
+
+    {% dnd_section 
+    full_width=true, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    },
+      background_linear_gradient={
+        'direction': 'to right',
+        'colors': [
+          '#439DF0',
+          '#2263EE'
+        ]
+      }
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Section Content Layouts' 
+          offset=0, 
+          width=12,
+          section_title='The Plan',
+          section_subtext='',
+          section_divider_type='waves',
+          content_groups=[
+            {
+                image_or_icon: 'icon',
+                icon_choice: {
+                  "name":"search",
+                  "type":"SOLID",
+                  "unicode":"f002"
+                },
+                text_content: '<h3 style="text-align: center">Step 1: Collect</h3><p style="text-align: center">Understand your challenges, goals, and target audience.</p>',
+            },
+            {
+                image_or_icon: 'icon',
+                icon_choice: {
+                  "name":"wrench",
+                  "type":"SOLID",
+                  "unicode":"f0ad"
+                },
+                text_content: '<h3 style="text-align: center">Step 2: Build</h3><p style="text-align: center">Build a kick-ass marketing engine that delivers quality sales opportunities.</p>',
+            },
+            {
+                image_or_icon: 'icon',
+                icon_choice: {
+                  "name":"chart-line",
+                  "type":"SOLID",
+                  "unicode":"f201"
+                },
+                text_content: '<h3 style="text-align: center">Step 3: Refine</h3><p style="text-align: center">Never stop improving! The better your machine, the easier your life will be.</p>',
+            }
+          ],
+          color_for_all_icons={
+            "color":"#4d4d4d",
+            "opacity":100
+          }
+          
+          %}
+         
+          {% end_dnd_module %}
+          
+          
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+      {# New Section Module #}
+
+    {% dnd_section 
+    full_width=false, 
+    padding={
+        top: 100,
+        right: 0,
+        bottom: 100,
+        left: 0
+      },
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path="@hubspot/rich_text" offset=0, width=12 %}
+              {% module_attribute "html" %}
+                <h2 style="text-align: center;">But Don't Just Take Our Word for It...</h2>
+
+              {% end_module_attribute %}
+            {% end_dnd_module %}
+        {%end_dnd_row%}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Testimonial Section' 
+          offset=0, 
+          width=12,
+          testimonials=[
+            {
+                testimonial_name: "John Smith",
+                testimonial_job_title: "Director of Marketing at Company",
+                testimonial_text: '<p style="font-size: 24px;"><span>"Every second I spent working with Web Canopy was time well spent! The team there is great at what they do!"</span></p>',
+                image_foreground: {
+                  "src":get_asset_url("../images/blop_teal_man.png"),
+                  "alt":"man in teal shape",
+                  "size_type":'auto'
+                },
+                image_background: {
+                  "src":get_asset_url("../images/teal_man_background_jobbies.png"),
+                  "alt":"design elements",
+                  "size_type":'auto'
+                },
+                quote_icon: {
+                  "src":get_asset_url("../images/quote-icon-green.svg"),
+                  "alt":"quote icon green",
+                },
+            },
+            {
+                testimonial_name: "Steve Smith",
+                testimonial_job_title: "CMO of Company",
+                testimonial_text: '<p style="font-size: 24px;"><span>"Working with Web Canopy has been the best decision of my career -- no, my life!"</span></p>',
+                image_foreground: {
+                  "src":get_asset_url("../images/blop_green_man.png"),
+                  "alt":"man in green shape",
+                  "size_type":'auto'
+                },
+                image_background: {
+                  "src":get_asset_url("../images/green_man_background_jobbies.png"),
+                  "alt":"design elements",
+                  "size_type":'auto'
+                },
+                quote_icon: {
+                  "src":get_asset_url("../images/quote-icon-green.svg"),
+                  "alt":"quote icon green",
+                },
+            },
+            {
+                testimonial_name: "Jane Doe",
+                testimonial_job_title: "CEO of Company",
+                testimonial_text: '<p style="font-size: 24px;"><span>"I would go back to Web Canopy for my next project in a heartbeat! The entirety of the project was smooth, painless, and fun!"</span></p>',
+                image_foreground: {
+                  "src":get_asset_url("../images/blop_navy_woman.png"),
+                  "alt":"woman in blue shape",
+                  "size_type":'auto'
+                },
+                image_background: {
+                  "src":get_asset_url("../images/navy_woman_background_jobbies.png"),
+                  "alt":"background design elements",
+                  "size_type":'auto'
+                },
+                quote_icon: {
+                  "src":get_asset_url("../images/quote-icon-green.svg"),
+                  "alt":"quote icon green",
+                },
+            }
+            
+          ],
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+  
+  {# Section Card Stack Module #}
+
+    {% dnd_section 
+    full_width=true, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Section Lead Magnet' offset=0, width=12 %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+  
+    {% dnd_section 
+    full_width=false, 
+    padding={
+      'top': 100,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path="@hubspot/rich_text" offset=0, width=12 %}
+              {% module_attribute "html" %}
+                <h5 style="text-align: center;">HOW WE THINK</h5>
+                <h2 style="text-align: center;">Insights, Info, and Ideas</h2>
+
+              {% end_module_attribute %}
+            {% end_dnd_module %}
+        {%end_dnd_row%}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Blog Feed' offset=0, width=12 %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+
+
+    
+    {# New Section Module #}
+
+    {% dnd_section 
+    full_width=true, 
+    padding={
+      'top': 50,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        
+        {% dnd_row %}
+          {% dnd_module path='../modules/Call To Action' offset=0, width=12 %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

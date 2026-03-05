@@ -1,0 +1,161 @@
+[ {
+  "id" : "2cddfffe-b976-c70f-369e-86dce7053f5b",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Trusted By The Best"
+}, {
+  "id" : "0aec0d13-40ef-86d7-0c64-b9de5c00dc73",
+  "name" : "logos",
+  "label" : "Logos",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 50,
+    "sorting_label_field" : null,
+    "default" : 10
+  },
+  "children" : [ {
+    "id" : "e03a52dc-303f-dd7c-c062-94ce3c3e18c3",
+    "name" : "logo",
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/395201/WEBSITE-WEEK-BLACK.png",
+      "alt" : "WEBSITE-WEEK-BLACK",
+      "loading" : "disabled",
+      "width" : 500,
+      "height" : 250,
+      "max_width" : 500,
+      "max_height" : 250
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/395201/WEBSITE-WEEK-BLACK.png",
+      "alt" : "WEBSITE-WEEK-BLACK",
+      "loading" : "disabled",
+      "width" : 500,
+      "height" : 250,
+      "max_width" : 500,
+      "max_height" : 250
+    }
+  }, {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/395201/WEBSITE-WEEK-BLACK.png",
+      "alt" : "WEBSITE-WEEK-BLACK",
+      "loading" : "disabled",
+      "width" : 500,
+      "height" : 250,
+      "max_width" : 500,
+      "max_height" : 250
+    }
+  }, {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/395201/WEBSITE-WEEK-BLACK.png",
+      "alt" : "WEBSITE-WEEK-BLACK",
+      "loading" : "disabled",
+      "width" : 500,
+      "height" : 250,
+      "max_width" : 500,
+      "max_height" : 250
+    }
+  }, {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/395201/WEBSITE-WEEK-BLACK.png",
+      "alt" : "WEBSITE-WEEK-BLACK",
+      "loading" : "disabled",
+      "width" : 500,
+      "height" : 250,
+      "max_width" : 500,
+      "max_height" : 250
+    }
+  }, {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/395201/WEBSITE-WEEK-BLACK.png",
+      "alt" : "WEBSITE-WEEK-BLACK",
+      "loading" : "disabled",
+      "width" : 500,
+      "height" : 250,
+      "max_width" : 500,
+      "max_height" : 250
+    }
+  }, {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/395201/WEBSITE-WEEK-BLACK.png",
+      "alt" : "WEBSITE-WEEK-BLACK",
+      "loading" : "disabled",
+      "width" : 500,
+      "height" : 250,
+      "max_width" : 500,
+      "max_height" : 250
+    }
+  }, {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/395201/WEBSITE-WEEK-BLACK.png",
+      "alt" : "WEBSITE-WEEK-BLACK",
+      "loading" : "disabled",
+      "width" : 500,
+      "height" : 250,
+      "max_width" : 500,
+      "max_height" : 250
+    }
+  }, {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/395201/WEBSITE-WEEK-BLACK.png",
+      "alt" : "WEBSITE-WEEK-BLACK",
+      "loading" : "disabled",
+      "width" : 500,
+      "height" : 250,
+      "max_width" : 500,
+      "max_height" : 250
+    }
+  }, {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/395201/WEBSITE-WEEK-BLACK.png",
+      "alt" : "WEBSITE-WEEK-BLACK",
+      "loading" : "disabled",
+      "width" : 500,
+      "height" : 250,
+      "max_width" : 500,
+      "max_height" : 250
+    }
+  }, {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/395201/WEBSITE-WEEK-BLACK.png",
+      "alt" : "WEBSITE-WEEK-BLACK",
+      "loading" : "disabled",
+      "width" : 500,
+      "height" : 250,
+      "max_width" : 500,
+      "max_height" : 250
+    }
+  } ]
+} ]

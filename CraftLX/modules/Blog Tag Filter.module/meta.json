@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "BLOG_LISTING", "BLOG_POST" ],
+  "inline_help_text" : "Filter module for blog tags",
+  "host_template_types" : [ "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 318368035548,
+  "label" : "Blog Tag filter",
+  "icon" : "../../../Studio-Canvas-Theme/images/module-icons/filter.svg",
+  "is_available_for_new_content" : true
+}

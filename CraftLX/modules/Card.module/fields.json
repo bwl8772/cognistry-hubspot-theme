@@ -1,0 +1,201 @@
+[ {
+  "id" : "857e0087-d612-0065-36c6-58acd6bae625",
+  "name" : "image_icon",
+  "label" : "Image/Icon",
+  "required" : true,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "image", "Image" ], [ "icon", "Icon" ], [ "none", "None" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "icon"
+}, {
+  "id" : "64c83d58-6303-c308-4aa1-3afaad93aad4",
+  "name" : "icon_group",
+  "label" : "Icon Group",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "857e0087-d612-0065-36c6-58acd6bae625",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "icon",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "726607da-b8f5-b6d8-38e0-669651e6d29a",
+    "name" : "icon_choice",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "bell",
+      "unicode" : "f0f3",
+      "type" : "SOLID"
+    }
+  }, {
+    "id" : "83a67620-a9d8-b357-3909-6fdc812ce164",
+    "name" : "icon_color",
+    "label" : "Icon Color",
+    "required" : true,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F27F1B",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "2b0cb41e-2e56-da5c-8a75-d83223cb11d6",
+    "name" : "icon_background_color",
+    "label" : "Icon Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 0
+    }
+  }, {
+    "id" : "271207f5-9195-431f-4794-06a45f2a33ed",
+    "name" : "icon_border_color",
+    "label" : "Icon Border Color",
+    "required" : true,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 0
+    }
+  }, {
+    "id" : "b9f63484-c159-93aa-fc0e-c1e87e99bd95",
+    "name" : "icon_width",
+    "label" : "Icon Width",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 10,
+    "max" : 300,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 100
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "icon_choice" : {
+      "name" : "bell",
+      "unicode" : "f0f3",
+      "type" : "SOLID"
+    },
+    "icon_color" : {
+      "color" : "#F27F1B",
+      "opacity" : 100
+    },
+    "icon_background_color" : {
+      "color" : "#ffffff",
+      "opacity" : 0
+    },
+    "icon_border_color" : {
+      "color" : "#ffffff",
+      "opacity" : 0
+    },
+    "icon_width" : 100
+  }
+}, {
+  "id" : "711432f3-1be9-5070-8120-e2c42058cda4",
+  "name" : "image",
+  "label" : "Image",
+  "help_text" : "Select if you want an image or icon to use for the card",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "857e0087-d612-0065-36c6-58acd6bae625",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "image",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null
+  }
+}, {
+  "id" : "c20d30ea-eadf-03c5-4f6f-792a7e1e3c81",
+  "name" : "card_content",
+  "label" : "Card Content",
+  "required" : true,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<div style=\"text-align: center;\">\n<h4><span style=\"color: #ffffff;\">Drag and Drop</span></h4>\n</div>\n<div style=\"text-align: center;\"><span style=\"color: #ffffff;\">StudioCanvas is built as a drag and drop theme allowing you to manipulate every aspect</span></div>"
+}, {
+  "id" : "ce4816e0-8180-91bf-2c76-67edc9dec5f6",
+  "name" : "background_type",
+  "label" : "Background Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "solid", "Solid Color" ], [ "blur", "iOS Blur" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "solid"
+}, {
+  "id" : "8a9d2f7c-b489-9490-9f00-3256d67c6add",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "3544d014-b12d-ef68-fa66-528261201bd5",
+    "name" : "color_field",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "color_field" : [ "color_field" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "color_field" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }
+} ]

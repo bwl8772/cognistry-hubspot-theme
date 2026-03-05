@@ -1,0 +1,39 @@
+<!--
+  templateType: search_results_page
+  isAvailableForNewContent: true
+  label: Search Results
+  screenshotPath: ../../images/template-previews/search-results.png
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+          <section class="hero-section hero-section-overlay theme-section-styles section-bg-fixed">
+          <div class="hero-content theme-scroll-reveal">
+            <h1 class="mobile-title"  style="color: #fff;">Search Results</h1>
+            <h1 class="ml11">
+              <span class="text-wrapper">
+                <span class="line line1" style="background-color: #000;"></span>
+                <span class="letters" style="color:#fff;">Search Results</span>
+              </span>
+            </h1>
+
+          </div>
+          <div class="hero-section-background-container">
+            <video class="vid-parallax" autoplay loop muted>
+              <source src="https://f.hubspotusercontent00.net/hubfs/395201/hero-vid-1.mov" type="video/mp4">
+            </video>
+        </div>
+          <img src="{{ get_asset_url('../../images/hero-jobbies-7.svg') }}" alt="jobbies" class="section-img hero-section-jobbies-3 img-parallax-overflow">
+          <div class="hero-section-divider-wave-1"></div>
+      </section>
+  <section class="content-wrapper">
+    <div class="systems-page">
+      <h2>Results for "{{ request.query_dict.term|escape }}"</h2>
+      {% module 'search_results'
+        path='@hubspot/search_results'
+      %}
+    </div>
+  </section>
+</main>
+{% endblock body %}

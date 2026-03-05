@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "inline_help_text" : "A section with a slider built in to highlight content and imagery. Upload you own icons or images and pair it with descriptive text. ",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 318368036541,
+  "label" : "Icon Slider",
+  "icon" : "https://f.hubspotusercontent00.net/hubfs/395201/icon_slider_icon.svg",
+  "is_available_for_new_content" : true
+}

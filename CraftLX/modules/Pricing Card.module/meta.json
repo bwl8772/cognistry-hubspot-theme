@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "inline_help_text" : "A module for creating a single pricing card. Use rich text to describe your offerings",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 318399097573,
+  "label" : "Pricing Card",
+  "icon" : "https://f.hubspotusercontent00.net/hubfs/395201/pricing_card_icon.svg",
+  "is_available_for_new_content" : true
+}

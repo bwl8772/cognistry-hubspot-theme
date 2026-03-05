@@ -1,0 +1,53 @@
+<section class="section-base testimonial row-fluid"> 
+  
+  {# Text Left - Image Right #}
+  <div class="section-row slider-row theme-scroll-reveal">
+    <div class="testimonial-container row-fluid">
+    {% for testimonial in module.testimonials %}
+
+      <div class="dnd-column">
+        <div class="span2"></div>
+        
+        <div class="span4">
+          <div class="quote-icon-container">
+<!--             <svg width="181" height="113" viewBox="0 0 181 113" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M180.583 71.0393C177.968 53.587 163.084 41.1497 146.189 40.3473C150.413 24.7004 160.671 18.4818 173.141 14.871C174.348 14.4698 174.147 13.2662 174.147 13.2662L172.135 0.828934C172.135 0.828934 171.934 -0.174074 170.325 0.0265266C127.283 4.84095 98.1187 37.5389 103.549 77.2579C108.578 104.74 130.099 115.372 150.011 112.564C169.923 109.354 183.6 90.8988 180.583 71.0393ZM43.2095 40.3473C47.2321 24.7004 57.8922 18.4818 70.1613 14.871C71.3681 14.4698 71.1669 13.2662 71.1669 13.2662L69.3567 0.828934C69.3567 0.828934 69.1556 -0.174074 67.5465 0.0265266C24.303 4.84095 -4.4589 37.5389 0.569411 77.2579C5.79886 104.74 27.5212 115.372 47.2321 112.564C67.1443 109.354 80.8213 90.8988 77.6032 71.0393C74.9884 53.3864 60.3058 40.9491 43.2095 40.3473Z" fill="#FD4D5B"/>
+            </svg> -->
+            
+              <img src="{{ testimonial.quote_icon.src }}" alt="{{ testimonial.quote_icon.alt }}" class="img-parallax-overflow-quote">
+            
+          </div>
+          {% inline_rich_text field="richtext_field" value="{{ testimonial.testimonial_text }}" %}
+          <div class="testimonial-author-block">
+            <div class="author-name">{% inline_text field="testimonial_name" value="{{ testimonial.testimonial_name }}" %}</div>
+            <div class="author-title">{% inline_text field="testimonial_job_title" value="{{ testimonial.testimonial_job_title }}" %}</div>
+          </div>
+        </div>
+        
+        <div class="span4">
+          {% if testimonial.image_foreground.src %}
+            {% set sizeAttrs = 'width="{{ testimonial.image_foreground.width }}" height="{{ testimonial.image_foreground.height }}"' %}
+            {% if testimonial.image_foreground.size_type == 'auto' %}
+              {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+            {% elif testimonial.image_foreground.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ testimonial.image_foreground.max_width }}px; max-height: {{ testimonial.image_foreground.max_height }}px"' %}
+            {% endif %}
+            <div class="section-img-container">
+            {% if testimonial.image_background.src %}
+              
+              <img src="{{ testimonial.image_background.src }}" alt="{{ testimonial.image_background.alt }}" class="section-img-behind img-parallax-overflow-background" {{ sizeAttrs }}>
+            {% endif %}
+              
+              <img src="{{ testimonial.image_foreground.src }}" alt="{{ testimonial.image_foreground.alt }}" class="section-img img-parallax-overflow-foreground" {{ sizeAttrs }}>
+            </div>
+            {% endif %}
+        </div>
+        <div class="span2"></div>
+        
+      </div>
+      
+    {% endfor %}
+      
+  </div>
+  </div>
+</section>

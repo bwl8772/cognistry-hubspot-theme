@@ -1,0 +1,88 @@
+
+
+<section class="hero-section lp hero-section-overlay theme-section-styles section-bg-fixed">
+    <div class="hero-content theme-scroll-reveal">
+      <h1 class="mobile-title"  style="color: {{ module.style.hero_text_color.color }};">{{ module.headline_text }}</h1>
+<!--       <h1 class="ml11">
+        <span class="text-wrapper">
+          <span class="line line1" style="background-color: { module.hero_text_color.color }};"></span>
+          <span class="letters" style="color: { module.hero_text_color.color }};">{ module.headline_text }}</span>
+        </span>
+      </h1> -->
+      
+        
+      {{ module.richtext_field }}
+        {% if module.cta_text %}
+        <a class="button hero-btn theme-shadow">{{ module.cta_text }}</a>
+        {% endif %}
+      
+    </div>
+    <div class="lp-form-container">
+        <div class="lp-form-card theme-shadow theme-border-radius theme-scroll-reveal">
+          {% form
+            form_to_use="{{ module.form_field.form_id }}"
+            response_response_type="{{ module.form_field.response_type }}"
+            response_message="{{ module.form_field.message }}"
+            response_redirect_id="{{ module.form_field.redirect_id }}"
+            response_redirect_url="{{module.form_field.redirect_url}}"
+            gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+          %}
+          
+      </div>
+    </div>
+    <div class="hero-section-background-container">
+        
+        {% if module.hero_background_type == 'video' %}
+        
+        <video class="vid-parallax" autoplay loop muted>
+          <source src="{{ module.background_video_source_url }}" type="video/mp4">
+        </video>
+      {% elif module.hero_background_type == 'image' %}
+        <img class="img-parallax" src="{{ module.background_image_video.src }}" alt="{{ module.background_image_video.alt }}">
+      {% elif module.hero_background_type == 'gradient' %}
+        <div class="module-hero-gradient" style="background: linear-gradient(100.46deg, {{ module.style.background_gradient_color_1.color }} 7.79%, {{ module.style.background_gradient_color_2.color }} 92.21%);"></div>
+      {% endif %}
+      
+  </div>
+    <img src="{{ module.hero_jobbies.src }}" alt="{{ module.hero_jobbies.alt }}" class="section-img hero-section-jobbies-3 img-parallax-overflow">
+<!--     <div class="hero-section-divider-wave-1"></div> -->
+</section>
+
+{% if module.form_style == 'style_1' %}
+<style>
+</style>
+{% endif %}
+
+{% if module.form_style == 'style_2' %}
+<style>
+input[type=text], input[type=email], input[type=password], input[type=tel], input[type=number], input[type=file], select, textarea { border-color: #fff; border-bottom:2px solid #d1d6dc; }
+  input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=number]:focus, input[type=file]:focus, select:focus, textarea:focus { border-color: #fff; border-bottom:2px solid #d1d6dc;
+
+</style>
+{% endif %}
+
+{% if module.form_style == 'style_3' %}
+<style>
+  input[type=text], input[type=email], input[type=password], input[type=tel], input[type=number], input[type=file], select, textarea { border-color: #fff; border-bottom:2px dotted #d1d6dc; }
+    input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=number]:focus, input[type=file]:focus, select:focus, textarea:focus { border-color: #fff; border-bottom:2px dotted #d1d6dc; }
+
+</style>
+{% endif %}
+
+{% if module.button_position == 'left' %}
+<style>
+    form input[type=submit], form .hs-button {float:left;}
+</style>
+{% endif %}
+
+{% if module.button_position == 'center' %}
+<style>
+
+</style>
+{% endif %}
+
+{% if module.button_position == 'right' %}
+<style>
+  form input[type=submit], form .hs-button {float:right;}
+</style>
+{% endif %}

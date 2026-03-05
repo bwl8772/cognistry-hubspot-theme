@@ -1,0 +1,23 @@
+[ {
+  "id" : "8d1386e2-d2ad-b7b7-8044-a09181335e4e",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "help_text" : "Title to show above the blog feed cards",
+  "inline_help_text" : "Title to show above the blog feed cards",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Insights, Info, and Ideas"
+}, {
+  "id" : "1586f55d-ad74-1609-3107-39e3e03f6aa1",
+  "name" : "select_blog",
+  "label" : "Select Blog",
+  "help_text" : "Select the blog to show in the blog feed",
+  "inline_help_text" : "Select the blog to show in the blog feed",
+  "required" : false,
+  "locked" : false,
+  "type" : "blog",
+  "display_width" : null
+} ]

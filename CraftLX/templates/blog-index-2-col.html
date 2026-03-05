@@ -1,0 +1,222 @@
+<!--
+  templateType: blog_listing
+  isAvailableForNewContent: true
+  label: Blog 2 Column
+  screenshotPath: ../images/template-previews/ThemeChallengeBlogList2-Col.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+{% dnd_area 'Before Section Listing' class='body-container body-container--home', label='DND Before Blog List' %}
+{% dnd_section %}
+{% end_dnd_section %}
+{% end_dnd_area %}
+<main class="body-container-wrapper">
+  <div class="body-container body-container--blog-index">
+
+    {# Blog author listing #}
+    {% if blog_author %}
+      <div class="blog-header">
+        <div class="blog-header__inner">
+          {% if blog_author.avatar %}
+            <div class="blog-header__author-avatar" style="background-image: url('{{ blog_author.avatar }}');"></div>
+          {% endif %}
+          <h1 class="blog-header__title">{{ blog_author.display_name }}</h1>
+          {% if blog_author.bio %}
+            <h4 class="blog-header__subtitle">{{ blog_author.bio }}</h4>
+          {% endif %}
+          {% if blog_author.has_social_profiles %}
+            <div class="blog-header__author-social-links">
+              {% if blog_author.website %}
+                <a href="{{ blog_author.website }}" target="_blank" rel="noopener">
+                  {% icon
+                    name='link',
+                    purpose='semantic',
+                    style='SOLID',
+                    title='Follow me on my website',
+                    width='10'
+                  %}
+                </a>
+              {% endif %}
+              {% if blog_author.facebook %}
+                <a href="{{ blog_author.facebook }}" target="_blank" rel="noopener">
+                  {% icon
+                    name='facebook-f',
+                    purpose='semantic',
+                    style='SOLID',
+                    title='Follow me on Facebook',
+                    width='10'
+                  %}
+                </a>
+              {% endif %}
+              {% if blog_author.linkedin %}
+                <a href="{{ blog_author.linkedin }}" target="_blank" rel="noopener">
+                  {% icon
+                    name='linkedin-in',
+                    purpose='semantic',
+                    style='SOLID',
+                    title='Follow me on LinkedIn',
+                    width='10'
+                  %}
+                </a>
+              {% endif %}
+              {% if blog_author.twitter %}
+                <a href="{{ blog_author.twitter }}" target="_blank" rel="noopener">
+                  {% icon
+                    name='twitter',
+                    purpose='semantic',
+                    style='SOLID',
+                    title='Follow me on Twitter',
+                    width='10'
+                  %}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% elif tag %}
+    {# End blog author listing #}
+
+    {# Blog tag listing #}
+      <div class="blog-header">
+        <div class="blog-header__inner">
+          <h1 class="blog-header__title">Posts about {{ page_meta.html_title|split(' | ')|last }}</h1>
+        </div>
+      </div>
+    {% else %}
+    <section class="hero-section hero-section-overlay theme-section-styles section-bg-fixed">
+    <div class="hero-content theme-scroll-reveal">
+      <h1 class="mobile-title"  style="color: #fff;">{{ group.public_title }}</h1>
+      {#<h1 class="ml11">
+        <span class="text-wrapper">
+          <span class="line line1" style="background-color: #000;"></span>
+          <span class="letters" style="color:#fff;">{{ group.public_title }}</span>
+        </span>
+      </h1>#}
+      
+      <div style="color:#fff;">{{ group.description }}</div>
+    </div>
+    <div class="hero-section-background-container">
+      <div class="module-hero-gradient" style="background: linear-gradient(100.46deg, #2263ee 7.79%, #1fa7c5 92.21%);"></div>
+  </div>
+    <img src="{{ get_asset_url('../images/hero-jobbies-7.svg') }}" alt="background-jobbies" class="section-img hero-section-jobbies-3 img-parallax-overflow">
+    <div class="hero-section-divider-wave-1"></div>
+</section>
+    {% endif %}
+    {# End blog header #}
+        <div class="blog-navigation">
+      <div class="content-wrapper">
+        <div class="row-fluid span12">
+          <div class="blog-navigation__tag-filter column span6">
+            {% module 'blog_tag_filter'
+              path='../modules/Blog Tag Filter.module'
+            %}
+          </div>
+          <div class="blog-navigation__search column span6">
+            {% module 'blog_search'
+              label='Blog search',
+              path='@hubspot/search_input'
+            %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-wrapper">
+
+
+
+      {# Blog listing section #}
+      <section class="blog-index">
+
+        {# Blog listing #}
+        {% for content in contents %}
+          {# On the blog listing page, the first post will be featured above older posts #}
+          {% if (loop.first && current_page_num == 1 && !topic) %}
+            <article class="blog-index__post2col blog-index__post--large">
+              {% if content.featured_image and group.use_featured_image_in_summary %}
+                <a class="blog-index__post-image blog-index__post-image--large theme-border-radius theme-shadow"
+                  {% if content.featured_image %}
+                    style="background-image: url('{{ content.featured_image }}');"
+                  {% endif %}
+                  href="{{ content.absolute_url }}">
+                </a>
+              {% endif %}
+              <div class="blog-index__post-content  blog-index__post-content--large theme-border-radius theme-shadow{% if !content.featured_image or !group.use_featured_image_in_summary %} blog-index__post-content--full-width{% endif %}">
+                <h2><a href="{{ content.absolute_url }}">{{ content.name }}</a></h2>
+                {% if content_group.show_summary_in_listing %}
+                <div class="blog-in-cont">
+                  {{ content.post_list_content|safe|truncatehtml(100, '...')|striptags }}
+                </div>
+                {% endif %}
+              </div>
+            </article>
+          {% else %}
+            <article class="blog-index__post2col blog-index__post--small">
+              {% if content.featured_image and group.use_featured_image_in_summary %}
+                <a class="blog-index__post-image blog-index__post-image--small theme-border-radius theme-shadow" style="background-image: url('{{ content.featured_image }}');" href="{{ content.absolute_url }}">
+                </a>
+              {% endif %}
+              <div class="blog-index__post-content  blog-index__post-content--small theme-border-radius theme-shadow">
+                <h2><a href="{{ content.absolute_url }}">{{ content.name }}</a></h2>
+                {% if content_group.show_summary_in_listing %}
+                  {{ content.post_list_content|truncatehtml(100) }}
+                {% endif %}
+              </div>
+            </article>
+          {% endif %}
+        {% endfor %}
+        {# End blog listing #}
+
+      </section>
+      {# End blog listing section #}
+
+      {# Blog pagination #}
+      {% if contents.total_page_count > 1 %}
+        <div class="blog-pagination">
+          {% set page_list = [-2, -1, 0, 1, 2] %}
+          {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+          {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+          {% elif current_page_num == 2 %}{% set offset = 1 %}
+          {% elif current_page_num == 1 %}{% set offset = 2 %}
+          {% else %}{% set offset = 0 %}{% endif %}
+
+          <a class="blog-pagination__link blog-pagination__prev-link {{ 'blog-pagination__prev-link--disabled' if !last_page_num }}" href="{{ blog_page_link(last_page_num) }}">
+            {% icon
+              name='chevron-left',
+              no_wrapper=True,
+              purpose='decorative',
+              style='SOLID',
+              width='13'
+            %}
+            Prev
+          </a>
+          {% for page in page_list %}
+            {% set this_page = current_page_num + page + offset %}
+            {% if this_page > 0 and this_page <= contents.total_page_count %}
+              <a class="blog-pagination__link blog-pagination__number-link {{ 'blog-pagination__link--active' if this_page == current_page_num }}" href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+            {% endif %}
+          {% endfor %}
+          <a class="blog-pagination__link blog-pagination__next-link {{ 'blog-pagination__next-link--disabled' if !next_page_num }}" href="{{ blog_page_link(current_page_num + 1) }}">
+            Next
+            {% icon
+              name='chevron-right',
+              no_wrapper=True,
+              purpose='decorative',
+              style='SOLID',
+              width='13'
+            %}
+          </a>
+        </div>
+      {% endif %}
+      {# End blog pagination #}
+
+    </div>
+
+  </div>
+</main>
+{% dnd_area 'After Listing' class='body-container body-container--home', label='DND After Blog List' %}
+{% dnd_section %}
+{% end_dnd_section %}
+{% end_dnd_area %}
+{% endblock body %}

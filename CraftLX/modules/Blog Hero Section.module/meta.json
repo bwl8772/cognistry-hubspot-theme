@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "inline_help_text" : "Module that pulls blog content into the theme hero section style",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 318399095520,
+  "label" : "Blog Hero Section",
+  "icon" : "https://f.hubspotusercontent00.net/hubfs/395201/blog_hero_section_icon.svg",
+  "is_available_for_new_content" : true
+}

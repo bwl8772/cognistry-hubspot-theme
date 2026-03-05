@@ -1,0 +1,259 @@
+[ {
+  "id" : "23de12a6-ba5b-8a3e-0989-d1fdefc26fbf",
+  "name" : "headline_text",
+  "label" : "Headline Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Become a Marketing Hero"
+}, {
+  "id" : "f157a073-63e2-0043-1cd0-6ada6a71f3b1",
+  "name" : "richtext_field",
+  "label" : "Headline Subtext",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p style=\"text-align: center;\"><span style=\"color: #ffffff;\">Irresistible website designs and kickass marketing programs that deliver results</span></p>"
+}, {
+  "id" : "39f7e4e0-15db-e4a7-eaa6-d6ffea2a5883",
+  "name" : "hero_jobbies",
+  "label" : "Hero Jobbies",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent00.net/hubfs/395201/hero-jobbies-6.svg",
+    "alt" : "hero-jobbies-6",
+    "loading" : "disabled",
+    "width" : 78,
+    "height" : 60,
+    "max_width" : 78,
+    "max_height" : 60
+  }
+}, {
+  "id" : "19eb93b3-a292-b704-2512-eb67f6668b65",
+  "name" : "cta_text",
+  "label" : "CTA Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Learn More"
+}, {
+  "id" : "81a3e56e-d7f1-b484-ae3d-adb199474bdf",
+  "name" : "hero_section_type",
+  "label" : "Hero Section Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "home", "Home" ], [ "interior", "Interior" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "home"
+}, {
+  "id" : "e7e5ce6f-be7e-cceb-70b5-15799621072a",
+  "name" : "form_style",
+  "label" : "Form Style",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "style_1", "Style 1" ], [ "style_2", "Style 2" ], [ "style_3", "Style 3" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "style_1"
+}, {
+  "id" : "fe671504-6ea2-c04b-c04b-5d313048fff9",
+  "name" : "button_position",
+  "label" : "Button Position",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "center"
+}, {
+  "id" : "d1f238c6-8320-4d9b-f7f6-c9a376cc90b5",
+  "name" : "form_field",
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "embed_versions" : [ "v2", "v4" ],
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : "bb3bead6-e193-4ab3-845d-59ea98ac6f3f",
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form.",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+}, {
+  "id" : "2bfacc0f-6b4d-e074-1458-1fe7b26c02e5",
+  "name" : "hero_background_type",
+  "label" : "Hero Background Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "video", "Video" ], [ "image", "Image" ], [ "gradient", "Gradient" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "video"
+}, {
+  "id" : "3621d5c6-3c73-3518-b137-3e0bfde257ce",
+  "name" : "background_video_source_url",
+  "label" : "Background Video Source URL",
+  "help_text" : "Enter the exact URL of the video file you would like to play in the hero background",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "2bfacc0f-6b4d-e074-1458-1fe7b26c02e5",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "video",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "https://f.hubspotusercontent00.net/hubfs/395201/hero-vid-1.mov"
+}, {
+  "id" : "33bcf67d-8f91-c6ff-852b-cfa3f9b07400",
+  "name" : "background_image_video",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "2bfacc0f-6b4d-e074-1458-1fe7b26c02e5",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "image",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null
+  }
+}, {
+  "id" : "438ce41b-edbd-f3d7-a077-f0a1c1a5a7d6",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "3d0110c3-b4da-eba5-e743-3b0f6bfac48e",
+    "name" : "hero_text_color",
+    "label" : "Headline Text Color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "hero_text_color" : [ "hero_text_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "25bb6515-346e-be57-59c0-26502c58aec4",
+    "name" : "background_gradient_color_1",
+    "label" : "Background Gradient Color 1",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "2bfacc0f-6b4d-e074-1458-1fe7b26c02e5",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "background_gradient_color_1" : [ "background_gradient_color_1" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#2263ee",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "365d3f18-9d8a-b8f6-5a25-97da2feb1021",
+    "name" : "background_gradient_color_2",
+    "label" : "Background Gradient Color 2",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "2bfacc0f-6b4d-e074-1458-1fe7b26c02e5",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "background_gradient_color_2" : [ "background_gradient_color_2" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#1FA7C5",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "hero_text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "background_gradient_color_1" : {
+      "color" : "#2263ee",
+      "opacity" : 100
+    },
+    "background_gradient_color_2" : {
+      "color" : "#1FA7C5",
+      "opacity" : 100
+    }
+  }
+} ]

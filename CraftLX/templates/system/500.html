@@ -1,0 +1,23 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  label: 500 error
+  screenshotPath: ../../images/template-previews/404.png
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper system-page theme-system-gradient">
+  <section class="content-wrapper">
+    <div class="error-page-img section-img-container">
+      <img class="section-img-behind system-img-parallax-overflow-background" src="https://f.hubspotusercontent00.net/hubfs/395201/error_blop.svg" alt="error-blop">
+      <img class="section-img img-parallax-overflow" src="https://f.hubspotusercontent00.net/hubfs/395201/500_img.svg" alt="500-img">
+    </div>
+    <div class="error-page" data-error="500">
+      <h1 class="error-page__heading">Ooops!</h1>
+      <p>This one is one us. The server ran into an unexpected internal error, hold tight, we have our best and brightest working to cheer up the server!</p>
+      <a class="button" href="/">Let's go home</a>
+    </div>
+  </section>
+</main>
+{% endblock body %}

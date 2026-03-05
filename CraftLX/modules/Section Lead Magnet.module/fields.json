@@ -1,0 +1,58 @@
+[ {
+  "id" : "654fed95-871e-653c-9442-38b36cc9f827",
+  "name" : "richtext_field",
+  "label" : "Rich text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h5>FREE DOWNLOAD</h5>\n<h2>Power Statement About Why Your Offer Is Awesome</h2>\n<ul>\n<li>Point number one should be the most important takeaway from your offer</li>\n<li>The second point should not be as strong as the first</li>\n<li>With point three, we want to highlight an action users will be able to do after they download</li>\n</ul>\n<p><a>Download</a></p>"
+}, {
+  "id" : "b6542dd9-d423-e955-20b2-a20acecbfbb3",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent00.net/hubfs/395201/lead_magnet_preview_v2.png",
+    "alt" : "lead_magnet_preview_v2",
+    "width" : 2340,
+    "height" : 1560,
+    "max_width" : 2340,
+    "max_height" : 1560
+  }
+}, {
+  "id" : "ee4b6d63-bb90-a4f3-edea-6d400270e2c9",
+  "name" : "content_layout",
+  "label" : "Content Layout",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "img_right", "Text Left | Image Right" ], [ "img_left", "Text Right | Image Left" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "img_right"
+}, {
+  "id" : "6de9c167-c3ab-82ae-6071-03608f69c789",
+  "name" : "section_divider_type",
+  "label" : "Section Divider Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "waves", "Waves" ], [ "angle", "Angle" ], [ "flat", "Flat" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "waves"
+} ]

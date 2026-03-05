@@ -1,0 +1,73 @@
+[ {
+  "id" : "148abd48-ed80-65ff-0078-0fc4b13bfa0a",
+  "name" : "accordion_box",
+  "label" : "Accordion Box",
+  "help_text" : "Module used to create accordion rich text boxes",
+  "inline_help_text" : "Repeater group for accordion boxes",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 6
+  },
+  "children" : [ {
+    "id" : "78151a54-2441-2244-f363-12996ea5fffc",
+    "name" : "accordion_title",
+    "label" : "Accordion Title",
+    "help_text" : "The title to show on the accordion box",
+    "inline_help_text" : "The title to show on the accordion box",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Sample Topic"
+  }, {
+    "id" : "3670f0f7-f382-8392-f93c-e97a6e180583",
+    "name" : "accordion_content",
+    "label" : "Accordion Content",
+    "help_text" : "The content that will be hidden in the accordion",
+    "inline_help_text" : "The content that will be hidden in the accordion",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "accordion_title" : "Sample Topic",
+    "accordion_content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+  }, {
+    "accordion_title" : "Sample Topic",
+    "accordion_content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+  }, {
+    "accordion_title" : "Sample Topic",
+    "accordion_content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+  }, {
+    "accordion_title" : "Sample Topic",
+    "accordion_content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+  }, {
+    "accordion_title" : "Sample Topic",
+    "accordion_content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+  }, {
+    "accordion_title" : "Sample Topic",
+    "accordion_content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+  } ]
+}, {
+  "id" : "a51a8ca9-0d99-da72-7fc9-0a42d916873c",
+  "name" : "accordion_id",
+  "label" : "Accordion ID",
+  "inline_help_text" : "If you're using multiple accordions on one page, please set each one with a unique ID. If you're only using one on this page, this is not needed.",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+} ]

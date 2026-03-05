@@ -1,0 +1,38 @@
+<div class="accordion_area fl100 {{ module.accordion_id }}">
+    <div class="wrapper animatedParent animateOnce">
+
+<!--         <div class="fl100 animated fadeInUpShort">
+            <h2 class="text_uppercase">{ module.section_title }}</h2>
+        </div> -->
+ 
+        <div class="accordion_cover fl100 animated fadeInUpShort delay-250">
+            {% for item in module.accordion_box %}
+            <div class="accordion_box">
+                <div class="accordion_boxinner theme-shadow-card-flat fl100">
+                    <h4>{{ item.accordion_title }}</h4>
+                    <div class="accordion_boxtext fl100">
+                        {{ item.accordion_content }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+{% require_js %}
+<script>
+/*var divs = $(".accordion_cover .accordion_box");
+var count = divs.length/2;
+for(var i = 0; i < divs.length; i+=count) {
+    divs.slice(i, i+count).wrapAll("<div class='accordion_fifty'></div>");
+} */
+
+$(".accordion_box .accordion_boxinner h4").click(function() {
+    $('.accordion_box .accordion_boxinner h4').not($(this)).removeClass('active');
+    $('.accordion_boxtext').not($(this).next()).slideUp();
+    $(this).toggleClass('active');
+    $(this).next().slideToggle(200);
+}); 
+</script>
+{% end_require_js %}

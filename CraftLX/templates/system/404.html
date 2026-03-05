@@ -1,0 +1,24 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  label: 404 error
+  screenshotPath: ../../images/template-previews/404.png
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper system-page theme-system-gradient">
+  <section class="content-wrapper">
+    <div class="error-page-img section-img-container">
+      <img class="section-img-behind system-img-parallax-overflow-background" src="https://f.hubspotusercontent00.net/hubfs/395201/error_blop.svg" alt="error-blop">
+      <img class="section-img img-parallax-overflow" src="https://f.hubspotusercontent00.net/hubfs/395201/404_img.svg" alt="404-img">
+    </div>
+    <div class="error-page" data-error="404">
+      <h1 class="error-page__heading">Ooops!</h1>
+
+      <p>This is probably not the page you meant to go to. No worries, it happens to the best of us! Feel free to hang out, or head back where you came from!</p>
+      <a class="button" href="/">Let's go home</a>
+    </div>
+  </section>
+</main>
+{% endblock body %}

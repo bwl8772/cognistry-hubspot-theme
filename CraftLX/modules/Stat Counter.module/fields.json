@@ -1,0 +1,59 @@
+[ {
+  "id" : "45a18af8-5530-44fb-72c5-b0f5110b526d",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "c7510aa3-e8f5-6c59-e30e-1c2523bd1a9e",
+  "name" : "animate_numbers",
+  "label" : "Stat  Numbers",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 50,
+    "sorting_label_field" : "1d145d2e-ab3c-13dd-9b4a-afb426916618",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "1d145d2e-ab3c-13dd-9b4a-afb426916618",
+    "name" : "number",
+    "label" : "Number",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "33"
+  }, {
+    "id" : "e88d6ca6-5c5d-1a00-937f-93597660d67e",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Reduction in total time to execution"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "number" : "33",
+    "title" : "Reduction in total time to execution"
+  }, {
+    "number" : "33",
+    "title" : "Reduction in total time to execution"
+  }, {
+    "number" : "33",
+    "title" : "Reduction in total time to execution"
+  } ]
+} ]

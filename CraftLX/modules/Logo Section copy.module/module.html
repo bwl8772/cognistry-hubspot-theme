@@ -1,0 +1,13 @@
+<div class="logo-section">
+    <div class="container">
+        <div class="logo-slider">
+            {% for item in module.logos %}
+            <div class="logo-slide">
+                {% if item.logo.src %}
+                <img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}">
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

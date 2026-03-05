@@ -1,0 +1,275 @@
+[ {
+  "id" : "23de12a6-ba5b-8a3e-0989-d1fdefc26fbf",
+  "name" : "headline_text",
+  "label" : "Headline Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Become a Marketing Hero"
+}, {
+  "id" : "f157a073-63e2-0043-1cd0-6ada6a71f3b1",
+  "name" : "richtext_field",
+  "label" : "Headline Subtext",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p style=\"text-align: center;\"><span style=\"color: #ffffff;\">Irresistible website designs and kickass marketing programs that deliver results</span></p>"
+}, {
+  "id" : "81a3e56e-d7f1-b484-ae3d-adb199474bdf",
+  "name" : "hero_section_type",
+  "label" : "Hero Section Type",
+  "help_text" : "Choose whether the hero section will be styled for a homepage (taller) or interior page (shorter)",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "home", "Home" ], [ "interior", "Interior" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "home"
+}, {
+  "id" : "b4a32109-b43a-64b2-1bb2-0774893f10ff",
+  "name" : "hero_section_background_type",
+  "label" : "Hero Section Background Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "video", "Video" ], [ "image", "Image" ], [ "gradient", "Gradient" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "video"
+}, {
+  "id" : "63649464-16fb-5860-38d1-85ade2ead917",
+  "name" : "background_video_source_url",
+  "label" : "Background Video Source URL",
+  "inline_help_text" : "Paste the external URL of the video file (.mov) you would like to see in the hero section. Supported file types: .mov",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "b4a32109-b43a-64b2-1bb2-0774893f10ff",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "video",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "https://f.hubspotusercontent00.net/hubfs/395201/hero-vid-1.mov"
+}, {
+  "id" : "41f30f22-d591-26fe-c072-9d4dc7223036",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "b4a32109-b43a-64b2-1bb2-0774893f10ff",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "image",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null
+  }
+}, {
+  "id" : "39f7e4e0-15db-e4a7-eaa6-d6ffea2a5883",
+  "name" : "hero_jobbies",
+  "label" : "Hero Floating Design Elements",
+  "help_text" : "You can upload your own assets here that will float in the hero section! ",
+  "inline_help_text" : "If you want to add your own, you will need to create a transparent rectangle to contain whatever elements you want to display. If not, the images may scale in unexpected ways.",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent00.net/hubfs/395201/hero-jobbies-7.svg",
+    "alt" : "hero-jobbies-7",
+    "loading" : "disabled",
+    "width" : 2048,
+    "height" : 512,
+    "max_width" : 2048,
+    "max_height" : 512
+  }
+}, {
+  "id" : "19eb93b3-a292-b704-2512-eb67f6668b65",
+  "name" : "cta_text",
+  "label" : "CTA Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Learn More"
+}, {
+  "id" : "925251b4-fa20-da62-f195-dab20f5868b3",
+  "name" : "cta_link",
+  "label" : "CTA Link",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "d95efd92-2cfc-fefb-02ad-53be4c316390",
+  "name" : "hero_bottom_divider_type",
+  "label" : "Hero Bottom Divider Type",
+  "help_text" : "The shape of the section divider. Choose from waves, angles, or flat.",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "waves", "Waves" ], [ "angle", "Angle" ], [ "flat", "Flat" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "waves"
+}, {
+  "id" : "2ef8c6d9-0cda-f501-d7ca-f7b146c69891",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "3d0110c3-b4da-eba5-e743-3b0f6bfac48e",
+    "name" : "hero_text_color",
+    "label" : "Headline Text Color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "hero_text_color" : [ "hero_text_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "3bfe7298-2ee3-70b1-9266-0e786fbef0d2",
+    "name" : "hero_overlay_color",
+    "label" : "Hero Overlay Color",
+    "required" : false,
+    "locked" : false,
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "hero_overlay_color" : [ "hero_overlay_color" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "34c195b1-745c-73d5-244f-beaa8ea25d28",
+    "name" : "background_gradient_color_1",
+    "label" : "Background Gradient Color 1",
+    "help_text" : "Left side gradient color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "81a3e56e-d7f1-b484-ae3d-adb199474bdf",
+      "controlling_field_path" : "hero_section_background_type",
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "background_gradient_color_1" : [ "background_gradient_color_1" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#7B2FA5",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "69a17746-bac8-9d07-790f-3c5ac85de0e2",
+    "name" : "background_gradient_color_2",
+    "label" : "Background Gradient Color 2",
+    "help_text" : "Right side gradient color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "81a3e56e-d7f1-b484-ae3d-adb199474bdf",
+      "controlling_field_path" : "hero_section_background_type",
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "aliases_mapping" : {
+      "property_aliases_paths" : {
+        "background_gradient_color_2" : [ "background_gradient_color_2" ]
+      }
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#4E0A77",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "hero_text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "hero_overlay_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "background_gradient_color_1" : {
+      "color" : "#7B2FA5",
+      "opacity" : 100
+    },
+    "background_gradient_color_2" : {
+      "color" : "#4E0A77",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "24938bd1-2bcc-7ffe-7f91-ecfa2f83579f",
+  "name" : "disable_text_animation",
+  "label" : "Disable Text Animation",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+} ]

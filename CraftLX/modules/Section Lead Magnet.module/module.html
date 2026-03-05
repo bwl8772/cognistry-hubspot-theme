@@ -1,0 +1,68 @@
+{% if module.section_divider_type == "waves" %}
+  {% set bottom_divider_style = 'hero-section-divider-wave-2' %}
+  {% set top_divider_style = 'hero-section-divider-wave-1' %}
+{% elif module.section_divider_type == "angle" %}
+  {% set bottom_divider_style = 'hero-section-divider-angle-2' %}
+  {% set top_divider_style = 'hero-section-divider-angle-1' %}
+{% elif module.section_divider_type == "flat" %}
+  {% set bottom_divider_style = '' %}
+  {% set top_divider_style = '' %}
+{% endif %}
+
+<section class="section-base lead-magnet dnd-section"> 
+  
+  {% if module.content_layout == "img_right" %}
+  {# Text Left - Image Right #}
+  <div class="section-row row-fluid theme-scroll-reveal section-background-overlay">
+    <div class="span7 dnd-column">
+      <div class="section-info-card vertical-buffer theme-shadow theme-border-radius">
+        {% inline_rich_text field="richtext_field" value="{{ module.richtext_field }}" %}
+      </div>
+    </div>  
+    <div class="span1 dnd-column column-flex"></div>
+    <div class="span4 dnd-column">
+      
+    </div>
+    <div class="section-background-container">
+        {% if module.background_image.src %}
+          {% set sizeAttrs = 'width="{{ module.background_image.width }}" height="{{ module.background_image.height }}"' %}
+          {% if module.background_image.size_type == 'auto' %}
+            {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+          {% elif module.background_image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.background_image.max_width }}px; max-height: {{ module.background_image.max_height }}px"' %}
+          {% endif %}
+           {% set loadingAttr = module.background_image.loading != 'disabled' ? 'loading="{{ module.background_image.loading }}"' : '' %}
+          <img class="img-parallax-horiz" src="{{ module.background_image.src }}" alt="{{ module.background_image.alt }}">
+          <img class="img-parallax-horiz-mobile" src="{{ module.background_image.src }}" alt="{{ module.background_image.alt }}">
+          
+        {% endif %}
+    </div>
+  </div>
+  {% endif %}
+  {% if module.content_layout == "img_left" %}
+  
+  {# Image Left - Text Right #}
+  <div class="section-row theme-scroll-reveal">
+    <div class="span6 dnd-column">
+      {% if module.image_field.src %}
+        {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+        {% if module.image_field.size_type == 'auto' %}
+          {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+        {% elif module.image_field.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image_field.max_width }}px; max-height: {{ module.image_field.max_height }}px"' %}
+        {% endif %}
+        <div class="">
+          <img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" class="section-img img-parallax" {{ sizeAttrs }}>
+        </div>
+      {% endif %}
+    </div>
+    <div class="span1 dnd-column column-flex"></div>
+    <div class="span5 dnd-column">
+      {% inline_rich_text field="richtext_field" value="{{ module.richtext_field }}" %} 
+    </div>
+  </div>
+  {% endif %}
+  
+  <div class="{{top_divider_style}}"></div>
+  <div class="{{bottom_divider_style}}"></div>
+</section>

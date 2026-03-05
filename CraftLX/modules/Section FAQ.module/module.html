@@ -1,0 +1,22 @@
+<section class="section-base section-faq dnd-section"> 
+  
+  {# Text Left - Image Right #}
+  <div class="section-row row-fluid theme-scroll-reveal">
+    <div class="span12 dnd-column column-flex">
+        <div class="faq-card-container two-col">
+          {% for item in module.faq_item %}
+            <div class="faq-card theme-border-radius theme-scroll-reveal">
+              {{ item }}
+            </div>
+          {% endfor %}
+        </div>
+    </div>  
+    <div class="section-background-container">
+        <img class="img-parallax-horiz" src="{{ module.background_image.src }}" alt="{{ module.background_image.alt }}">
+    </div>
+  </div>
+  
+  
+<!--   <div class="hero-section-divider-wave-1"></div>
+  <div class="hero-section-divider-wave-2"></div> -->
+</section>

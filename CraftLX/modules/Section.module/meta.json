@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "inline_help_text" : "A module that will create a section on the page with an image and text side by side. The image can be set up to have foreground and background images to work with the parallax scrolling.",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 318399097583,
+  "label" : "Theme Section Module",
+  "icon" : "https://f.hubspotusercontent00.net/hubfs/395201/section_icon.svg",
+  "is_available_for_new_content" : true
+}

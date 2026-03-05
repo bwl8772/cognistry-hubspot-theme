@@ -1,0 +1,380 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Product
+  screenshotPath: ../images/template-previews/ThemeChallengeProduct.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+  {% dnd_area 'dnd_area' class='body-container body-container--about', label='Main section' %}
+  
+    {% dnd_section 
+    full_width=TRUE, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Hero Section', 
+              offset=0, 
+              width=12,
+              headline_text="Tried and True Meets Bold and New",
+              richtext_field='<p style="color: #fff">We are the Experts So That You Dont Have To Be</p>',
+              cta_text='What Are You Waiting For?',
+              cta_link='https://preview.hs-sites.com/_hcms/preview/template/multi?domain=undefined&hs_preview_key=pdiWSELolR2LddDtkNrVhQ&portalId=395201&tc_deviceCategory=undefined&template_file_path=theme-challenge/templates/demo-lp.html&updated=1605907492591',
+              hero_section_type='interior',
+              class='insert-class-here',
+              disable_text_animation='true',
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  {% dnd_section 
+    padding={
+      'top': 100,
+      'right': 0,
+      'bottom': 100,
+      'left': 0
+    }, 
+      %}
+        {% dnd_column
+            offset=0,
+            width=3
+          %}
+             {% dnd_row %}
+            {% dnd_module path="@hubspot/horizontal_spacer" %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+        {% end_dnd_column %}
+      {% dnd_column 
+            offset=3,
+            width=6%}
+        {% dnd_row %}
+          {% dnd_module path='@hubspot/rich_text'
+            horizontal_alignment='CENTER'
+          %}
+            {% module_attribute 'html' %}
+              <h5 style="text-align: center;">WE KEEP IT SIMPLE</h5>
+              <h2 style="text-align: center;">No Headaches Needed - We Got You</h2>
+              <p  style="text-align: center;">The last thing you need is another super complicated process to learn and understand. Our team of experts will lead you through every step in a simple, human way that creates marketing heroes in every client we partner with.</p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+  {# New Section Module #}
+
+    {% dnd_section 
+    full_width=false, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Section' 
+          offset=0, 
+          width=12,
+          image_foreground={
+              'alt': 'About Headshot Example',
+              'size_type': 'auto',
+              'src': get_asset_url("../images/web_phone_both.png")
+          },
+          image_background={
+              'alt': 'About Headshot Example',
+              'size_type': 'auto',
+              'src': get_asset_url("../images/blue_lady_background_jobbies (1).png")
+          },
+          richtext_field="<h5>WEB DESIGN</h5>
+                          <h2>Dress Your Best</h2>
+                          <p>Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum. Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+          cta_text='Get to Know Us'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+  {# New Section Module #}
+
+    {% dnd_section 
+    full_width=false, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Section' 
+          offset=0, 
+          width=12,
+          content_layout="img_right",
+          image_foreground={
+              'alt': 'About Headshot Example',
+              'size_type': 'auto',
+              'src': get_asset_url("../images/phone_square_top.png")
+          },
+          image_background={
+              'alt': 'About Headshot Example',
+              'size_type': 'auto',
+              'src': get_asset_url("../images/product_jobbies_2.png")
+          },
+          richtext_field="<h5>INBOUND STRATEGY</h5>
+                          <h2>Optimized Lead Generation</h2>
+                          <p>Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum. Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+          cta_text='Get to Know Us'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+    
+    {# New Section Module #}
+
+    {% dnd_section 
+    full_width=false, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Section' 
+          offset=0, 
+          width=12,
+          image_foreground={
+              'alt': 'About Headshot Example',
+              'size_type': 'auto',
+              'src': get_asset_url("../images/web_mockup_long.png")
+          },
+          image_background={
+              'alt': 'About Headshot Example',
+              'size_type': 'auto',
+              'src': get_asset_url("../images/product_jobbies_3.png")
+          },
+          richtext_field="<h5>SALES ENABLEMENT</h5>
+                          <h2>Accelerate Your Revenue Growth</h2>
+                          <p>Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum. Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+          cta_text='Get to Know Us'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+  {% dnd_section 
+    full_width=true, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    },
+    background_linear_gradient={
+        'direction': 'to right',
+        'colors': [
+          '#439DF0',
+          '#2263EE'
+        ]
+      }
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Content Timeline' 
+          offset=0, 
+          width=12,
+          section_title="Our Proven Process",
+          timeline_content=[
+            '<h5><span style="color: #ffffff;">STEP 1</span></h5>
+              <h3><span style="color: #ffffff;">Wireframing</span></h3>
+              <p><span style="color: #ffffff;">Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum. Sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>',
+              
+              '<h5><span style="color: #ffffff;">STEP 2</span></h5>
+              <h3><span style="color: #ffffff;">Design</span></h3>
+              <p><span style="color: #ffffff;">Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum. Sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>',
+              
+              '<h5><span style="color: #ffffff;">STEP 3</span></h5>
+              <h3><span style="color: #ffffff;">Development</span></h3>
+              <p><span style="color: #ffffff;">Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum. Sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>',
+              
+              '<h5><span style="color: #ffffff;">STEP 4</span></h5>
+              <h3><span style="color: #ffffff;">QA Testing</span></h3>
+              <p><span style="color: #ffffff;">Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum. Sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>',
+              
+              '<h5><span style="color: #ffffff;">STEP 5</span></h5>
+              <h3><span style="color: #ffffff;">Launch!</span></h3>
+              <p><span style="color: #ffffff;">Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum. Sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>'
+          ],
+          %}
+         
+          {% end_dnd_module %}
+          
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  {# New Section Module #}
+  
+  {% dnd_section 
+    padding={
+      'top': 100,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column %}
+        {% dnd_row %}
+          {% dnd_module path='@hubspot/rich_text'
+            horizontal_alignment='CENTER'
+          %}
+            {% module_attribute 'html' %}
+              <h5 style="text-align: center;">PEOPLE LIKE WORKING WITH US</h5>
+              <h2 style="text-align: center;">Trusted By The Best</h2>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+    {% dnd_section 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 100,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column %}
+        {% dnd_row %}
+          {% dnd_module path="../modules/Logo Section copy", 
+          label="Logo Section copy",
+          logos=[
+          {
+          'logo':{
+                'alt': 'team working on laptops',
+                'size_type': 'auto',
+                'src': get_asset_url("../images/WEBSITE-WEEK-BLACK.png")
+            }
+          },
+          {
+          'logo':{
+                'alt': 'team working on laptops',
+                'size_type': 'auto',
+                'src': get_asset_url("../images/studiocanvaslogo-blue.png")
+            }
+          },
+          {
+          'logo':{
+                'alt': 'team working on laptops',
+                'size_type': 'auto',
+                'src': get_asset_url("../images/Symphony-2-logo-blue-small-double.png")
+            }
+          },
+          {
+          'logo':{
+                'alt': 'team working on laptops',
+                'size_type': 'auto',
+                'src': get_asset_url("../images/consult logo.png")
+            }
+          }
+          
+            
+          ]
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {% dnd_section 
+    full_width=true, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        
+        {% dnd_row %}
+          {% dnd_module path='../modules/Call To Action' offset=0, width=12 %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

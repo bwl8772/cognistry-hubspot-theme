@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "inline_help_text" : "A module used for creating a tabbed content information section with imagery",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 318368038628,
+  "label" : "Tab Module",
+  "icon" : "https://f.hubspotusercontent00.net/hubfs/395201/tab_module_icon.svg",
+  "is_available_for_new_content" : true
+}

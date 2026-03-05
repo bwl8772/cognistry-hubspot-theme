@@ -1,0 +1,57 @@
+<section class="section-base section-didvider-buffer dnd-section" id="{{ name }}"> 
+  <div class="row-fluid content-layouts-main">
+  
+  <div class="heading-main text-centered">
+    <h2 class="title" style="color: {{ module.style.section_header_text_color.color }};"> {{ module.section_title }}</h2>
+    <div class="heading-text" style="color: {{ module.style.section_header_text_color.color }};">
+      {{ module.section_subtext }}
+    </div> 
+  </div>
+  
+  {# Text Left - Image Right #}
+  <div class="section-row theme-scroll-reveal">
+    <div class="span12 dnd-column">
+      <div class="timeline-container">
+        {% for item in module.timeline_content %}
+        <div class="timeline-row {% cycle 'odd','even' %}">
+          <div class="timeline-content">
+            {{ item }}
+          </div>
+        </div>
+      {% endfor %}
+        <div class="timeline-midline"></div>
+      </div>
+    </div>  
+  </div>
+  <div class="section-row">
+    <a class="button section-cta-btn theme-shadow" href="{{ module.cta_url }}" style="transform: translateY(-86px); z-index: 10;">{{ module.cta_text }}</a>
+  </div>
+    
+    {% if module.section_dividers == "wave" %}
+    <div class="hero-section-divider-wave-1"></div>
+    <div class="hero-section-divider-wave-2"></div>
+    {% elif module.section_dividers == "angle" %}
+    {% elif module.section_dividers == "none" %}
+    {% endif %}
+
+  <div class="section-background-container" >
+    {% if module.background_type == "image" %}
+    <img class="img-parallax-horiz" src="{{ module.background_image.src }}" alt="{{ module.background_image.alt }}">
+    {% endif %}
+  </div>
+  </div>
+</section>
+
+<style>
+.timeline-container .timeline-row.even .timeline-content:after  {
+    background-color: {{ module.style.timeline_dot_color.color }} !important;
+    opacity: {{ module.style.timeline_dot_color.opacity }} !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.timeline-container .timeline-row.odd .timeline-content:after  {
+    background-color: {{ module.style.timeline_dot_color.color }} !important;
+    opacity: {{ module.style.timeline_dot_color.opacity }} !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  
+}
+</style>

@@ -1,0 +1,52 @@
+<div class="single-card {{ card_styles }}" id="{{ name }}" style="">
+  <div class="card-content">
+    {% if module.image_icon == "icon" and module.icon_group.icon_choice.unicode != 'null' %}
+    <span class="feature__icon">	
+      {% icon
+        name="{{ module.icon_group.icon_choice.name }}"
+        style="{{ module.icon_group.icon_choice.type }}"
+        unicode="{{ module.icon_group.icon_choice.unicode }}"
+      %}
+    </span>
+    {% elif module.image_icon == "image" %}
+      {% if module.image.src %}
+        <div class="feature__image">
+          {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+          {% if module.image.size_type == 'auto' %}
+            {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+          {% elif module.image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image.max_width }}px; max-height: {{ module.image.max_height }}px"' %}
+          {% endif %}
+          <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" {{ sizeAttrs }}>
+        </div>
+      {% endif %}
+    {% endif %}
+    {% inline_rich_text field="card_content" value="{{ module.card_content }}" %}
+  </div>
+</div>
+
+{% require_css %}
+<style>
+  #hs_cos_wrapper_{{name}} .single-card .feature__icon > span {
+    background-color: {{ module.icon_group.icon_bg_color.color }}; 
+    border-color: {{ module.icon_group.icon_border_color.color }}; 
+  }
+  #hs_cos_wrapper_{{name}} .single-card .feature__icon svg {
+    fill: {{ module.icon_group.icon_color.color }}; 
+    width: {{ module.icon_group.icon_width }}px;
+  }
+  
+  #hs_cos_wrapper_{{name}} .single-card {
+    {% if module.background_type  == "solid" %}
+    background-color: rgba({{ color_variant(module.style.color_field.color, 100)|convert_rgb }}, {{ module.style.color_field.opacity / 100 }});
+    {% endif %}
+    
+    {% if module.background_type  == "blur" %}
+    background: rgba(255,255,255,0.01);
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);  
+    {% endif %}
+    
+  }
+</style>
+{% end_require_css %}

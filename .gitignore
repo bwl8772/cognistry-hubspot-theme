@@ -2,3 +2,25 @@
 
 # HubSpot config file
 hubspot.config.yml
+
+# Documentation (not for HubSpot)
+docs/
+
+# Node modules
+node_modules/
+package-lock.json
+
+# Environment files
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

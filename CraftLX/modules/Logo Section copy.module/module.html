@@ -1,5 +1,8 @@
 <div class="logo-section">
     <div class="container">
+        {% if module.title %}
+        <div class="title">{{ module.title }}</div>
+        {% endif %}
         <div class="logo-slider">
             {% for item in module.logos %}
             <div class="logo-slide">

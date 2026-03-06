@@ -1,0 +1,54 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Contact
+  screenshotPath: ../images/template-previews/ThemeChallengeContact.png
+-->
+{% extends './layouts/base.html' %}
+
+
+
+{% block body %}
+<main class="body-container-wrapper">
+  {% dnd_area 'dnd_area' class='body-container body-container--contact', label='Main section' %}
+
+    {% dnd_section 
+    full_width=TRUE, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/LP Hero Section', 
+          offset=0, 
+          width=12,
+          headline_text="Get In Touch",
+          richtext_field='<p style="color: #fff;">Dont be shy. Drop us a line antime. If you have a more immeadiate need, click the chatbot!</p>',
+          hero_section_type='interior',
+          cta_text=''
+          
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+  
+  
+  
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

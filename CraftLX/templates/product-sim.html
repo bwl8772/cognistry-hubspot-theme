@@ -1,0 +1,400 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Product - Sim
+  screenshotPath: ../images/template-previews/ThemeChallengeProduct.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+  {% dnd_area 'dnd_area' class='body-container body-container--about', label='Main section' %}
+  
+    {% dnd_section 
+    full_width=TRUE, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Hero Section', 
+              offset=0, 
+              width=12,
+              headline_text="Practice real work decisions before they happen.",
+              richtext_field='<p style="color: #fff">Sim runs interactive simulations where teams practice real work decisions.</p><p style="color: #fff; opacity: 0.9;">Organizations use Sim to prepare teams for complex scenarios, accelerate time-to-competency, and improve decision quality before situations occur in the real world.</p>',
+              cta_text='Schedule a Demo',
+              cta_link='#contact',
+              hero_section_type='interior',
+              disable_text_animation='false',
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  {% dnd_section 
+    padding={
+      'top': 100,
+      'right': 0,
+      'bottom': 100,
+      'left': 0
+    }, 
+      %}
+        {% dnd_column
+            offset=0,
+            width=3
+          %}
+             {% dnd_row %}
+            {% dnd_module path="@hubspot/horizontal_spacer" %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+        {% end_dnd_column %}
+      {% dnd_column 
+            offset=3,
+            width=6%}
+        {% dnd_row %}
+          {% dnd_module path='@hubspot/rich_text'
+            horizontal_alignment='CENTER'
+          %}
+            {% module_attribute 'html' %}
+              <h2 style="text-align: center;">Run simulations where teams practice decisions in realistic scenarios</h2>
+              <p style="text-align: center;">Sim runs interactive simulations based on learning experiences designed in Forge.</p>
+              <p style="text-align: center;">Instead of learning passively, teams actively engage with decision situations that mirror real workflows, practicing complex scenarios safely before facing them operationally.</p>
+              <p style="text-align: center;"><strong>Sim runs the simulation</strong> — enabling teams to practice real work decisions in realistic environments and improve decision quality before those situations occur in the real world.</p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+  {# New Section Module #}
+
+    {% dnd_section 
+    full_width=false, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Section' 
+          offset=0, 
+          width=12,
+          image_foreground={
+              'alt': 'About Headshot Example',
+              'size_type': 'auto',
+              'src': get_asset_url("../images/web_phone_both.png")
+          },
+          image_background={
+              'alt': 'About Headshot Example',
+              'size_type': 'auto',
+              'src': get_asset_url("../images/blue_lady_background_jobbies (1).png")
+          },
+          richtext_field="<h5>SIGNAL</h5>
+                          <h2>Capture expertise and workflows</h2>
+                          <p>Organizations rely on expert knowledge that often exists in conversations, documents, and informal processes.</p>
+                          <p>Signal captures expertise, decision logic, and workflow signals so organizations can translate real work into structured capability development.</p>
+                          <p><strong>Organizations use Signal to:</strong></p>
+                          <ul>
+                            <li>Capture expert workflows</li>
+                            <li>Identify critical decision points</li>
+                            <li>Document capability signals within complex processes</li>
+                          </ul>
+                          <p><em>This creates the foundation for scalable learning experiences.</em></p>",
+          cta_text='Learn More'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+  {# New Section Module #}
+
+    {% dnd_section 
+    full_width=false, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Section' 
+          offset=0, 
+          width=12,
+          content_layout="img_right",
+          image_foreground={
+              'alt': 'About Headshot Example',
+              'size_type': 'auto',
+              'src': get_asset_url("../images/phone_square_top.png")
+          },
+          image_background={
+              'alt': 'About Headshot Example',
+              'size_type': 'auto',
+              'src': get_asset_url("../images/product_jobbies_2.png")
+          },
+          richtext_field="<h5>FORGE</h5>
+                          <h2>Design immersive learning experiences</h2>
+                          <p>Once expertise is captured, Forge converts those insights into immersive learning experiences.</p>
+                          <p>Forge structures real work scenarios into guided interactions where learners engage with realistic decision points.</p>
+                          <p><strong>Organizations use Forge to:</strong></p>
+                          <ul>
+                            <li>Design experiences based on real work scenarios</li>
+                            <li>Structure interactions around decision points</li>
+                            <li>Transform expertise into scalable learning design</li>
+                          </ul>
+                          <p><em>The result is learning that reflects how work actually happens.</em></p>",
+          cta_text='Learn More'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+    
+    {# New Section Module #}
+
+    {% dnd_section 
+    full_width=false, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Section' 
+          offset=0, 
+          width=12,
+          image_foreground={
+              'alt': 'About Headshot Example',
+              'size_type': 'auto',
+              'src': get_asset_url("../images/web_mockup_long.png")
+          },
+          image_background={
+              'alt': 'About Headshot Example',
+              'size_type': 'auto',
+              'src': get_asset_url("../images/product_jobbies_3.png")
+          },
+          richtext_field="<h5>SIM</h5>
+                          <h2>Run interactive simulations</h2>
+                          <p>Sim runs interactive simulations where teams practice real work decisions in realistic scenarios.</p>
+                          <p>Instead of learning passively, teams actively engage with decision situations that mirror real workflows.</p>
+                          <p><strong>Organizations use Sim to:</strong></p>
+                          <ul>
+                            <li>Run team-based decision simulations</li>
+                            <li>Practice complex scenarios safely</li>
+                            <li>Prepare employees for real operational situations</li>
+                          </ul>
+                          <p><em>This helps teams improve decision quality before those situations occur in the real world.</em></p>",
+          cta_text='Learn More'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+  {% dnd_section 
+    full_width=true, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    },
+    background_linear_gradient={
+        'direction': 'to right',
+        'colors': [
+          '#439DF0',
+          '#2263EE'
+        ]
+      }
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        {% dnd_row %}
+          {% dnd_module path='../modules/Content Timeline' 
+          offset=0, 
+          width=12,
+          section_title="From expertise to capability",
+          section_subtext='CraftLX turns real work expertise into scalable capability development through a structured flow.',
+          timeline_content=[
+            '<h5><span style="color: #ffffff;">STEP 1</span></h5>
+              <h3><span style="color: #ffffff;">Capture Expertise</span></h3>
+              <p><span style="color: #ffffff;">Experts share workflows, decision logic, and operational context through Signal.</span></p>',
+              
+              '<h5><span style="color: #ffffff;">STEP 2</span></h5>
+              <h3><span style="color: #ffffff;">Design Experiences</span></h3>
+              <p><span style="color: #ffffff;">Forge structures captured expertise into immersive learning experiences built around real work scenarios.</span></p>',
+              
+              '<h5><span style="color: #ffffff;">STEP 3</span></h5>
+              <h3><span style="color: #ffffff;">Simulate Decisions</span></h3>
+              <p><span style="color: #ffffff;">Sim runs interactive simulations where teams practice decision-making in realistic environments.</span></p>',
+              
+              '<h5><span style="color: #ffffff;">STEP 4</span></h5>
+              <h3><span style="color: #ffffff;">Develop Capability</span></h3>
+              <p><span style="color: #ffffff;">Teams gain experience with real scenarios before facing them in the real world.</span></p>'
+          ],
+          %}
+         
+          {% end_dnd_module %}
+          
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  {# New Section Module #}
+  
+  {% dnd_section 
+    padding={
+      'top': 100,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column %}
+        {% dnd_row %}
+          {% dnd_module path='@hubspot/rich_text'
+            horizontal_alignment='CENTER'
+          %}
+            {% module_attribute 'html' %}
+              <h2 style="text-align: center;">Organizations developing capability with CraftLX</h2>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+    {% dnd_section 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 100,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column %}
+        {% dnd_row %}
+          {% dnd_module path="../modules/Logo Section copy", 
+          label="Logo Section copy",
+          logos=[
+          {
+          'logo':{
+                'alt': 'team working on laptops',
+                'size_type': 'auto',
+                'src': get_asset_url("../images/WEBSITE-WEEK-BLACK.png")
+            }
+          },
+          {
+          'logo':{
+                'alt': 'team working on laptops',
+                'size_type': 'auto',
+                'src': get_asset_url("../images/studiocanvaslogo-blue.png")
+            }
+          },
+          {
+          'logo':{
+                'alt': 'team working on laptops',
+                'size_type': 'auto',
+                'src': get_asset_url("../images/Symphony-2-logo-blue-small-double.png")
+            }
+          },
+          {
+          'logo':{
+                'alt': 'team working on laptops',
+                'size_type': 'auto',
+                'src': get_asset_url("../images/consult logo.png")
+            }
+          }
+          
+            
+          ]
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {% dnd_section 
+    full_width=true, 
+    padding={
+      'top': 0,
+      'right': 0,
+      'bottom': 0,
+      'left': 0
+    }, 
+      %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          'top': 0,
+          'right': 0,
+          'bottom': 0,
+          'left': 0
+        }, 
+      %}
+        
+        {% dnd_row %}
+          {% dnd_module path='../modules/Call To Action' offset=0, width=12 %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

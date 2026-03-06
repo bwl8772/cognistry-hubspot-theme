@@ -178,48 +178,155 @@ a.button,
 }
 
 /* ====================================================================== */
-/* Header Navigation Refinements (more compact)                          */
+/* Header & Menu Styling (child theme overrides)                         */
 /* ====================================================================== */
 
-/* Reduce header main bar padding */
-.header__main-bar {
-  padding: 0.5rem 0; /* Was 0.75rem (12px), now 0.5rem (8px) */
+/* Modern system font stack for navigation */
+.navigation-primary a,
+body .navigation-primary a,
+.header__menu .header__navigation .menu-link,
+.navigation-primary .submenu.level-1 > li > a {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.02em !important;
 }
 
-/* Reduce nav link font size and padding */
-.header__menu .header__navigation .menu-link {
-  font-size: 0.9375rem; /* Was 1rem (16px), now 15px */
-  padding: 8px 0; /* Was 10px */
+/* Active menu item styling */
+.navigation-primary a.active-item,
+body .navigation-primary a.active-item {
+  font-weight: 600 !important;
 }
 
-/* Reduce language switcher font size to match nav */
-.header__language-switcher-label-current,
-.header__language-switcher .lang_list_class li a {
-  font-size: 0.9375rem; /* Was 1rem (16px), now 15px */
+/* Header container spacing */
+.header__container {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
 }
 
-/* Mobile: keep proportional but slightly more compact */
-@media (max-width: 767px) {
-  .header__main-bar {
-    padding: 0.5rem 0;
+/* Logo sizing and positioning */
+.header__logo {
+  padding-left: 0 !important;
+  flex-shrink: 0;
+}
+
+.header__logo img,
+.header__logo svg,
+.header__logo .logo-on-transparent img,
+.header__logo .logo-on-white img {
+  max-width: 140px !important;
+  height: auto !important;
+}
+
+/* Menu item spacing - prevent cutoff */
+.navigation-primary .submenu.level-1 > li {
+  padding: 18px 20px !important;
+}
+
+.navigation-primary .submenu.level-1 > li:first-child {
+  padding-left: 0 !important;
+}
+
+/* Tablet breakpoint (768px - 1150px) */
+@media (min-width: 768px) and (max-width: 1150px) {
+  .navigation-primary a,
+  body .navigation-primary a,
+  .header__menu .header__navigation .menu-link {
+    font-size: 13px !important;
+  }
+  
+  .header__container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  .navigation-primary .submenu.level-1 > li {
+    padding: 18px 16px !important;
+  }
+  
+  .navigation-primary .submenu.level-1 > li:first-child {
+    padding-left: 0 !important;
+  }
+  
+  .header__logo img,
+  .header__logo svg,
+  .header__logo .logo-on-transparent img,
+  .header__logo .logo-on-white img {
+    max-width: 130px !important;
   }
 }
+
+/* Mobile breakpoint (<768px) */
+@media (max-width: 767px) {
+  .navigation-primary a,
+  body .navigation-primary a,
+  .header__menu .header__navigation .menu-link {
+    font-size: 16px !important;
+  }
+  
+  .header__container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .header__logo {
+    padding-left: 0 !important;
+  }
+  
+  .header__logo img,
+  .header__logo svg,
+  .header__logo .logo-on-transparent img,
+  .header__logo .logo-on-white img {
+    max-width: 120px !important;
+  }
+}
+
+/* ====================================================================== */
+/* Content Styling Refinements                                           */
+/* ====================================================================== */
 
 /* ====================================================================== */
 /* Homepage Improvements (safe visual enhancements)                      */
 /* ====================================================================== */
 
-/* Hero section: enhance title typography */
+/* Hero section: enhance title typography + fix horizontal spacing */
 .hero-section h1 {
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .hero-section h4 {
   font-weight: 400;
   line-height: 1.5;
   opacity: 0.95;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* All hero content: ensure safe horizontal margins */
+.hero-section .content-wrapper,
+.hero-section .dnd-section,
+.hero-section .row-fluid,
+.hero-section .span12 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Mobile: increase padding to prevent edge touching */
+@media (max-width: 767px) {
+  .hero-section h1,
+  .hero-section h4,
+  .hero-section .content-wrapper,
+  .hero-section .dnd-section,
+  .hero-section .row-fluid,
+  .hero-section .span12 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }
 
 /* All CTAs: add subtle hover elevation */
@@ -292,6 +399,36 @@ footer a {
 .section-base {
   padding-top: clamp(3rem, 8vw, 5rem);
   padding-bottom: clamp(3rem, 8vw, 5rem);
+}
+
+/* ====================================================================== */
+/* Global Horizontal Spacing (prevent edge touching)                     */
+/* ====================================================================== */
+
+/* Ensure all page content has safe horizontal margins */
+body {
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* All sections: minimum horizontal padding (exclude header) */
+.dnd-section:not(.header *),
+.content-wrapper:not(.header *),
+.row-fluid:not(.header *),
+section:not(.header) {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+/* Mobile: ensure no content touches edges */
+@media (max-width: 767px) {
+  .dnd-section:not(.header *),
+  .content-wrapper:not(.header *),
+  .row-fluid:not(.header *),
+  section:not(.header),
+  .container:not(.header *) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 /* ====================================================================== */

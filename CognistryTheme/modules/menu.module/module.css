@@ -17,6 +17,7 @@
 
 .menu__link {
   border-radius: var(--cognistry-radius-full);
+  color: var(--cognistry-text);
   display: inline-flex;
   align-items: center;
   font-size: 0.95rem;
@@ -31,8 +32,9 @@
 }
 
 .menu__link:hover,
-.menu__link:focus,
-.menu__link:active {
+.menu__link:focus {
+  background: var(--cognistry-primary-10);
+  color: var(--cognistry-primary);
   text-decoration: none;
 }
 
@@ -57,6 +59,8 @@
 }
 
 .menu__submenu {
+  background: var(--cognistry-bg);
+  border: 1px solid var(--cognistry-border);
   border-radius: var(--cognistry-radius-xl);
   box-shadow: var(--cognistry-shadow-dropdown);
   display: none;
@@ -101,11 +105,19 @@
 }
 
 .menu__submenu .menu__link {
+  background: transparent;
   border-radius: 0;
+  color: var(--cognistry-text);
   display: block;
   padding: 0.85rem 1.05rem;
   transition: background-color var(--cognistry-transition), color var(--cognistry-transition);
   width: 100%;
+}
+
+.menu__submenu .menu__link:hover,
+.menu__submenu .menu__link:focus {
+  background: var(--cognistry-primary-10);
+  color: var(--cognistry-primary);
 }
 
 .menu__submenu--level-3 {

@@ -146,107 +146,50 @@ a.button,
 }
 
 /* ====================================================================== */
-/* Header & Menu Styling                                                  */
+/* Header & Logo Styling                                                  */
 /* ====================================================================== */
-
-/* Modern system font stack for navigation */
-.navigation-primary a,
-body .navigation-primary a,
-.header__menu .header__navigation .menu-link,
-.navigation-primary .submenu.level-1 > li > a {
-  font-family: var(--cognistry-font-sans) !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  line-height: 1.5 !important;
-  letter-spacing: 0.02em !important;
-}
-
-/* Active menu item styling */
-.navigation-primary a.active-item,
-body .navigation-primary a.active-item {
-  font-weight: 600 !important;
-}
 
 /* Header container spacing */
 .header__container {
-  padding-left: var(--cognistry-space-8) !important;
-  padding-right: var(--cognistry-space-8) !important;
+  padding-left: var(--cognistry-space-8);
+  padding-right: var(--cognistry-space-8);
 }
 
 /* Logo sizing and positioning */
 .header__logo {
-  padding-left: 0 !important;
+  padding-left: 0;
   flex-shrink: 0;
 }
 
 .header__logo img,
-.header__logo svg,
-.header__logo .logo-on-transparent img,
-.header__logo .logo-on-white img {
-  max-width: 140px !important;
-  height: auto !important;
-}
-
-/* Menu item spacing */
-.navigation-primary .submenu.level-1 > li {
-  padding: 18px 20px !important;
-}
-
-.navigation-primary .submenu.level-1 > li:first-child {
-  padding-left: 0 !important;
+.header__logo svg {
+  max-width: 140px;
+  height: auto;
 }
 
 /* Tablet breakpoint (768px - 1150px) */
 @media (min-width: 768px) and (max-width: 1150px) {
-  .navigation-primary a,
-  body .navigation-primary a,
-  .header__menu .header__navigation .menu-link {
-    font-size: 13px !important;
-  }
-  
   .header__container {
-    padding-left: var(--cognistry-space-6) !important;
-    padding-right: var(--cognistry-space-6) !important;
-  }
-  
-  .navigation-primary .submenu.level-1 > li {
-    padding: 18px 16px !important;
-  }
-  
-  .navigation-primary .submenu.level-1 > li:first-child {
-    padding-left: 0 !important;
+    padding-left: var(--cognistry-space-6);
+    padding-right: var(--cognistry-space-6);
   }
   
   .header__logo img,
-  .header__logo svg,
-  .header__logo .logo-on-transparent img,
-  .header__logo .logo-on-white img {
-    max-width: 130px !important;
+  .header__logo svg {
+    max-width: 130px;
   }
 }
 
 /* Mobile breakpoint (<768px) */
 @media (max-width: 767px) {
-  .navigation-primary a,
-  body .navigation-primary a,
-  .header__menu .header__navigation .menu-link {
-    font-size: 16px !important;
-  }
-  
   .header__container {
-    padding-left: var(--cognistry-space-4) !important;
-    padding-right: var(--cognistry-space-4) !important;
-  }
-  
-  .header__logo {
-    padding-left: 0 !important;
+    padding-left: var(--cognistry-space-4);
+    padding-right: var(--cognistry-space-4);
   }
   
   .header__logo img,
-  .header__logo svg,
-  .header__logo .logo-on-transparent img,
-  .header__logo .logo-on-white img {
-    max-width: 120px !important;
+  .header__logo svg {
+    max-width: 120px;
   }
 }
 

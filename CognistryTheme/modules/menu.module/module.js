@@ -5,22 +5,37 @@ document.addEventListener("DOMContentLoaded", () => {
   desktopParentItems.forEach((item) => {
     const link = item.querySelector("a");
     const button = item.querySelector(".menu__child-toggle");
+    let closeTimer;
 
-    item.addEventListener("mouseover", () => {
+    const openMenu = () => {
+      window.clearTimeout(closeTimer);
       item.classList.add("menu__item--open");
       if (link) link.setAttribute("aria-expanded", "true");
       if (button) button.setAttribute("aria-expanded", "true");
-    });
+    };
 
-    item.addEventListener("mouseout", () => {
+    const closeMenu = () => {
       item.classList.remove("menu__item--open");
       if (link) link.setAttribute("aria-expanded", "false");
       if (button) button.setAttribute("aria-expanded", "false");
+    };
+
+    item.addEventListener("mouseenter", openMenu);
+    item.addEventListener("mouseleave", () => {
+      closeTimer = window.setTimeout(closeMenu, 120);
+    });
+
+    item.addEventListener("focusin", openMenu);
+    item.addEventListener("focusout", (event) => {
+      if (!item.contains(event.relatedTarget)) {
+        closeMenu();
+      }
     });
 
     if (button) {
       button.addEventListener("click", () => {
         const isOpen = item.classList.contains("menu__item--open");
+        window.clearTimeout(closeTimer);
         item.classList.toggle("menu__item--open", !isOpen);
         if (link) link.setAttribute("aria-expanded", String(!isOpen));
         button.setAttribute("aria-expanded", String(!isOpen));

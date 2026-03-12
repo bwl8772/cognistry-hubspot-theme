@@ -1,0 +1,30 @@
+[
+  {
+    "id": "card_title",
+    "name": "card_title",
+    "label": "Card Title",
+    "type": "text",
+    "default": "About the Author"
+  },
+  {
+    "id": "show_social_links",
+    "name": "show_social_links",
+    "label": "Show Social Links",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "twitter_url",
+    "name": "twitter_url",
+    "label": "Twitter/X URL",
+    "type": "text",
+    "default": ""
+  },
+  {
+    "id": "linkedin_url",
+    "name": "linkedin_url",
+    "label": "LinkedIn URL",
+    "type": "text",
+    "default": ""
+  }
+]

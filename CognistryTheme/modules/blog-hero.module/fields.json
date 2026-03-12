@@ -30,11 +30,20 @@
     "default": "Search articles..."
   },
   {
+    "id": "show_tag_filter",
+    "name": "show_tag_filter",
+    "label": "Show Dynamic Tag Filter",
+    "type": "boolean",
+    "default": true,
+    "help_text": "Uses blog_tags() to show all tags automatically"
+  },
+  {
     "id": "show_categories",
     "name": "show_categories",
-    "label": "Show Category Filters",
+    "label": "Show Manual Category Filters",
     "type": "boolean",
-    "default": true
+    "default": false,
+    "help_text": "Only used if dynamic tag filter is disabled"
   },
   {
     "id": "categories",

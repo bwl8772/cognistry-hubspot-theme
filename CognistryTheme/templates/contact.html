@@ -6,6 +6,8 @@
 -->
 {% extends "../layouts/base.html" %}
 
+{% set template_css = "../css/templates/contact.css" %}
+
 {% block body %}
 {% dnd_area "dnd_area"
   label="Main section",
@@ -24,8 +26,8 @@
         {% dnd_module
           path="/Cognistry Theme/modules/hero.module",
           eyebrow="Contact",
-          heading="Let's discuss your capability architecture",
-          hero_body="<p>Have questions about the platform? Want to see how Cognistry can help your organization turn knowledge into operational capability? Get in touch.</p>",
+          heading="Let's start a conversation",
+          hero_body="<p>Have questions about capability architecture? Ready to explore how Cognistry can transform how your organization learns and performs? We're here to help.</p>",
           alignment="center",
           theme="light"
         %}
@@ -34,8 +36,8 @@
     {% end_dnd_column %}
   {% end_dnd_section %}
 
-  {# Contact Form #}
-  {% include_dnd_partial path="../sections/lead-form-section.html" %}
+  {# Two-Column Contact Section #}
+  {% include_dnd_partial path="../sections/contact-split.html" %}
 
   {# CTA #}
   {% include_dnd_partial path="../sections/cta-band.html" %}

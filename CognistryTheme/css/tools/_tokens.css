@@ -82,10 +82,10 @@
   --cognistry-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.04);
 
   /* --- Button Shadows (brand-tinted) --- */
-  --cognistry-shadow-primary: 0 10px 24px rgba(78, 10, 119, 0.16);
-  --cognistry-shadow-primary-hover: 0 14px 28px rgba(123, 47, 165, 0.18);
-  --cognistry-shadow-accent: 0 10px 24px rgba(15, 191, 150, 0.18);
-  --cognistry-shadow-accent-hover: 0 14px 28px rgba(15, 191, 150, 0.22);
+  --cognistry-shadow-primary: 0 6px 16px rgba(78, 10, 119, 0.14);
+  --cognistry-shadow-primary-hover: 0 8px 20px rgba(123, 47, 165, 0.16);
+  --cognistry-shadow-accent: 0 6px 16px rgba(15, 191, 150, 0.16);
+  --cognistry-shadow-accent-hover: 0 8px 20px rgba(15, 191, 150, 0.18);
 
   /* --- Typography --- */
   --cognistry-font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -191,9 +191,9 @@
   --cognistry-gradient-text-subtle: linear-gradient(135deg, var(--cognistry-primary) 0%, var(--cognistry-secondary) 100%);
 
   /* --- Premium Glows --- */
-  --cognistry-glow-primary: 0 0 60px rgba(78, 10, 119, 0.25), 0 0 120px rgba(78, 10, 119, 0.15);
-  --cognistry-glow-accent: 0 0 60px rgba(15, 191, 150, 0.25), 0 0 120px rgba(15, 191, 150, 0.15);
-  --cognistry-glow-soft: 0 0 80px rgba(78, 10, 119, 0.08);
+  --cognistry-glow-primary: 0 0 40px rgba(78, 10, 119, 0.15), 0 0 80px rgba(78, 10, 119, 0.08);
+  --cognistry-glow-accent: 0 0 40px rgba(15, 191, 150, 0.15), 0 0 80px rgba(15, 191, 150, 0.08);
+  --cognistry-glow-soft: 0 0 60px rgba(78, 10, 119, 0.05);
 
   /* --- Premium Image Shadows --- */
   --cognistry-shadow-product: 
@@ -222,8 +222,8 @@
   --cognistry-orb-accent: radial-gradient(circle, rgba(15, 191, 150, 0.10) 0%, transparent 70%);
 
   /* --- Button Shadows (simplified) --- */
-  --cognistry-shadow-cta: 0 4px 14px rgba(78, 10, 119, 0.25);
-  --cognistry-shadow-cta-hover: 0 6px 20px rgba(78, 10, 119, 0.35);
+  --cognistry-shadow-cta: 0 4px 12px rgba(78, 10, 119, 0.18);
+  --cognistry-shadow-cta-hover: 0 6px 16px rgba(78, 10, 119, 0.22);
 
   /* --- Grid/Dot Patterns --- */
   --cognistry-pattern-dots: radial-gradient(circle, rgba(78, 10, 119, 0.08) 1px, transparent 1px);

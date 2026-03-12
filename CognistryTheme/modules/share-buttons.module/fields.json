@@ -1,0 +1,37 @@
+[
+  {
+    "id": "card_title",
+    "name": "card_title",
+    "label": "Card Title",
+    "type": "text",
+    "default": "Share this article"
+  },
+  {
+    "id": "show_twitter",
+    "name": "show_twitter",
+    "label": "Show Twitter/X",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "show_linkedin",
+    "name": "show_linkedin",
+    "label": "Show LinkedIn",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "show_facebook",
+    "name": "show_facebook",
+    "label": "Show Facebook",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "show_copy_link",
+    "name": "show_copy_link",
+    "label": "Show Copy Link",
+    "type": "boolean",
+    "default": true
+  }
+]

@@ -10,95 +10,151 @@
 {% block body %}
 <div class="body-container body-container--blog-index">
 
-  {# Premium Blog Hero #}
+  {# Premium Blog Hero with Search + Dynamic Tag Filter #}
   {% module "blog_hero"
     path="/Cognistry Theme/modules/blog-hero.module",
     title="Insights",
     subtitle="Thought leadership on capability, decision-making, and knowledge systems",
     show_search=true,
     search_placeholder="Search articles...",
-    show_categories=true
+    show_tag_filter=true,
+    show_categories=false
   %}
 
-  {# Featured Post (first post) #}
-  {% if contents[0] %}
-  <section class="blog-featured">
-    <div class="blog-featured__inner">
-      <span class="blog-featured__label">Featured</span>
-      <article class="blog-featured__post">
-        {% if contents[0].featured_image %}
-        <a href="{{ contents[0].absolute_url }}" class="blog-featured__image-link">
-          <img 
-            src="{{ contents[0].featured_image }}" 
-            alt="{{ contents[0].featured_image_alt_text }}"
-            class="blog-featured__image"
-            loading="eager"
-          />
-        </a>
-        {% endif %}
-        <div class="blog-featured__content">
-          {% if contents[0].tag_list[0] %}
-          <span class="blog-card__category">{{ contents[0].tag_list[0].name }}</span>
-          {% endif %}
-          <h2 class="blog-featured__title">
-            <a href="{{ contents[0].absolute_url }}">{{ contents[0].name }}</a>
-          </h2>
-          <p class="blog-featured__excerpt">
-            {{ contents[0].post_summary|truncatehtml(200, '...')|striptags }}
-          </p>
-          <div class="blog-card__meta">
-            <span class="blog-card__author">{{ contents[0].blog_post_author.display_name }}</span>
-            <span class="blog-card__separator">·</span>
-            <span class="blog-card__reading-time">{{ (contents[0].post_body|wordcount / 200)|round|int }} min read</span>
-            <span class="blog-card__separator">·</span>
-            <time class="blog-card__date">{{ contents[0].publish_date_localized }}</time>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-  {% endif %}
+  {# Two-Column Layout: Main Content + Sidebar #}
+  <div class="blog-layout">
+    <div class="blog-layout__inner">
 
-  {# Post Grid #}
-  <section class="blog-grid">
-    <div class="blog-grid__inner">
-      <h2 class="blog-grid__heading">Latest</h2>
-      <div class="blog-grid__posts">
-        {% for content in contents %}
-          {% if loop.index > 1 %}
-          <article class="blog-card">
-            {% if content.featured_image %}
-            <a href="{{ content.absolute_url }}" class="blog-card__image-link">
+      {# Main Content Column #}
+      <main class="blog-layout__main">
+
+        {# Featured Post (first post) #}
+        {% if contents[0] %}
+        <section class="blog-featured">
+          <span class="blog-featured__label">Featured</span>
+          <article class="blog-featured__post">
+            {% if contents[0].featured_image %}
+            <a href="{{ contents[0].absolute_url }}" class="blog-featured__image-link">
               <img 
-                src="{{ content.featured_image }}" 
-                alt="{{ content.featured_image_alt_text }}"
-                class="blog-card__image"
-                loading="lazy"
+                src="{{ contents[0].featured_image }}" 
+                alt="{{ contents[0].featured_image_alt_text }}"
+                class="blog-featured__image"
+                loading="eager"
               />
             </a>
             {% endif %}
-            <div class="blog-card__content">
-              {% if content.tag_list[0] %}
-              <span class="blog-card__category">{{ content.tag_list[0].name }}</span>
+            <div class="blog-featured__content">
+              {% if contents[0].tag_list[0] %}
+              <span class="blog-card__category">{{ contents[0].tag_list[0].name }}</span>
               {% endif %}
-              <h3 class="blog-card__title">
-                <a href="{{ content.absolute_url }}">{{ content.name }}</a>
-              </h3>
-              <p class="blog-card__excerpt">
-                {{ content.post_summary|truncatehtml(120, '...')|striptags }}
+              <h2 class="blog-featured__title">
+                <a href="{{ contents[0].absolute_url }}">{{ contents[0].name }}</a>
+              </h2>
+              <p class="blog-featured__excerpt">
+                {{ contents[0].post_summary|truncatehtml(200, '...')|striptags }}
               </p>
               <div class="blog-card__meta">
-                <span class="blog-card__author">{{ content.blog_post_author.display_name }}</span>
+                <span class="blog-card__author">{{ contents[0].blog_post_author.display_name }}</span>
                 <span class="blog-card__separator">·</span>
-                <span class="blog-card__reading-time">{{ (content.post_body|wordcount / 200)|round|int }} min read</span>
+                <span class="blog-card__reading-time">{{ (contents[0].post_body|wordcount / 200)|round|int }} min read</span>
+                <span class="blog-card__separator">·</span>
+                <time class="blog-card__date">{{ contents[0].publish_date_localized }}</time>
               </div>
             </div>
           </article>
-          {% endif %}
-        {% endfor %}
-      </div>
+        </section>
+        {% endif %}
+
+        {# Post Grid #}
+        <section class="blog-grid">
+          <h2 class="blog-grid__heading">Latest</h2>
+          <div class="blog-grid__posts">
+            {% for content in contents %}
+              {% if loop.index > 1 %}
+              <article class="blog-card">
+                {% if content.featured_image %}
+                <a href="{{ content.absolute_url }}" class="blog-card__image-link">
+                  <img 
+                    src="{{ content.featured_image }}" 
+                    alt="{{ content.featured_image_alt_text }}"
+                    class="blog-card__image"
+                    loading="lazy"
+                  />
+                </a>
+                {% endif %}
+                <div class="blog-card__content">
+                  {% if content.tag_list[0] %}
+                  <span class="blog-card__category">{{ content.tag_list[0].name }}</span>
+                  {% endif %}
+                  <h3 class="blog-card__title">
+                    <a href="{{ content.absolute_url }}">{{ content.name }}</a>
+                  </h3>
+                  <p class="blog-card__excerpt">
+                    {{ content.post_summary|truncatehtml(120, '...')|striptags }}
+                  </p>
+                  <div class="blog-card__meta">
+                    <span class="blog-card__author">{{ content.blog_post_author.display_name }}</span>
+                    <span class="blog-card__separator">·</span>
+                    <span class="blog-card__reading-time">{{ (content.post_body|wordcount / 200)|round|int }} min read</span>
+                  </div>
+                </div>
+              </article>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </section>
+
+      </main>
+
+      {# Sidebar Column #}
+      <aside class="blog-layout__sidebar">
+
+        {# Popular/Recent Posts Widget #}
+        <div class="blog-sidebar-widget">
+          <h3 class="blog-sidebar-widget__title">Popular Articles</h3>
+          <ul class="blog-sidebar-widget__list">
+            {% set popular_posts = blog_recent_posts(group.id, 5) %}
+            {% for post in popular_posts %}
+              <li class="blog-sidebar-widget__item">
+                <a href="{{ post.absolute_url }}" class="blog-sidebar-widget__link">
+                  {{ post.name }}
+                </a>
+                <span class="blog-sidebar-widget__meta">
+                  {{ (post.post_body|wordcount / 200)|round|int }} min read
+                </span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        {# Tag Cloud Widget #}
+        <div class="blog-sidebar-widget">
+          <h3 class="blog-sidebar-widget__title">Topics</h3>
+          <div class="blog-sidebar-widget__tags">
+            {% set all_tags = blog_tags(group.id, 15) %}
+            {% for tag in all_tags %}
+              <a href="{{ blog_tag_url(group.id, tag.slug) }}" class="blog-sidebar-widget__tag">
+                {{ tag.name }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+
+        {# Newsletter CTA Widget #}
+        <div class="blog-sidebar-widget blog-sidebar-widget--cta">
+          <h3 class="blog-sidebar-widget__title">Stay Updated</h3>
+          <p class="blog-sidebar-widget__text">
+            Get the latest insights on capability development and decision-making delivered to your inbox.
+          </p>
+          <a href="/contact" class="blog-sidebar-widget__button">
+            Subscribe
+          </a>
+        </div>
+
+      </aside>
+
     </div>
-  </section>
+  </div>
 
   {# Pagination #}
   {% if contents.total_page_count > 1 %}

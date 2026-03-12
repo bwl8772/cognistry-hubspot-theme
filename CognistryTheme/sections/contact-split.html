@@ -1,0 +1,85 @@
+<!--
+  templateType: section
+  label: Contact Split Section
+  isAvailableForNewContent: true
+  description: "Two-column contact section with content left, form right."
+-->
+
+{% dnd_section
+  padding={
+    "top": 80,
+    "bottom": 80,
+    "left": 24,
+    "right": 24
+  },
+  background_color="#ffffff"
+%}
+  {% dnd_column width=6 %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html="<div class='contact-content'>
+          <span class='contact-eyebrow'>Get in touch</span>
+          <h2 class='contact-heading'>Start a conversation</h2>
+          <p class='contact-intro'>We'd love to hear from you. Whether you're exploring how Cognistry can transform your organization or have specific questions, we're here to help.</p>
+          
+          <div class='contact-expect'>
+            <h3>What to expect</h3>
+            <ul class='contact-expect-list'>
+              <li>
+                <svg width='20' height='20' viewBox='0 0 20 20' fill='none'><circle cx='10' cy='10' r='10' fill='#0fbf96' fill-opacity='0.15'/><path d='M6 10l3 3 5-6' stroke='#0fbf96' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>
+                <span><strong>Quick response</strong> — We typically reply within 24 hours</span>
+              </li>
+              <li>
+                <svg width='20' height='20' viewBox='0 0 20 20' fill='none'><circle cx='10' cy='10' r='10' fill='#0fbf96' fill-opacity='0.15'/><path d='M6 10l3 3 5-6' stroke='#0fbf96' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>
+                <span><strong>No pressure</strong> — Exploratory conversations welcome</span>
+              </li>
+              <li>
+                <svg width='20' height='20' viewBox='0 0 20 20' fill='none'><circle cx='10' cy='10' r='10' fill='#0fbf96' fill-opacity='0.15'/><path d='M6 10l3 3 5-6' stroke='#0fbf96' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>
+                <span><strong>Tailored guidance</strong> — We'll match you with the right resource</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class='contact-starters'>
+            <h3>People often ask about...</h3>
+            <div class='contact-starters-scroll'>
+              <div class='contact-starters-track'>
+                <div class='starter-item'><span class='starter-icon'>💬</span> How does capability architecture differ from traditional training?</div>
+                <div class='starter-item'><span class='starter-icon'>🎯</span> Can you help us map our current knowledge gaps?</div>
+                <div class='starter-item'><span class='starter-icon'>🚀</span> What does implementation look like for a team of 50+?</div>
+                <div class='starter-item'><span class='starter-icon'>📊</span> How do you measure capability improvement over time?</div>
+                <div class='starter-item'><span class='starter-icon'>🔗</span> Does Cognistry integrate with our existing LMS?</div>
+                <div class='starter-item'><span class='starter-icon'>💬</span> How does capability architecture differ from traditional training?</div>
+                <div class='starter-item'><span class='starter-icon'>🎯</span> Can you help us map our current knowledge gaps?</div>
+                <div class='starter-item'><span class='starter-icon'>🚀</span> What does implementation look like for a team of 50+?</div>
+                <div class='starter-item'><span class='starter-icon'>📊</span> How do you measure capability improvement over time?</div>
+                <div class='starter-item'><span class='starter-icon'>🔗</span> Does Cognistry integrate with our existing LMS?</div>
+              </div>
+            </div>
+          </div>
+        </div>"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+
+  {% dnd_column width=6, class="contact-form-column" %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html="<div class='contact-form-header'>
+          <h3>Send us a message</h3>
+          <p>Fill out the form and we'll be in touch soon.</p>
+        </div>"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/form"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

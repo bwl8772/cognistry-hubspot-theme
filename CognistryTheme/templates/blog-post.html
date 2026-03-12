@@ -81,16 +81,36 @@
   <div class="post-content-wrapper">
     <div class="post-content-wrapper__inner">
 
-      {# Table of Contents Sidebar #}
+      {# Sidebar with TOC, Author Card, Share Buttons #}
       <aside class="post-sidebar">
-        {% module "toc"
-          path="/Cognistry Theme/modules/toc.module",
-          toc_title="In this article",
-          content_selector=".blog-post__body",
-          heading_levels="h2, h3",
-          sticky=true,
-          sticky_offset=100
-        %}
+        <div class="post-sidebar__sticky">
+          {# Table of Contents #}
+          {% module "toc"
+            path="/Cognistry Theme/modules/toc.module",
+            toc_title="In this article",
+            content_selector=".blog-post__body",
+            heading_levels="h2, h3",
+            sticky=false,
+            sticky_offset=100
+          %}
+
+          {# Share Buttons #}
+          {% module "share_buttons"
+            path="/Cognistry Theme/modules/share-buttons.module",
+            card_title="Share this article",
+            show_twitter=true,
+            show_linkedin=true,
+            show_facebook=true,
+            show_copy_link=true
+          %}
+
+          {# Author Card #}
+          {% module "author_card"
+            path="/Cognistry Theme/modules/author-card.module",
+            card_title="About the Author",
+            show_social_links=true
+          %}
+        </div>
       </aside>
 
       {# Main Article Content #}
@@ -112,30 +132,6 @@
                   {{ tag.name|escape_html }}
                 </a>
               {% endfor %}
-            </div>
-          {% endif %}
-
-          {# Author Bio Card #}
-          {% if content.blog_post_author %}
-            <div class="blog-post__author-card">
-              {% if content.blog_post_author.avatar %}
-                <img 
-                  src="{{ content.blog_post_author.avatar }}" 
-                  alt="{{ content.blog_post_author.display_name }}"
-                  class="blog-post__author-card-avatar"
-                />
-              {% endif %}
-              <div class="blog-post__author-card-content">
-                <p class="blog-post__author-card-label">Written by</p>
-                <h4 class="blog-post__author-card-name">
-                  <a href="{{ blog_author_url(group.id, content.blog_post_author.slug)|escape_url }}">
-                    {{ content.blog_post_author.display_name|escape_html }}
-                  </a>
-                </h4>
-                {% if content.blog_post_author.bio %}
-                  <p class="blog-post__author-card-bio">{{ content.blog_post_author.bio }}</p>
-                {% endif %}
-              </div>
             </div>
           {% endif %}
 

@@ -1,0 +1,105 @@
+/* ============================================================ */
+/* Author Card Module                                            */
+/* ============================================================ */
+
+.author-card {
+  background: var(--cognistry-surface);
+  border: 1px solid var(--cognistry-border);
+  border-radius: var(--cognistry-radius-lg);
+  padding: 24px;
+}
+
+.author-card__label {
+  color: var(--cognistry-text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+.author-card__header {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.author-card__avatar {
+  border-radius: var(--cognistry-radius-full);
+  flex-shrink: 0;
+  height: 64px;
+  object-fit: cover;
+  width: 64px;
+}
+
+.author-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.author-card__name {
+  color: var(--cognistry-text);
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--cognistry-transition);
+}
+
+.author-card__name:hover {
+  color: var(--cognistry-primary);
+}
+
+.author-card__email {
+  color: var(--cognistry-text-muted);
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.author-card__bio {
+  color: var(--cognistry-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.author-card__social {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.author-card__social-link {
+  align-items: center;
+  background: var(--cognistry-bg-subtle);
+  border-radius: var(--cognistry-radius);
+  color: var(--cognistry-text-muted);
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--cognistry-transition);
+  width: 36px;
+}
+
+.author-card__social-link:hover {
+  background: var(--cognistry-primary-10);
+  color: var(--cognistry-primary);
+}
+
+.author-card__link {
+  align-items: center;
+  color: var(--cognistry-primary);
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 500;
+  gap: 6px;
+  text-decoration: none;
+  transition: gap var(--cognistry-transition);
+}
+
+.author-card__link:hover {
+  gap: 10px;
+}

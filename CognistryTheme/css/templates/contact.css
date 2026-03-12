@@ -1,0 +1,279 @@
+/* ====================================================================== */
+/* Contact Page Styles                                                    */
+/* ====================================================================== */
+
+/* --- Contact Content (Left Column) --- */
+.contact-content {
+  padding-right: var(--cognistry-space-8);
+}
+
+.contact-eyebrow {
+  display: inline-block;
+  font-size: var(--cognistry-eyebrow-size);
+  font-weight: var(--cognistry-eyebrow-weight);
+  letter-spacing: var(--cognistry-eyebrow-spacing);
+  text-transform: uppercase;
+  color: var(--cognistry-secondary);
+  margin-bottom: var(--cognistry-space-3);
+}
+
+.contact-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--cognistry-text);
+  margin: 0 0 var(--cognistry-space-4) 0;
+}
+
+.contact-intro {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--cognistry-text-muted);
+  margin-bottom: var(--cognistry-space-8);
+}
+
+/* --- What to Expect Section --- */
+.contact-expect {
+  margin-bottom: var(--cognistry-space-8);
+}
+
+.contact-expect h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cognistry-text);
+  margin: 0 0 var(--cognistry-space-4) 0;
+}
+
+.contact-expect-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cognistry-space-3);
+}
+
+.contact-expect-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cognistry-space-3);
+}
+
+.contact-expect-list li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-expect-list li span {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--cognistry-text-muted);
+}
+
+.contact-expect-list li strong {
+  color: var(--cognistry-text);
+  font-weight: 600;
+}
+
+/* --- Conversation Starters Section --- */
+.contact-starters {
+  background: var(--cognistry-bg-subtle);
+  border-radius: var(--cognistry-radius-lg);
+  padding: var(--cognistry-space-6);
+  border: 1px solid var(--cognistry-border);
+}
+
+.contact-starters h3 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cognistry-text-muted);
+  margin: 0 0 var(--cognistry-space-4) 0;
+}
+
+.contact-starters-scroll {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  height: 180px;
+}
+
+.contact-starters-track {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cognistry-space-3);
+  animation: scroll-starters 20s linear infinite;
+}
+
+.contact-starters-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-starters {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.starter-item {
+  display: flex;
+  align-items: center;
+  gap: var(--cognistry-space-3);
+  padding: var(--cognistry-space-3) var(--cognistry-space-4);
+  background: var(--cognistry-bg);
+  border-radius: var(--cognistry-radius);
+  border: 1px solid var(--cognistry-border);
+  font-size: 0.9rem;
+  color: var(--cognistry-text);
+  transition: 
+    border-color var(--cognistry-transition),
+    box-shadow var(--cognistry-transition);
+  cursor: default;
+}
+
+.starter-item:hover {
+  border-color: var(--cognistry-card-border-hover);
+  box-shadow: var(--cognistry-shadow-sm);
+}
+
+.starter-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* --- Form Column (Right Side) --- */
+.contact-form-column {
+  background: var(--cognistry-bg-subtle);
+  border-radius: var(--cognistry-radius-xl);
+  padding: var(--cognistry-space-8);
+  border: 1px solid var(--cognistry-border);
+  box-shadow: var(--cognistry-shadow-lg);
+}
+
+.contact-form-header {
+  margin-bottom: var(--cognistry-space-4);
+}
+
+.contact-form-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cognistry-text);
+  margin: 0 0 var(--cognistry-space-2) 0;
+}
+
+.contact-form-header p {
+  font-size: 0.95rem;
+  color: var(--cognistry-text-muted);
+  margin: 0;
+}
+
+/* Ensure form inherits proper styling */
+.body-container--contact .hs-form-field {
+  margin-bottom: var(--cognistry-space-4);
+}
+
+.body-container--contact .hs-form-field label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cognistry-text);
+  margin-bottom: var(--cognistry-space-2);
+  display: block;
+}
+
+.body-container--contact .hs-input {
+  width: 100%;
+  padding: var(--cognistry-space-3) var(--cognistry-space-4);
+  border: 1px solid var(--cognistry-border);
+  border-radius: var(--cognistry-radius);
+  font-size: 1rem;
+  transition: 
+    border-color var(--cognistry-transition),
+    box-shadow var(--cognistry-transition);
+}
+
+.body-container--contact .hs-input:focus {
+  outline: none;
+  border-color: var(--cognistry-primary);
+  box-shadow: 0 0 0 3px var(--cognistry-primary-10);
+}
+
+.body-container--contact textarea.hs-input {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.body-container--contact .hs-submit .hs-button {
+  background: var(--cognistry-primary);
+  color: var(--cognistry-fg-on-primary);
+  border: none;
+  padding: var(--cognistry-space-3) var(--cognistry-space-6);
+  border-radius: var(--cognistry-radius-full);
+  font-size: var(--cognistry-btn-font-size);
+  font-weight: var(--cognistry-btn-font-weight);
+  cursor: pointer;
+  transition: 
+    background var(--cognistry-transition),
+    transform var(--cognistry-transition),
+    box-shadow var(--cognistry-transition);
+  box-shadow: var(--cognistry-shadow-cta);
+}
+
+.body-container--contact .hs-submit .hs-button:hover {
+  background: var(--cognistry-secondary);
+  color: var(--cognistry-fg-on-primary);
+  transform: translateY(var(--cognistry-btn-hover-lift));
+  box-shadow: var(--cognistry-shadow-cta-hover);
+}
+
+/* --- Responsive --- */
+@media (max-width: 991px) {
+  .contact-content {
+    padding-right: 0;
+    margin-bottom: var(--cognistry-space-8);
+  }
+
+  .contact-heading {
+    font-size: 2rem;
+  }
+
+  .contact-starters-scroll {
+    height: 150px;
+  }
+
+  .contact-form-column {
+    margin-top: var(--cognistry-space-8);
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-heading {
+    font-size: 1.75rem;
+  }
+
+  .contact-form-column {
+    padding: var(--cognistry-space-6);
+  }
+
+  .contact-starters {
+    padding: var(--cognistry-space-4);
+  }
+}

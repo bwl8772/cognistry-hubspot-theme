@@ -1,0 +1,232 @@
+/* ====================================================================== */
+/* Cognistry Theme - Design Tokens                                        */
+/* Single source of truth for all CSS custom properties                   */
+/* ====================================================================== */
+
+:root {
+  /* --- Brand Colors --- */
+  --cognistry-primary: #4e0a77;
+  --cognistry-secondary: #7b2fa5;
+  --cognistry-accent: #0fbf96;
+
+  /* --- Brand Color Variants (10% opacity) --- */
+  --cognistry-primary-10: rgba(78, 10, 119, 0.10);
+  --cognistry-secondary-10: rgba(123, 47, 165, 0.10);
+  --cognistry-accent-10: rgba(15, 191, 150, 0.10);
+
+  /* --- Brand Hover States --- */
+  --cognistry-primary-hover: #3d0860;
+  --cognistry-secondary-hover: #6a2891;
+  --cognistry-accent-hover: #0da883;
+
+  /* --- Semantic Colors --- */
+  --cognistry-text: #101828;
+  --cognistry-text-muted: #475467;
+  --cognistry-bg: #ffffff;
+  --cognistry-bg-subtle: #f8fafc;
+  --cognistry-border: #e4e7ec;
+
+  /* --- Foreground on Brand Colors --- */
+  --cognistry-fg-on-primary: #ffffff;
+  --cognistry-fg-on-secondary: #ffffff;
+  --cognistry-fg-on-accent: #052e2b;
+
+  /* --- State Colors --- */
+  --cognistry-error: #ef4444;
+  --cognistry-error-light: #fef2f2;
+  --cognistry-error-border: #fecaca;
+  --cognistry-success: #22c55e;
+  --cognistry-success-light: #f0fdf4;
+  --cognistry-success-border: #bbf7d0;
+  --cognistry-warning: #f59e0b;
+  --cognistry-warning-light: #fffbeb;
+  --cognistry-warning-border: #fde68a;
+  --cognistry-info: #3b82f6;
+  --cognistry-info-light: #eff6ff;
+  --cognistry-info-border: #bfdbfe;
+
+  /* --- Disabled States --- */
+  --cognistry-disabled-bg: #d0d5dd;
+  --cognistry-disabled-text: #98a2b3;
+  --cognistry-disabled-border: #d0d5dd;
+
+  /* --- Dark Mode Surfaces --- */
+  --cognistry-on-dark-fg: hsl(0 0% 96%);
+  --cognistry-on-dark-muted: hsl(0 0% 80%);
+  --cognistry-on-dark-border: hsl(0 0% 40%);
+
+  /* --- Spacing Scale (4px base) --- */
+  --cognistry-space-1: 0.25rem;   /* 4px */
+  --cognistry-space-2: 0.5rem;    /* 8px */
+  --cognistry-space-3: 0.75rem;   /* 12px */
+  --cognistry-space-4: 1rem;      /* 16px */
+  --cognistry-space-6: 1.5rem;    /* 24px */
+  --cognistry-space-8: 2rem;      /* 32px */
+  --cognistry-space-12: 3rem;     /* 48px */
+  --cognistry-space-16: 4rem;     /* 64px */
+  --cognistry-space-24: 6rem;     /* 96px */
+
+  /* --- Border Radius --- */
+  --cognistry-radius-sm: 0.375rem;  /* 6px */
+  --cognistry-radius: 0.5rem;       /* 8px */
+  --cognistry-radius-md: 0.65rem;   /* 10px */
+  --cognistry-radius-lg: 0.75rem;   /* 12px */
+  --cognistry-radius-xl: 1rem;      /* 16px */
+  --cognistry-radius-full: 9999px;
+
+  /* --- Shadows / Elevation --- */
+  --cognistry-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --cognistry-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --cognistry-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --cognistry-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --cognistry-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.04);
+
+  /* --- Button Shadows (brand-tinted) --- */
+  --cognistry-shadow-primary: 0 10px 24px rgba(78, 10, 119, 0.16);
+  --cognistry-shadow-primary-hover: 0 14px 28px rgba(123, 47, 165, 0.18);
+  --cognistry-shadow-accent: 0 10px 24px rgba(15, 191, 150, 0.18);
+  --cognistry-shadow-accent-hover: 0 14px 28px rgba(15, 191, 150, 0.22);
+
+  /* --- Typography --- */
+  --cognistry-font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --cognistry-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  /* --- Transitions --- */
+  --cognistry-transition-fast: 150ms ease;
+  --cognistry-transition: 200ms ease;
+  --cognistry-transition-slow: 300ms ease;
+
+  /* --- Z-Index Scale --- */
+  --cognistry-z-dropdown: 1000;
+  --cognistry-z-sticky: 1020;
+  --cognistry-z-fixed: 1030;
+  --cognistry-z-modal-backdrop: 1040;
+  --cognistry-z-modal: 1050;
+  --cognistry-z-popover: 1060;
+  --cognistry-z-tooltip: 1070;
+
+  /* --- Focus Ring --- */
+  --cognistry-ring: var(--cognistry-accent);
+  --cognistry-ring-offset: 2px;
+  --cognistry-ring-width: 2px;
+
+  /* --- Card & Panel Styles --- */
+  --cognistry-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, var(--cognistry-bg-subtle) 100%);
+  --cognistry-card-shadow: 0 2px 6px rgba(16, 24, 40, 0.04), 0 14px 32px rgba(16, 24, 40, 0.06);
+  --cognistry-card-shadow-hover: 0 10px 24px rgba(16, 24, 40, 0.08), 0 24px 46px rgba(78, 10, 119, 0.10);
+  --cognistry-card-border-hover: rgba(78, 10, 119, 0.22);
+
+  /* --- Overlay --- */
+  --cognistry-overlay-dark: rgba(15, 23, 42, 0.88);
+  --cognistry-overlay-light: rgba(255, 255, 255, 0.08);
+
+  /* --- Dropdown & Menu Shadows --- */
+  --cognistry-shadow-dropdown: 0 18px 40px rgba(16, 24, 40, 0.12);
+  --cognistry-shadow-dropdown-sm: 0 8px 20px rgba(16, 24, 40, 0.10);
+
+  /* --- Header / Frosted Glass --- */
+  --cognistry-header-bg: rgba(255, 255, 255, 0.88);
+  --cognistry-header-border: rgba(78, 10, 119, 0.08);
+  --cognistry-header-shadow: 0 6px 24px rgba(16, 24, 40, 0.04);
+
+  /* --- Image / Card Shadows (neutral) --- */
+  --cognistry-shadow-image: 0 8px 20px rgba(16, 24, 40, 0.08), 0 24px 48px rgba(16, 24, 40, 0.08);
+
+  /* --- Table Styles --- */
+  --cognistry-table-row-hover: rgba(78, 10, 119, 0.03);
+
+  /* --- Button Styles (unified) --- */
+  --cognistry-btn-gradient: linear-gradient(135deg, var(--cognistry-primary) 0%, var(--cognistry-secondary) 100%);
+  --cognistry-btn-min-height: 48px;
+  --cognistry-btn-min-height-sm: 44px;
+  --cognistry-btn-padding: 0 1.25rem;
+  --cognistry-btn-font-weight: 700;
+  --cognistry-btn-font-size: 0.95rem;
+  --cognistry-btn-hover-lift: -2px;
+
+  /* --- Eyebrow / Label Styles (unified) --- */
+  --cognistry-eyebrow-size: 0.8rem;
+  --cognistry-eyebrow-weight: 700;
+  --cognistry-eyebrow-spacing: 0.12em;
+  --cognistry-eyebrow-color: var(--cognistry-secondary);
+
+  /* --- Card Title Styles (unified) --- */
+  --cognistry-card-title-size: 1.35rem;
+  --cognistry-card-title-spacing: -0.02em;
+  --cognistry-card-title-line-height: 1.2;
+  --cognistry-card-hover-lift: -4px;
+
+  /* --- Icon Container Styles (unified) --- */
+  --cognistry-icon-size: 50px;
+  --cognistry-icon-radius: 14px;
+  --cognistry-icon-bg: var(--cognistry-primary-10);
+
+  /* --- Section Spacing (unified) --- */
+  --cognistry-section-padding-y: 80px;
+  --cognistry-section-padding-y-lg: 96px;
+  --cognistry-section-padding-x: 24px;
+  --cognistry-section-padding-y-mobile: 56px;
+  --cognistry-section-padding-x-mobile: 20px;
+
+  /* ============================================================ */
+  /* PREMIUM VISUAL EFFECTS                                        */
+  /* ============================================================ */
+
+  /* --- Gradient Backgrounds --- */
+  --cognistry-gradient-hero: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(78, 10, 119, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(123, 47, 165, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse 50% 30% at 10% 60%, rgba(15, 191, 150, 0.06) 0%, transparent 40%),
+    var(--cognistry-bg);
+  
+  --cognistry-gradient-mesh:
+    radial-gradient(at 40% 20%, rgba(78, 10, 119, 0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(123, 47, 165, 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(15, 191, 150, 0.04) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgba(78, 10, 119, 0.04) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(123, 47, 165, 0.06) 0px, transparent 50%);
+
+  /* --- Gradient Text --- */
+  --cognistry-gradient-text: linear-gradient(135deg, var(--cognistry-primary) 0%, var(--cognistry-secondary) 50%, var(--cognistry-accent) 100%);
+  --cognistry-gradient-text-subtle: linear-gradient(135deg, var(--cognistry-primary) 0%, var(--cognistry-secondary) 100%);
+
+  /* --- Premium Glows --- */
+  --cognistry-glow-primary: 0 0 60px rgba(78, 10, 119, 0.25), 0 0 120px rgba(78, 10, 119, 0.15);
+  --cognistry-glow-accent: 0 0 60px rgba(15, 191, 150, 0.25), 0 0 120px rgba(15, 191, 150, 0.15);
+  --cognistry-glow-soft: 0 0 80px rgba(78, 10, 119, 0.08);
+
+  /* --- Premium Image Shadows --- */
+  --cognistry-shadow-product: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 12px 24px -8px rgba(78, 10, 119, 0.10),
+    0 0 0 1px rgba(78, 10, 119, 0.05);
+  
+  --cognistry-shadow-product-hover:
+    0 35px 60px -15px rgba(0, 0, 0, 0.18),
+    0 20px 40px -10px rgba(78, 10, 119, 0.15),
+    0 0 0 1px rgba(78, 10, 119, 0.08);
+
+  /* --- Glass Effects --- */
+  --cognistry-glass-bg: rgba(255, 255, 255, 0.7);
+  --cognistry-glass-border: rgba(255, 255, 255, 0.5);
+  --cognistry-glass-blur: blur(12px);
+
+  /* --- Premium Badge --- */
+  --cognistry-badge-bg: linear-gradient(135deg, rgba(78, 10, 119, 0.08) 0%, rgba(123, 47, 165, 0.04) 100%);
+  --cognistry-badge-border: rgba(78, 10, 119, 0.15);
+  --cognistry-badge-glow: 0 0 20px rgba(78, 10, 119, 0.08);
+
+  /* --- Ambient Orbs (for background decoration) --- */
+  --cognistry-orb-primary: radial-gradient(circle, rgba(78, 10, 119, 0.15) 0%, transparent 70%);
+  --cognistry-orb-secondary: radial-gradient(circle, rgba(123, 47, 165, 0.12) 0%, transparent 70%);
+  --cognistry-orb-accent: radial-gradient(circle, rgba(15, 191, 150, 0.10) 0%, transparent 70%);
+
+  /* --- Button Shadows (simplified) --- */
+  --cognistry-shadow-cta: 0 4px 14px rgba(78, 10, 119, 0.25);
+  --cognistry-shadow-cta-hover: 0 6px 20px rgba(78, 10, 119, 0.35);
+
+  /* --- Grid/Dot Patterns --- */
+  --cognistry-pattern-dots: radial-gradient(circle, rgba(78, 10, 119, 0.08) 1px, transparent 1px);
+  --cognistry-pattern-grid: linear-gradient(rgba(78, 10, 119, 0.03) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(78, 10, 119, 0.03) 1px, transparent 1px);
+}

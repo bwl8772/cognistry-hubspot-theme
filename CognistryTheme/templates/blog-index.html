@@ -1,0 +1,149 @@
+<!--
+  templateType: blog_listing
+  isAvailableForNewContent: true
+  label: Blog Listing - Insights
+  screenshotPath: ../images/template-previews/blog-index.png
+-->
+{% set template_css = "../../css/templates/blog.css" %}
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+<div class="body-container body-container--blog-index">
+
+  {# Premium Blog Hero #}
+  {% module "blog_hero"
+    path="/Cognistry Theme/modules/blog-hero.module",
+    title="Insights",
+    subtitle="Thought leadership on capability, decision-making, and knowledge systems",
+    show_search=true,
+    search_placeholder="Search articles...",
+    show_categories=true
+  %}
+
+  {# Featured Post (first post) #}
+  {% if contents[0] %}
+  <section class="blog-featured">
+    <div class="blog-featured__inner">
+      <span class="blog-featured__label">Featured</span>
+      <article class="blog-featured__post">
+        {% if contents[0].featured_image %}
+        <a href="{{ contents[0].absolute_url }}" class="blog-featured__image-link">
+          <img 
+            src="{{ contents[0].featured_image }}" 
+            alt="{{ contents[0].featured_image_alt_text }}"
+            class="blog-featured__image"
+            loading="eager"
+          />
+        </a>
+        {% endif %}
+        <div class="blog-featured__content">
+          {% if contents[0].tag_list[0] %}
+          <span class="blog-card__category">{{ contents[0].tag_list[0].name }}</span>
+          {% endif %}
+          <h2 class="blog-featured__title">
+            <a href="{{ contents[0].absolute_url }}">{{ contents[0].name }}</a>
+          </h2>
+          <p class="blog-featured__excerpt">
+            {{ contents[0].post_summary|truncatehtml(200, '...')|striptags }}
+          </p>
+          <div class="blog-card__meta">
+            <span class="blog-card__author">{{ contents[0].blog_post_author.display_name }}</span>
+            <span class="blog-card__separator">·</span>
+            <span class="blog-card__reading-time">{{ (contents[0].post_body|wordcount / 200)|round|int }} min read</span>
+            <span class="blog-card__separator">·</span>
+            <time class="blog-card__date">{{ contents[0].publish_date_localized }}</time>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  {% endif %}
+
+  {# Post Grid #}
+  <section class="blog-grid">
+    <div class="blog-grid__inner">
+      <h2 class="blog-grid__heading">Latest</h2>
+      <div class="blog-grid__posts">
+        {% for content in contents %}
+          {% if loop.index > 1 %}
+          <article class="blog-card">
+            {% if content.featured_image %}
+            <a href="{{ content.absolute_url }}" class="blog-card__image-link">
+              <img 
+                src="{{ content.featured_image }}" 
+                alt="{{ content.featured_image_alt_text }}"
+                class="blog-card__image"
+                loading="lazy"
+              />
+            </a>
+            {% endif %}
+            <div class="blog-card__content">
+              {% if content.tag_list[0] %}
+              <span class="blog-card__category">{{ content.tag_list[0].name }}</span>
+              {% endif %}
+              <h3 class="blog-card__title">
+                <a href="{{ content.absolute_url }}">{{ content.name }}</a>
+              </h3>
+              <p class="blog-card__excerpt">
+                {{ content.post_summary|truncatehtml(120, '...')|striptags }}
+              </p>
+              <div class="blog-card__meta">
+                <span class="blog-card__author">{{ content.blog_post_author.display_name }}</span>
+                <span class="blog-card__separator">·</span>
+                <span class="blog-card__reading-time">{{ (content.post_body|wordcount / 200)|round|int }} min read</span>
+              </div>
+            </div>
+          </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {# Pagination #}
+  {% if contents.total_page_count > 1 %}
+  <nav class="blog-pagination" aria-label="Blog pagination">
+    <div class="blog-pagination__inner">
+      {% set page_index = current_page_num > 0 ? current_page_num : 1 %}
+      
+      {% if page_index > 1 %}
+      <a href="{{ blog_page_link(page_index - 1) }}" class="blog-pagination__link blog-pagination__link--prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        Previous
+      </a>
+      {% endif %}
+      
+      <div class="blog-pagination__pages">
+        {% if page_index >= 3 %}
+        <a href="{{ blog_page_link(1) }}" class="blog-pagination__page">1</a>
+        <span class="blog-pagination__ellipsis">...</span>
+        {% endif %}
+        
+        {% if page_index > 1 %}
+        <a href="{{ blog_page_link(page_index - 1) }}" class="blog-pagination__page">{{ page_index - 1 }}</a>
+        {% endif %}
+        
+        <span class="blog-pagination__page blog-pagination__page--active">{{ page_index }}</span>
+        
+        {% if page_index != contents.total_page_count %}
+        <a href="{{ blog_page_link(page_index + 1) }}" class="blog-pagination__page">{{ page_index + 1 }}</a>
+        {% endif %}
+        
+        {% if contents.total_page_count - page_index > 1 %}
+        <span class="blog-pagination__ellipsis">...</span>
+        <a href="{{ blog_page_link(contents.total_page_count) }}" class="blog-pagination__page">{{ contents.total_page_count }}</a>
+        {% endif %}
+      </div>
+      
+      {% if page_index != contents.total_page_count %}
+      <a href="{{ blog_page_link(page_index + 1) }}" class="blog-pagination__link blog-pagination__link--next">
+        Next
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      {% endif %}
+    </div>
+  </nav>
+  {% endif %}
+
+</div>
+{% endblock body %}

@@ -1,0 +1,224 @@
+/* ============================================================ */
+/* Blog Hero — Premium Thought Leadership Header                */
+/* ============================================================ */
+
+.blog-hero {
+  background: var(--cognistry-gradient-hero);
+  padding: 100px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient orbs - same as main hero */
+.blog-hero::before {
+  background: var(--cognistry-orb-primary);
+  content: "";
+  height: 600px;
+  left: -10%;
+  opacity: 0.4;
+  pointer-events: none;
+  position: absolute;
+  top: -20%;
+  width: 600px;
+  z-index: 0;
+}
+
+.blog-hero::after {
+  background: var(--cognistry-orb-accent);
+  content: "";
+  height: 400px;
+  opacity: 0.3;
+  pointer-events: none;
+  position: absolute;
+  right: -5%;
+  top: 40%;
+  width: 400px;
+  z-index: 0;
+}
+
+.blog-hero__inner {
+  margin: 0 auto;
+  max-width: 800px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Title */
+
+.blog-hero__title {
+  color: var(--cognistry-text);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+/* Subtitle */
+
+.blog-hero__subtitle {
+  color: var(--cognistry-text-muted);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0 0 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================ */
+/* Search Bar                                                    */
+/* ============================================================ */
+
+.blog-hero__search {
+  margin: 0 auto 32px;
+  max-width: 500px;
+}
+
+.blog-hero__search-form {
+  display: flex;
+  gap: 0;
+  position: relative;
+}
+
+.blog-hero__search-input {
+  background: var(--cognistry-surface);
+  border: 1px solid var(--cognistry-border);
+  border-radius: var(--cognistry-radius-full);
+  color: var(--cognistry-text);
+  flex: 1;
+  font-size: 1rem;
+  height: 52px;
+  padding: 0 56px 0 24px;
+  transition: border-color var(--cognistry-transition), box-shadow var(--cognistry-transition);
+  width: 100%;
+}
+
+.blog-hero__search-input:focus {
+  border-color: var(--cognistry-primary);
+  box-shadow: 0 0 0 3px var(--cognistry-primary-10);
+  outline: none;
+}
+
+.blog-hero__search-input::placeholder {
+  color: var(--cognistry-text-muted);
+}
+
+.blog-hero__search-button {
+  align-items: center;
+  background: var(--cognistry-primary);
+  border: none;
+  border-radius: var(--cognistry-radius-full);
+  color: var(--cognistry-fg-on-primary);
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background var(--cognistry-transition);
+  width: 40px;
+}
+
+.blog-hero__search-button:hover {
+  background: var(--cognistry-secondary);
+}
+
+.blog-hero__search-button svg {
+  height: 18px;
+  width: 18px;
+}
+
+/* ============================================================ */
+/* Category Navigation                                           */
+/* ============================================================ */
+
+.blog-hero__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.blog-hero__category {
+  background: var(--cognistry-glass-bg);
+  backdrop-filter: var(--cognistry-glass-blur);
+  -webkit-backdrop-filter: var(--cognistry-glass-blur);
+  border: 1px solid var(--cognistry-border);
+  border-radius: var(--cognistry-radius-full);
+  color: var(--cognistry-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: all var(--cognistry-transition);
+}
+
+.blog-hero__category:hover {
+  border-color: var(--cognistry-primary);
+  color: var(--cognistry-primary);
+}
+
+.blog-hero__category--active {
+  background: var(--cognistry-primary);
+  border-color: var(--cognistry-primary);
+  color: var(--cognistry-fg-on-primary);
+}
+
+.blog-hero__category--active:hover {
+  background: var(--cognistry-secondary);
+  border-color: var(--cognistry-secondary);
+  color: var(--cognistry-fg-on-primary);
+}
+
+/* ============================================================ */
+/* Accessibility                                                 */
+/* ============================================================ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* ============================================================ */
+/* Responsive                                                    */
+/* ============================================================ */
+
+@media (max-width: 767px) {
+  .blog-hero {
+    padding: 80px 20px 60px;
+  }
+
+  .blog-hero__title {
+    font-size: 2rem;
+  }
+
+  .blog-hero__subtitle {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
+
+  .blog-hero__search-input {
+    height: 48px;
+    padding: 0 50px 0 20px;
+  }
+
+  .blog-hero__search-button {
+    height: 36px;
+    width: 36px;
+  }
+
+  .blog-hero__category {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+}

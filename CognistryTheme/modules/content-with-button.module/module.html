@@ -1,0 +1,70 @@
+<div class="content-column-repeater-wrap">
+  <div class="container">
+    <div class="content-wrapper-main {{ module.content_position_choice }}"> 
+      <div class="content-wrap">
+        <h2>
+          {{ module.content_here.title_text }} 
+        </h2>
+        {{ module.content_here.content }}
+
+        <div class="listing">
+          {% for item in module.content_here.list %}
+          <div class="list-inner">
+            {% if item.list_title_text %}
+            <h3>
+              {{ item.list_title_text }}
+            </h3>
+            {% endif %}
+            {% if item.list_content %}
+            {{ item.list_content }}
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        <div class="button">
+          {% set href = module.content_here.button_here.link_field.url.href %}
+          {% if module.content_here.button_here.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% elif module.content_here.button_here.link_field.url.type is equalto "PHONE_NUMBER" %}
+          {% set href = "tel:" + href %}
+          {% endif %}
+          <a
+             {% if module.content_here.button_here.link_field.url.type is equalto "CALL_TO_ACTION"  %}
+             href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+             {% else %}
+             href="{{ href|escape_url }}"
+             {% endif %}
+             {% if module.content_here.button_here.link_field.open_in_new_tab %}
+             target="_blank"
+             {% endif %}
+             {% if module.content_here.button_here.link_field.rel %}
+             rel="{{ module.content_here.button_here.link_field.rel|escape_attr }}"
+             {% endif %}
+             >
+            {{ module.content_here.button_here.button_text }} <span><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {% scope_css %}
+
+  .content-column-repeater-wrap { background:{{ module.style.background_color.color }}; {{ module.style.desktop_spacing.css }}; }
+  .content-column-repeater-wrap  .content-wrapper-main.center {    text-align: center;   }
+  .content-wrapper-main.center .listing {
+    text-align: left;
+  }
+
+  @media(max-width:767px){
+    .content-column-repeater-wrap { {{ module.style.mobile_spacing.css }}; } 
+  }
+
+  {% end_scope_css %}
+</style>
+{% end_require_css %}

@@ -1,0 +1,36 @@
+[ {
+  "id" : "logo_field",
+  "name" : "logo_field",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : true,
+  "show_loading" : true,
+  "display_width" : null,
+  "type" : "logo",
+  "default" : {
+    "override_inherited_src" : true,
+    "src" : "https://245311528.fs1.hubspotusercontent-na2.net/hubfs/245311528/cognistry-primary%20(1).png",
+    "alt" : "cognistry-primary (1)",
+    "suppress_company_name" : true,
+    "width" : 198,
+    "height" : 39
+  }
+}, {
+  "id" : "menu_field",
+  "name" : "menu_field",
+  "label" : "Menu",
+  "required" : false,
+  "locked" : true,
+  "display_width" : null,
+  "type" : "menu",
+  "default" : 321937712878
+}, {
+  "id" : "copyright_content",
+  "name" : "copyright_content",
+  "label" : "Copyright Content",
+  "required" : false,
+  "locked" : true,
+  "display_width" : null,
+  "type" : "richtext",
+  "default" : "<p>© {{ year }} Cognistry. AI for Professionals.</p>"
+} ]

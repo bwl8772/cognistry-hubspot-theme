@@ -1,0 +1,31 @@
+<div class="cards">
+  {% for item in module.card %}
+    <div class="cards__card">
+
+      {% if item.image.src %}
+        {% set sizeAttrs = 'width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}"' %}
+        {% if item.image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif item.image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ item.image.max_width|escape_attr }}" height="{{ item.image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading|escape_attr }}"' : '' %}
+
+        <div class="card__media">
+          <img
+            class="card__image"
+            src="{{ item.image.src|escape_url }}"
+            alt="{{ item.image.alt|escape_attr }}"
+            {{ loadingAttr }}
+            {{ sizeAttrs }}
+          >
+        </div>
+      {% endif %}
+
+      <div class="card__text">
+        {{ item.text }}
+      </div>
+
+    </div>
+  {% endfor %}
+</div>

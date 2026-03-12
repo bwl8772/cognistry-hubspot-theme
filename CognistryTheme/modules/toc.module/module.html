@@ -1,0 +1,14 @@
+<nav 
+  class="toc {% if module.sticky %}toc--sticky{% endif %}" 
+  aria-label="Table of contents"
+  data-content-selector="{{ module.content_selector }}"
+  data-heading-levels="{{ module.heading_levels }}"
+  style="{% if module.sticky %}--toc-offset: {{ module.sticky_offset }}px;{% endif %}"
+>
+  {% if module.toc_title %}
+    <h4 class="toc__title">{{ module.toc_title }}</h4>
+  {% endif %}
+  <ol class="toc__list" id="toc-list">
+    <li class="toc__loading">Loading...</li>
+  </ol>
+</nav>

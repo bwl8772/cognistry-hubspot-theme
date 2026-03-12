@@ -1,0 +1,224 @@
+[ {
+  "id" : "layout",
+  "name" : "layout",
+  "label" : "Layout",
+  "required" : false,
+  "locked" : false,
+  "display" : "radio",
+  "choices" : [ [ "centered", "Centered" ], [ "split", "Split (Text + Image)" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "display_width" : null,
+  "type" : "choice",
+  "default" : "centered",
+  "help_text" : "Split layout shows text on left, image on right"
+}, {
+  "id" : "eyebrow",
+  "name" : "eyebrow",
+  "label" : "Eyebrow",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "About Cognistry"
+}, {
+  "id" : "heading",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Turning enterprise knowledge into operational decision capability"
+}, {
+  "id" : "heading_highlight",
+  "name" : "heading_highlight",
+  "label" : "Heading Highlight",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "",
+  "help_text" : "Text that appears in accent color (e.g. 'transform professionals')"
+}, {
+  "id" : "hero_body",
+  "name" : "hero_body",
+  "label" : "Hero Body",
+  "required" : false,
+  "locked" : false,
+  "display_width" : null,
+  "type" : "richtext",
+  "default" : "<p>Cognistry helps organizations capture expertise, structure capability development, run realistic decision practice, and connect improved judgment to operational performance.</p>"
+}, {
+  "id" : "hero_image",
+  "name" : "hero_image",
+  "label" : "Hero Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "display_width" : null,
+  "type" : "image",
+  "default" : {
+    "src" : "",
+    "alt" : "Product screenshot",
+    "loading" : "lazy",
+    "size_type" : "auto"
+  },
+  "help_text" : "Product image or screenshot (used in split layout)"
+}, {
+  "id" : "cta_type",
+  "name" : "cta_type",
+  "label" : "CTA Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "radio",
+  "choices" : [ [ "buttons", "Buttons" ], [ "form", "Email Signup Form" ] ],
+  "multiple" : false,
+  "display_width" : null,
+  "type" : "choice",
+  "default" : "buttons",
+  "help_text" : "Show buttons or an email signup form"
+}, {
+  "id" : "form",
+  "name" : "form",
+  "label" : "Signup Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "default" : {
+    "response_type" : "redirect",
+    "message" : "Thanks for submitting the form."
+  },
+  "help_text" : "Select a HubSpot form (used when CTA Type is 'Email Signup Form')"
+}, {
+  "id" : "form_button_text",
+  "name" : "form_button_text",
+  "label" : "Form Button Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "default" : "Request Access",
+  "help_text" : "Button text for the email form"
+}, {
+  "id" : "primary_cta_text",
+  "name" : "primary_cta_text",
+  "label" : "Primary CTA Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Request a demo"
+}, {
+  "id" : "primary_cta_link",
+  "name" : "primary_cta_link",
+  "label" : "Primary CTA Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "display_width" : null,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "secondary_cta_text",
+  "name" : "secondary_cta_text",
+  "label" : "Secondary CTA Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Explore the platform"
+}, {
+  "id" : "secondary_cta_link",
+  "name" : "secondary_cta_link",
+  "label" : "Secondary CTA Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "display_width" : null,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "secondary_link_text",
+  "name" : "secondary_link_text",
+  "label" : "Secondary Link Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "",
+  "help_text" : "Optional text link below CTA (e.g. 'Already have access? Sign in')"
+}, {
+  "id" : "secondary_link_url",
+  "name" : "secondary_link_url",
+  "label" : "Secondary Link URL",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "EMAIL_ADDRESS" ],
+  "show_advanced_rel_options" : false,
+  "display_width" : null,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "alignment",
+  "name" : "alignment",
+  "label" : "Alignment",
+  "required" : false,
+  "locked" : false,
+  "display" : "radio",
+  "placeholder" : "left",
+  "choices" : [ [ "left", "Left" ], [ "center", "Center" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "display_width" : null,
+  "type" : "choice",
+  "default" : "left"
+}, {
+  "id" : "theme",
+  "name" : "theme",
+  "label" : "Theme",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "placeholder" : "light",
+  "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "display_width" : null,
+  "type" : "choice"
+} ]

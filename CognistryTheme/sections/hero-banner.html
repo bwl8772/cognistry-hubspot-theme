@@ -1,0 +1,31 @@
+<!--
+  templateType: section
+  label: Hero Banner
+  isAvailableForNewContent: true
+-->
+
+{% set hero_content = "<h1>Turn enterprise knowledge into decision capability</h1><p>Cognistry helps organizations structure expertise, build capability, simulate decisions, and improve operational readiness.</p>" %}
+
+{% if context is defined and context.content is defined and context.content %}
+  {% set hero_content = context.content %}
+{% endif %}
+
+{% dnd_section
+  padding={
+    "top": 80,
+    "bottom": 80,
+    "left": 24,
+    "right": 24
+  },
+  background_color="#F8F7FC"
+%}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html=hero_content
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

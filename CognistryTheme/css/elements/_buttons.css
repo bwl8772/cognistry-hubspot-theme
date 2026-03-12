@@ -1,0 +1,184 @@
+button,
+.button,
+.hs-button,
+.hs-form input[type="submit"],
+.hs-form input[type="button"] {
+  appearance: none;
+  background: var(--cognistry-primary);
+  border: none;
+  border-radius: var(--cognistry-radius-full);
+  box-shadow: var(--cognistry-shadow-cta);
+  color: var(--cognistry-fg-on-primary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-size: var(--cognistry-btn-font-size);
+  font-weight: var(--cognistry-btn-font-weight);
+  line-height: 1.1;
+  min-height: var(--cognistry-btn-min-height);
+  padding: var(--cognistry-btn-padding);
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background var(--cognistry-transition),
+    transform var(--cognistry-transition),
+    box-shadow var(--cognistry-transition);
+  white-space: normal;
+}
+
+button:hover,
+.button:hover,
+.hs-button:hover,
+.hs-form input[type="submit"]:hover,
+.hs-form input[type="button"]:hover {
+  background: var(--cognistry-secondary);
+  box-shadow: var(--cognistry-shadow-cta-hover);
+  color: var(--cognistry-fg-on-primary);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+button:focus,
+.button:focus,
+.hs-button:focus,
+.hs-form input[type="submit"]:focus,
+.hs-form input[type="button"]:focus {
+  outline: none;
+}
+
+button:focus-visible,
+.button:focus-visible,
+.hs-button:focus-visible,
+.hs-form input[type="submit"]:focus-visible,
+.hs-form input[type="button"]:focus-visible {
+  box-shadow:
+    0 0 0 4px var(--cognistry-accent-10),
+    var(--cognistry-shadow-primary);
+  outline: none;
+}
+
+button:active,
+.button:active,
+.hs-button:active,
+.hs-form input[type="submit"]:active,
+.hs-form input[type="button"]:active {
+  transform: translateY(0);
+  box-shadow: var(--cognistry-shadow);
+}
+
+button:disabled,
+.button:disabled,
+.hs-button:disabled,
+.hs-form input[type="submit"]:disabled,
+.hs-form input[type="button"]:disabled {
+  background-color: var(--cognistry-disabled-bg);
+  border-color: var(--cognistry-disabled-border);
+  box-shadow: none;
+  color: var(--cognistry-disabled-text);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Secondary / ghost button patterns */
+
+.button--secondary,
+.button-secondary,
+.hs-button.secondary,
+.button.is-secondary {
+  background: transparent;
+  border: 1px solid var(--cognistry-primary);
+  box-shadow: none;
+  color: var(--cognistry-primary);
+}
+
+.button--secondary:hover,
+.button-secondary:hover,
+.hs-button.secondary:hover,
+.button.is-secondary:hover {
+  background: var(--cognistry-primary-10);
+  border-color: var(--cognistry-secondary);
+  color: var(--cognistry-secondary);
+  box-shadow: none;
+}
+
+.button--accent,
+.button-accent,
+.button.is-accent {
+  background: var(--cognistry-accent);
+  border-color: var(--cognistry-accent);
+  box-shadow: var(--cognistry-shadow-accent);
+  color: var(--cognistry-fg-on-accent);
+}
+
+.button--accent:hover,
+.button-accent:hover,
+.button.is-accent:hover {
+  background: var(--cognistry-accent-hover);
+  border-color: var(--cognistry-accent-hover);
+  box-shadow: var(--cognistry-shadow-accent-hover);
+  color: var(--cognistry-fg-on-accent);
+}
+
+/* Text / link-style button */
+
+.no-button,
+.no-button:hover,
+.no-button:focus,
+.no-button:active {
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--cognistry-accent);
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: 600;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin-bottom: 0;
+  min-height: auto;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  transition: color var(--cognistry-transition);
+  transform: none;
+}
+
+.no-button:hover,
+.no-button:focus,
+.no-button:active {
+  color: var(--cognistry-secondary);
+  text-decoration: underline;
+}
+
+/* Button groups */
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  align-items: center;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+  button,
+  .button,
+  .hs-button,
+  .hs-form input[type="submit"],
+  .hs-form input[type="button"] {
+    width: auto;
+    min-height: var(--cognistry-btn-min-height-sm);
+    padding: var(--cognistry-btn-padding);
+  }
+
+  .button-group {
+    gap: 0.75rem;
+  }
+}

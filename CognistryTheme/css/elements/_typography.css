@@ -1,0 +1,254 @@
+/* The overflow-wrap is meant to prevent long/large words from breaking the mobile responsiveness of a page (e.g. horizontal scrolling). It is preferred to reduce font sizes on mobile to address this, with this CSS specifically helping with extreme scenarios where a reduction in font size is not possible. */
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cognistry-bg);
+  color: var(--cognistry-text);
+  font-family: var(--cognistry-font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Handles word breaking for a few specific languages which handle breaks in words differently. If your content is not translated into these languages, you can safely remove this. */
+
+html[lang^="ja"] body,
+html[lang^="zh"] body,
+html[lang^="ko"] body {
+  line-break: strict;
+  overflow-wrap: normal;
+  word-break: break-all;
+}
+
+/* Paragraphs */
+
+p {
+  color: var(--cognistry-text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0 0 1.5rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Anchors */
+
+a {
+  color: var(--cognistry-accent);
+  cursor: pointer;
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--cognistry-secondary);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--cognistry-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--cognistry-text);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.05;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  line-height: 1.15;
+}
+
+h4 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.2;
+}
+
+h5 {
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* Lists */
+
+ul,
+ol {
+  color: var(--cognistry-text-muted);
+  margin: 0 0 1.5rem;
+  padding-left: 1.25rem;
+}
+
+ul li,
+ol li {
+  margin-bottom: 0.45rem;
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin: 0.5rem 0 0;
+}
+
+ul.no-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+/* Strong / emphasis */
+
+strong,
+b {
+  color: var(--cognistry-text);
+  font-weight: 700;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+/* Small text */
+
+small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--cognistry-text-muted);
+}
+
+/* Code blocks */
+
+pre {
+  background: var(--cognistry-bg-subtle);
+  border: 1px solid var(--cognistry-border);
+  border-radius: 12px;
+  color: var(--cognistry-text);
+  margin: 0 0 1.5rem;
+  overflow: auto;
+  padding: 1rem 1.25rem;
+}
+
+code {
+  background: var(--cognistry-primary-10);
+  border-radius: 6px;
+  color: var(--cognistry-primary);
+  display: inline-block;
+  font-size: 0.9em;
+  padding: 0.1em 0.4em;
+  vertical-align: baseline;
+}
+
+pre code {
+  background: transparent;
+  color: inherit;
+  display: inline;
+  padding: 0;
+}
+
+/* Blockquotes */
+
+blockquote {
+  background: var(--cognistry-primary-10);
+  border-left: 4px solid var(--cognistry-primary);
+  border-radius: 0 12px 12px 0;
+  color: var(--cognistry-text);
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem;
+}
+
+blockquote p {
+  color: var(--cognistry-text);
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Horizontal rules */
+
+hr {
+  border: none;
+  border-bottom: 1px solid var(--cognistry-border);
+  margin: 2rem 0;
+}
+
+/* Image alt text */
+
+img {
+  font-size: 0.583rem;
+  max-width: 100%;
+  word-break: normal;
+}
+
+/* Selection */
+
+::selection {
+  background: var(--cognistry-primary-10);
+  color: var(--cognistry-text);
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 767px) {
+  body {
+    line-height: 1.6;
+  }
+
+  p,
+  ul,
+  ol {
+    font-size: 0.975rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.85rem;
+  }
+}

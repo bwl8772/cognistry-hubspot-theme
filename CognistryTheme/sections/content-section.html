@@ -1,0 +1,38 @@
+<!--
+  templateType: section
+  label: Content Section
+  isAvailableForNewContent: true
+  description: "A simple centered content section with adjustable rich text."
+-->
+
+{% set content_html = "<div style='max-width:800px; margin:0 auto; text-align:center;'><h2>Explain what matters here</h2><p>Use this section for positioning, narrative, overview copy, or buyer-facing context.</p></div>" %}
+{% set section_bg = "#FFFFFF" %}
+
+{% if context is defined %}
+  {% if context.content is defined and context.content %}
+    {% set content_html = context.content %}
+  {% endif %}
+  {% if context.background_color is defined and context.background_color %}
+    {% set section_bg = context.background_color %}
+  {% endif %}
+{% endif %}
+
+{% dnd_section
+  padding={
+    "top": 72,
+    "bottom": 72,
+    "left": 24,
+    "right": 24
+  },
+  background_color=section_bg
+%}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html=content_html
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

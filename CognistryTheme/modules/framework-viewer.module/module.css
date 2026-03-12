@@ -1,0 +1,100 @@
+.framework-viewer {
+  text-align: center;
+  position: relative;
+}
+
+.framework-viewer__trigger {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+.framework-viewer img {
+  border-radius: var(--cognistry-radius-xl);
+  box-shadow: var(--cognistry-shadow-lg);
+  height: auto;
+  max-width: 100%;
+  transition: transform var(--cognistry-transition), box-shadow var(--cognistry-transition);
+}
+
+.framework-viewer__trigger:hover img,
+.framework-viewer__trigger:focus img {
+  box-shadow: var(--cognistry-shadow-xl);
+  transform: translateY(-2px);
+}
+
+/* Lightbox */
+
+.framework-viewer__lightbox {
+  align-items: center;
+  background: var(--cognistry-overlay-dark);
+  backdrop-filter: blur(6px);
+  display: none;
+  inset: 0;
+  justify-content: center;
+  padding: 32px;
+  position: fixed;
+  z-index: var(--cognistry-z-modal);
+}
+
+.framework-viewer__lightbox-inner {
+  max-height: 95vh;
+  max-width: 95vw;
+  position: relative;
+}
+
+.framework-viewer__lightbox img {
+  border-radius: var(--cognistry-radius-xl);
+  box-shadow: var(--cognistry-shadow-xl);
+}
+
+/* Close button */
+
+.framework-viewer__close {
+  align-items: center;
+  background: var(--cognistry-bg);
+  border: 1px solid var(--cognistry-border);
+  border-radius: var(--cognistry-radius-full);
+  color: var(--cognistry-text);
+  cursor: pointer;
+  display: flex;
+  font-size: 22px;
+  height: 42px;
+  justify-content: center;
+  position: absolute;
+  right: -16px;
+  top: -16px;
+  transition: 
+    background var(--cognistry-transition),
+    transform var(--cognistry-transition),
+    border-color var(--cognistry-transition);
+  width: 42px;
+}
+
+.framework-viewer__close:hover,
+.framework-viewer__close:focus {
+  background: var(--cognistry-primary);
+  border-color: var(--cognistry-primary);
+  color: var(--cognistry-fg-on-primary);
+  transform: scale(1.05);
+}
+
+/* Caption */
+
+.framework-viewer__caption {
+  color: var(--cognistry-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 16px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.framework-viewer__caption strong {
+  color: var(--cognistry-text);
+}

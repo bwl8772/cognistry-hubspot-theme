@@ -1,0 +1,208 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Blog Post - Insights
+  screenshotPath: ../images/template-previews/blog-post.png
+-->
+{% set template_css = "../../css/templates/blog.css" %}
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+<div class="body-container body-container--blog-post">
+
+  {# Premium Post Header #}
+  <header class="post-header">
+    <div class="post-header__inner">
+      
+      {# Breadcrumb #}
+      <nav class="post-header__breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ group.absolute_url }}">Insights</a>
+        <span class="post-header__breadcrumb-sep">/</span>
+        {% if content.tag_list[0] %}
+          <a href="{{ blog_tag_url(group.id, content.tag_list[0].slug) }}">{{ content.tag_list[0].name }}</a>
+        {% else %}
+          <span>Article</span>
+        {% endif %}
+      </nav>
+
+      {# Category Badge #}
+      {% if content.tag_list[0] %}
+        <span class="post-header__category">{{ content.tag_list[0].name }}</span>
+      {% endif %}
+
+      {# Title #}
+      <h1 class="post-header__title">{{ content.name|sanitize_html }}</h1>
+
+      {# Meta #}
+      <div class="post-header__meta">
+        {% if content.blog_post_author.avatar %}
+          <img 
+            src="{{ content.blog_post_author.avatar }}" 
+            alt="{{ content.blog_post_author.display_name }}"
+            class="post-header__author-avatar"
+          />
+        {% endif %}
+        <div class="post-header__meta-text">
+          <a href="{{ blog_author_url(group.id, content.blog_post_author.slug)|escape_url }}" 
+             rel="author" 
+             class="post-header__author-name">
+            {{ content.blog_post_author.display_name|escape_html }}
+          </a>
+          <div class="post-header__meta-details">
+            <time datetime="{{ content.publish_date|escape_attr }}">
+              {{ content.publish_date_localized|escape_html }}
+            </time>
+            <span class="post-header__separator">·</span>
+            <span class="post-header__reading-time">
+              {{ (content.post_body|wordcount / 200)|round|int }} min read
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  {# Featured Image (if exists) #}
+  {% if content.featured_image %}
+    <div class="post-featured-image">
+      <div class="post-featured-image__inner">
+        <img 
+          src="{{ content.featured_image }}" 
+          alt="{{ content.featured_image_alt_text }}"
+          class="post-featured-image__img"
+          loading="eager"
+        />
+      </div>
+    </div>
+  {% endif %}
+
+  {# Two-Column Article Layout #}
+  <div class="post-content-wrapper">
+    <div class="post-content-wrapper__inner">
+
+      {# Table of Contents Sidebar #}
+      <aside class="post-sidebar">
+        {% module "toc"
+          path="/Cognistry Theme/modules/toc.module",
+          toc_title="In this article",
+          content_selector=".blog-post__body",
+          heading_levels="h2, h3",
+          sticky=true,
+          sticky_offset=100
+        %}
+      </aside>
+
+      {# Main Article Content #}
+      <div class="post-main">
+        <article class="blog-post">
+          <div class="blog-post__body">
+            {{ content.post_body }}
+          </div>
+
+          {# Tags #}
+          {% if content.tag_list %}
+            <div class="blog-post__tags">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/>
+                <path d="M7 7h.01"/>
+              </svg>
+              {% for tag in content.tag_list %}
+                <a class="blog-post__tag-link" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">
+                  {{ tag.name|escape_html }}
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {# Author Bio Card #}
+          {% if content.blog_post_author %}
+            <div class="blog-post__author-card">
+              {% if content.blog_post_author.avatar %}
+                <img 
+                  src="{{ content.blog_post_author.avatar }}" 
+                  alt="{{ content.blog_post_author.display_name }}"
+                  class="blog-post__author-card-avatar"
+                />
+              {% endif %}
+              <div class="blog-post__author-card-content">
+                <p class="blog-post__author-card-label">Written by</p>
+                <h4 class="blog-post__author-card-name">
+                  <a href="{{ blog_author_url(group.id, content.blog_post_author.slug)|escape_url }}">
+                    {{ content.blog_post_author.display_name|escape_html }}
+                  </a>
+                </h4>
+                {% if content.blog_post_author.bio %}
+                  <p class="blog-post__author-card-bio">{{ content.blog_post_author.bio }}</p>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+
+        </article>
+
+        {# Comments #}
+        {% if group.allow_comments %}
+          <div class="blog-comments">
+            {% module "blog_comments"
+              path="@hubspot/blog_comments",
+              label="Blog comments"
+            %}
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+  {# Related Posts #}
+  {% macro related_posts(post, count, total) %}
+    {% if count == 1 %}
+      <section class="blog-related-posts">
+        <div class="blog-related-posts__container">
+          <h2>Continue Reading</h2>
+          <div class="blog-related-posts__list">
+    {% endif %}
+            <article class="blog-card" aria-label="Blog post summary: {{ post.name|escape_attr }}">
+              {% if post.featured_image %}
+                <a class="blog-card__image-link" href="{{ post.absolute_url|escape_url }}">
+                  <img 
+                    class="blog-card__image" 
+                    src="{{ post.featured_image|escape_url }}" 
+                    loading="lazy" 
+                    alt="{{ post.featured_image_alt_text|escape_attr }}"
+                  />
+                </a>
+              {% endif %}
+              <div class="blog-card__content">
+                {% if post.tag_list[0] %}
+                  <span class="blog-card__category">{{ post.tag_list[0].name }}</span>
+                {% endif %}
+                <h3 class="blog-card__title">
+                  <a href="{{ post.absolute_url|escape_url }}">{{ post.name|escape_html }}</a>
+                </h3>
+                <p class="blog-card__excerpt">
+                  {{ post.post_summary|truncatehtml(100)|striptags }}
+                </p>
+                <div class="blog-card__meta">
+                  <span class="blog-card__author">{{ post.blog_post_author.display_name }}</span>
+                  <span class="blog-card__separator">·</span>
+                  <span class="blog-card__reading-time">{{ (post.post_body|wordcount / 200)|round|int }} min read</span>
+                </div>
+              </div>
+            </article>
+      {% if count == total %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+  {% endmacro %}
+
+  {% related_blog_posts
+    limit=3,
+    no_wrapper=True,
+    post_formatter="related_posts"
+  %}
+
+</div>
+{% endblock body %}

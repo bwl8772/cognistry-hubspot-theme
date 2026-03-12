@@ -1,0 +1,13 @@
+{
+  "label": "Table of Contents",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Sticky table of contents that auto-generates from article headings",
+  "host_template_types": ["PAGE", "BLOG_POST"],
+  "icon": "../images/module-icons/list.svg",
+  "is_available_for_new_content": true,
+  "js_assets": [],
+  "categories": ["blog", "text"],
+  "content_tags": []
+}

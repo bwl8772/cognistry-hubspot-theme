@@ -1,0 +1,44 @@
+<!--
+  templateType: section
+  label: Stats Band
+  isAvailableForNewContent: true
+  description: "A three-column stats band for proof points and outcomes."
+-->
+{% set heading = "Outcomes that matter" %}
+{% set stat_one = "32%" %}
+{% set stat_one_text = "faster onboarding readiness" %}
+{% set stat_two = "2.4x" %}
+{% set stat_two_text = "more content reuse across teams" %}
+{% set stat_three = "18%" %}
+{% set stat_three_text = "improvement in decision confidence" %}
+{% if context is defined %}
+  {% if context.heading is defined and context.heading %}{% set heading = context.heading %}{% endif %}
+  {% if context.stat_one is defined and context.stat_one %}{% set stat_one = context.stat_one %}{% endif %}
+  {% if context.stat_one_text is defined and context.stat_one_text %}{% set stat_one_text = context.stat_one_text %}{% endif %}
+  {% if context.stat_two is defined and context.stat_two %}{% set stat_two = context.stat_two %}{% endif %}
+  {% if context.stat_two_text is defined and context.stat_two_text %}{% set stat_two_text = context.stat_two_text %}{% endif %}
+  {% if context.stat_three is defined and context.stat_three %}{% set stat_three = context.stat_three %}{% endif %}
+  {% if context.stat_three_text is defined and context.stat_three_text %}{% set stat_three_text = context.stat_three_text %}{% endif %}
+{% endif %}
+
+{% dnd_section
+  padding={"top": 56, "bottom": 56, "left": 24, "right": 24},
+  background_color="#F8F7FC"
+%}
+  {% dnd_column width=12, offset=0 %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html="<div style='text-align:center; margin-bottom:32px;'><h2>" ~ heading ~ "</h2></div>"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html="<div style='display:flex; justify-content:space-around; align-items:flex-start; flex-wrap:wrap; gap:24px;'><div style='flex:1; min-width:160px; text-align:center;'><h3 style='margin:0 0 8px;'>" ~ stat_one ~ "</h3><p style='margin:0;'>" ~ stat_one_text ~ "</p></div><div style='flex:1; min-width:160px; text-align:center;'><h3 style='margin:0 0 8px;'>" ~ stat_two ~ "</h3><p style='margin:0;'>" ~ stat_two_text ~ "</p></div><div style='flex:1; min-width:160px; text-align:center;'><h3 style='margin:0 0 8px;'>" ~ stat_three ~ "</h3><p style='margin:0;'>" ~ stat_three_text ~ "</p></div></div>"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

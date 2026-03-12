@@ -1,0 +1,91 @@
+<div class="content-column-repeater-wrap">
+  <div class="container">
+    <div class="content-wrapper-main {{ module.content_position_choice }}">
+      <div class="content-wrap">
+
+        {% if module.content_here.title_text %}
+          <h2>{{ module.content_here.title_text }}</h2>
+        {% endif %}
+
+        {% if module.content_here.content %}
+          {{ module.content_here.content }}
+        {% endif %}
+
+        {% if module.content_here.button_here %}
+          <div class="button-wrap">
+            {% for item in module.content_here.button_here %}
+              {% set item_href = "#" %}
+              {% set item_is_cta = false %}
+              {% set item_open_new_tab = false %}
+              {% set item_rel = "" %}
+              {% set item_button_text = "Learn more" %}
+              {% set item_button_choice = "secondary" %}
+
+              {% if item.button_text %}
+                {% set item_button_text = item.button_text %}
+              {% endif %}
+
+              {% if item.button_choice %}
+                {% set item_button_choice = item.button_choice %}
+              {% endif %}
+
+              {% if item.link_field is defined %}
+                {% if item.link_field.url is defined %}
+                  {% if item.link_field.url.type == "CALL_TO_ACTION" %}
+                    {% set item_is_cta = true %}
+                  {% endif %}
+
+                  {% if item.link_field.url.href %}
+                    {% set item_href = item.link_field.url.href %}
+                  {% endif %}
+
+                  {% if item.link_field.url.type == "EMAIL_ADDRESS" and item.link_field.url.href %}
+                    {% set item_href = "mailto:" ~ item.link_field.url.href %}
+                  {% elif item.link_field.url.type == "PHONE_NUMBER" and item.link_field.url.href %}
+                    {% set item_href = "tel:" ~ item.link_field.url.href %}
+                  {% endif %}
+                {% endif %}
+
+                {% if item.link_field.open_in_new_tab %}
+                  {% set item_open_new_tab = true %}
+                {% endif %}
+
+                {% if item.link_field.rel %}
+                  {% set item_rel = item.link_field.rel %}
+                {% endif %}
+              {% endif %}
+
+              <div class="{{ item_button_choice }}">
+                <a
+                  {% if item_is_cta %}
+                    href="{{ item_href }}"
+                  {% else %}
+                    href="{{ item_href if item_href == '#' else item_href|escape_url }}"
+                  {% endif %}
+                  {% if item_open_new_tab %}
+                    target="_blank"
+                  {% endif %}
+                  {% if item_rel %}
+                    rel="{{ item_rel|escape_attr }}"
+                  {% endif %}
+                >
+                  {{ item_button_text|escape }}
+                  {% if loop.first %}
+                    <span aria-hidden="true">→</span>
+                  {% endif %}
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if module.content_here.content_bottom %}
+          <div class="bottom-content">
+            {{ module.content_here.content_bottom }}
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</div>

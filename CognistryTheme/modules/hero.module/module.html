@@ -1,0 +1,99 @@
+{% set theme_class = "cg-hero--light" %}
+{% set align_class = "cg-hero--left" %}
+{% set layout_class = "cg-hero--centered" %}
+
+{% if module.theme == "dark" %}
+  {% set theme_class = "cg-hero--dark" %}
+{% endif %}
+
+{% if module.alignment == "center" %}
+  {% set align_class = "cg-hero--center" %}
+{% endif %}
+
+{% if module.layout == "split" %}
+  {% set layout_class = "cg-hero--split" %}
+{% endif %}
+
+<section class="cg-hero {{ theme_class }} {{ align_class }} {{ layout_class }}">
+  <div class="cg-hero__inner">
+    <div class="cg-hero__content">
+
+      {% if module.eyebrow %}
+        <p class="cg-hero__eyebrow">{{ module.eyebrow }}</p>
+      {% endif %}
+
+      {% if module.heading %}
+        <h1 class="cg-hero__heading">
+          {{ module.heading }}
+          {% if module.heading_highlight %}
+            <span class="cg-hero__heading-highlight">{{ module.heading_highlight }}</span>
+          {% endif %}
+        </h1>
+      {% endif %}
+
+      {% if module.hero_body %}
+        <div class="cg-hero__body">
+          {{ module.hero_body }}
+        </div>
+      {% endif %}
+
+      {% if module.cta_type == "form" and module.form.form_id %}
+        <div class="cg-hero__form-wrapper">
+          {% form
+            form_to_use="{{ module.form.form_id }}"
+            response_type="{{ module.form.response_type }}"
+            message="{{ module.form.message }}"
+            redirect_url="{{ module.form.redirect_url }}"
+            submit_button_text="{{ module.form_button_text }}"
+          %}
+        </div>
+      {% elif module.primary_cta_text or module.secondary_cta_text %}
+        <div class="cg-hero__actions">
+
+          {% if module.primary_cta_text and module.primary_cta_link.url.href %}
+            <a
+              class="cg-hero__button cg-hero__button--primary"
+              href="{{ module.primary_cta_link.url.href }}"
+              {% if module.primary_cta_link.open_in_new_tab %}target="_blank"{% endif %}
+              {% if module.primary_cta_link.rel %}rel="{{ module.primary_cta_link.rel|escape_attr }}"{% endif %}
+            >
+              {{ module.primary_cta_text }}
+            </a>
+          {% endif %}
+
+          {% if module.secondary_cta_text and module.secondary_cta_link.url.href %}
+            <a
+              class="cg-hero__button cg-hero__button--secondary"
+              href="{{ module.secondary_cta_link.url.href }}"
+              {% if module.secondary_cta_link.open_in_new_tab %}target="_blank"{% endif %}
+              {% if module.secondary_cta_link.rel %}rel="{{ module.secondary_cta_link.rel|escape_attr }}"{% endif %}
+            >
+              {{ module.secondary_cta_text }}
+            </a>
+          {% endif %}
+
+        </div>
+      {% endif %}
+
+      {% if module.secondary_link_text and module.secondary_link_url.url.href %}
+        <p class="cg-hero__secondary-link">
+          <a href="{{ module.secondary_link_url.url.href }}"
+            {% if module.secondary_link_url.open_in_new_tab %}target="_blank"{% endif %}
+          >{{ module.secondary_link_text }}</a>
+        </p>
+      {% endif %}
+
+    </div>
+
+    {% if module.layout == "split" and module.hero_image.src %}
+      <div class="cg-hero__media">
+        <img 
+          src="{{ module.hero_image.src }}" 
+          alt="{{ module.hero_image.alt }}"
+          loading="{{ module.hero_image.loading }}"
+          class="cg-hero__image"
+        />
+      </div>
+    {% endif %}
+  </div>
+</section>

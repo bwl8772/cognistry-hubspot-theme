@@ -1,0 +1,412 @@
+/* ============================================================ */
+/* Banner Module — Premium Hero Section                          */
+/* ============================================================ */
+
+.banner-column-repeater-wrap {
+  background: var(--cognistry-gradient-hero);
+  min-height: 85vh;
+  overflow: hidden;
+  padding: 120px 24px 100px;
+  position: relative;
+  {{ module.style.desktop_spacing.css }};
+}
+
+/* Ambient background orbs */
+.banner-column-repeater-wrap::before {
+  background: var(--cognistry-orb-primary);
+  content: "";
+  height: 600px;
+  left: -10%;
+  opacity: 0.6;
+  pointer-events: none;
+  position: absolute;
+  top: -20%;
+  width: 600px;
+  z-index: 0;
+}
+
+.banner-column-repeater-wrap::after {
+  background: var(--cognistry-orb-accent);
+  content: "";
+  height: 500px;
+  opacity: 0.5;
+  pointer-events: none;
+  position: absolute;
+  right: -5%;
+  top: 40%;
+  width: 500px;
+  z-index: 0;
+}
+
+/* Subtle grid pattern overlay */
+.content-wrapper-main {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1280px;
+  position: relative;
+  z-index: 1;
+}
+
+.content-wrapper-main > div {
+  flex: 0 0 46%;
+}
+
+.content-wrapper-main.right_image_left_content {
+  flex-direction: row-reverse;
+}
+
+/* ============================================================ */
+/* Premium Tag / Badge                                           */
+/* ============================================================ */
+
+.tag-banner {
+  align-items: center;
+  animation: tagFloat 3s ease-in-out infinite;
+  backdrop-filter: var(--cognistry-glass-blur);
+  -webkit-backdrop-filter: var(--cognistry-glass-blur);
+  background: var(--cognistry-badge-bg);
+  border: 1px solid var(--cognistry-badge-border);
+  border-radius: var(--cognistry-radius-full);
+  box-shadow: var(--cognistry-badge-glow);
+  color: var(--cognistry-primary);
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  font-weight: 600;
+  gap: 10px;
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+  padding: 12px 20px;
+  transition: all var(--cognistry-transition);
+}
+
+.tag-banner:hover {
+  border-color: var(--cognistry-primary);
+  box-shadow: var(--cognistry-glow-soft);
+  transform: translateY(-2px);
+}
+
+.tag-banner__icon {
+  align-items: center;
+  display: inline-flex;
+}
+
+.tag-banner svg {
+  height: 16px;
+  width: auto;
+}
+
+@keyframes tagFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* ============================================================ */
+/* Premium Heading with Gradient Text                            */
+/* ============================================================ */
+
+.content-wrap h1 {
+  color: var(--cognistry-text);
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 0 0 24px;
+}
+
+.content-wrap h1 span {
+  background: var(--cognistry-gradient-text-subtle);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content-wrap p {
+  color: var(--cognistry-text-muted);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.content-wrap p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================ */
+/* Premium Form with Inline CTA                                  */
+/* ============================================================ */
+
+.banner-form {
+  margin-top: 36px;
+  max-width: 480px;
+  width: 100%;
+}
+
+.banner-form form {
+  align-items: stretch;
+  background: var(--cognistry-glass-bg);
+  backdrop-filter: var(--cognistry-glass-blur);
+  -webkit-backdrop-filter: var(--cognistry-glass-blur);
+  border: 1px solid var(--cognistry-border);
+  border-radius: var(--cognistry-radius-full);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  display: flex;
+  overflow: hidden;
+  padding: 6px;
+  position: relative;
+  transition: all var(--cognistry-transition);
+}
+
+.banner-form form:focus-within {
+  border-color: var(--cognistry-primary);
+  box-shadow: 
+    0 4px 20px rgba(78, 10, 119, 0.08),
+    0 0 0 3px var(--cognistry-primary-10);
+}
+
+.banner-form .hs-form-field {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.banner-form .hs-form-field input {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  height: 52px;
+  outline: none;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.banner-form .hs-form-field input::placeholder {
+  color: var(--cognistry-text-muted);
+}
+
+.banner-form form .hs_submit.hs-submit {
+  flex-shrink: 0;
+  position: static;
+}
+
+.banner-form form .hs_submit input[type="submit"] {
+  background: var(--cognistry-primary);
+  border: none;
+  border-radius: var(--cognistry-radius-full);
+  box-shadow: var(--cognistry-shadow-cta);
+  color: var(--cognistry-fg-on-primary);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: var(--cognistry-btn-font-weight);
+  height: 52px;
+  padding: 0 28px;
+  transition: all var(--cognistry-transition);
+  white-space: nowrap;
+}
+
+.banner-form form .hs_submit input[type="submit"]:hover {
+  background: var(--cognistry-secondary);
+  box-shadow: var(--cognistry-shadow-cta-hover);
+  transform: translateY(-2px);
+}
+
+.banner-form h3 {
+  padding: 0;
+}
+
+/* ============================================================ */
+/* Sign-in Link                                                  */
+/* ============================================================ */
+
+.sign-wrap-banner {
+  margin-top: 20px;
+}
+
+.sign-wrap-banner p {
+  color: var(--cognistry-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.sign-wrap-banner a {
+  color: var(--cognistry-primary);
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+  transition: color var(--cognistry-transition);
+}
+
+.sign-wrap-banner a::after {
+  background: var(--cognistry-accent);
+  bottom: -2px;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--cognistry-transition);
+  width: 100%;
+}
+
+.sign-wrap-banner a:hover {
+  color: var(--cognistry-accent);
+}
+
+.sign-wrap-banner a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ============================================================ */
+/* Premium Product Image Treatment                               */
+/* ============================================================ */
+
+.image-wrap {
+  perspective: 1000px;
+  position: relative;
+}
+
+.image-wrap::before {
+  background: var(--cognistry-glow-primary);
+  border-radius: 50%;
+  content: "";
+  filter: blur(60px);
+  height: 60%;
+  left: 50%;
+  opacity: 0.4;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  z-index: -1;
+}
+
+.image-wrap img {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--cognistry-radius-xl);
+  box-shadow: var(--cognistry-shadow-product);
+  display: block;
+  height: auto;
+  max-width: 100%;
+  position: relative;
+  transform: rotateY(-2deg) rotateX(2deg);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.image-wrap:hover img {
+  box-shadow: var(--cognistry-shadow-product-hover);
+  transform: rotateY(0deg) rotateX(0deg) translateY(-8px);
+}
+
+/* Reflection effect */
+.image-wrap::after {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  border-radius: var(--cognistry-radius-xl);
+  content: "";
+  height: 50%;
+  left: 5%;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translateY(100%) scaleY(-0.5);
+  transition: opacity var(--cognistry-transition-slow);
+  width: 90%;
+}
+
+/* ============================================================ */
+/* Responsive Design                                             */
+/* ============================================================ */
+
+@media (max-width: 1100px) {
+  .content-wrapper-main > div {
+    flex: 0 0 50%;
+  }
+  
+  .content-wrapper-main {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .banner-column-repeater-wrap {
+    min-height: auto;
+    padding: 80px 24px;
+  }
+
+  .content-wrapper-main {
+    flex-direction: column;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .content-wrapper-main > div {
+    flex: 0 0 100%;
+  }
+
+  .content-wrap p {
+    margin: 0 auto;
+  }
+
+  .banner-form {
+    margin: 36px auto 0;
+  }
+
+  .banner-form form {
+    flex-direction: column;
+    border-radius: var(--cognistry-radius-lg);
+    padding: 4px;
+  }
+
+  .banner-form .hs-form-field input {
+    text-align: center;
+  }
+
+  .banner-form form .hs_submit.hs-submit {
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  .banner-form form .hs_submit input[type="submit"] {
+    width: 100%;
+  }
+
+  .image-wrap img {
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner-column-repeater-wrap {
+    padding: 64px 20px;
+    {{ module.style.mobile_spacing.css }};
+  }
+
+  .banner-column-repeater-wrap::before,
+  .banner-column-repeater-wrap::after {
+    opacity: 0.3;
+  }
+
+  .content-wrap h1 {
+    font-size: clamp(2.2rem, 8vw, 3rem);
+  }
+
+  .content-wrap p {
+    font-size: 1.05rem;
+  }
+
+  .tag-banner {
+    font-size: 0.8rem;
+    padding: 10px 16px;
+  }
+}

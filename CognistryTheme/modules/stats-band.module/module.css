@@ -1,0 +1,108 @@
+.cg-stats-band {
+  background: linear-gradient(
+    180deg,
+    var(--cognistry-primary-10) 0%,
+    var(--cognistry-bg) 100%
+  );
+  padding: 72px 24px;
+  position: relative;
+}
+
+.cg-stats-band__inner {
+  margin: 0 auto;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.cg-stats-band__eyebrow {
+  color: var(--cognistry-eyebrow-color);
+  font-size: var(--cognistry-eyebrow-size);
+  font-weight: var(--cognistry-eyebrow-weight);
+  letter-spacing: var(--cognistry-eyebrow-spacing);
+  line-height: 1.4;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+.cg-stats-band__heading {
+  color: var(--cognistry-text);
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0 0 44px;
+}
+
+.cg-stats-band__stats {
+  display: grid;
+  gap: 48px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+}
+
+/* Individual stat */
+
+.cg-stat {
+  text-align: center;
+}
+
+.cg-stat__value {
+  color: var(--cognistry-primary);
+  font-size: clamp(2.2rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.cg-stat__text {
+  color: var(--cognistry-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 220px;
+}
+
+/* subtle divider between stats */
+
+.cg-stat:not(:last-child)::after {
+  content: "";
+  display: block;
+  height: 32px;
+  margin: 24px auto 0;
+  width: 1px;
+  background: var(--cognistry-border);
+}
+
+@media (min-width: 768px) {
+  .cg-stat:not(:last-child)::after {
+    display: none;
+  }
+
+  .cg-stats-band__stats > .cg-stat {
+    position: relative;
+  }
+
+  .cg-stats-band__stats > .cg-stat:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -24px;
+    top: 10px;
+    width: 1px;
+    height: 48px;
+    background: var(--cognistry-border);
+  }
+}
+
+@media (max-width: 767px) {
+  .cg-stats-band {
+    padding: 56px 20px;
+  }
+
+  .cg-stats-band__stats {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cg-stats-band__heading {
+    margin-bottom: 32px;
+  }
+}

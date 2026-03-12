@@ -1,0 +1,13 @@
+{
+  "label": "Feature Badges",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "A horizontal row of feature badges with icons",
+  "host_template_types": ["PAGE", "BLOG_POST", "BLOG_LISTING"],
+  "icon": "../images/module-icons/ellipses.svg",
+  "is_available_for_new_content": true,
+  "js_assets": [],
+  "categories": ["commerce"],
+  "content_tags": []
+}

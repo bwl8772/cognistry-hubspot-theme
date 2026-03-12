@@ -1,0 +1,113 @@
+.two-column-repeater-wrap {
+  background: var(--cognistry-bg);
+  padding: 96px 24px;
+  position: relative;
+  {{ module.style.desktop_spacing.css }};
+}
+
+/* Layout */
+
+.content-wrapper-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 48px;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.content-wrapper-main > div {
+  flex: 0 0 48%;
+}
+
+/* Reverse layout */
+
+.content-wrapper-main.right_image_left_content {
+  flex-direction: row-reverse;
+}
+
+/* Image */
+
+.image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--cognistry-radius-xl);
+}
+
+/* Content */
+
+.content-wrap h2 {
+  color: var(--cognistry-text);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0 0 18px;
+}
+
+.content-wrap p {
+  color: var(--cognistry-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* Button */
+
+.single {
+  margin-top: 28px;
+}
+
+.single a {
+  align-items: center;
+  background: var(--cognistry-primary);
+  border: none;
+  border-radius: var(--cognistry-radius-full);
+  box-shadow: var(--cognistry-shadow-cta);
+  color: var(--cognistry-fg-on-primary);
+  display: inline-flex;
+  font-size: var(--cognistry-btn-font-size);
+  font-weight: var(--cognistry-btn-font-weight);
+  gap: 8px;
+  min-height: var(--cognistry-btn-min-height);
+  padding: var(--cognistry-btn-padding);
+  text-decoration: none;
+  transition:
+    transform var(--cognistry-transition),
+    box-shadow var(--cognistry-transition),
+    background var(--cognistry-transition);
+}
+
+.single a:hover {
+  background: var(--cognistry-secondary);
+  box-shadow: var(--cognistry-shadow-cta-hover);
+  transform: translateY(-2px);
+}
+
+.single a span {
+  transition: transform var(--cognistry-transition);
+}
+
+.single a:hover span {
+  transform: translateX(4px);
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+  .two-column-repeater-wrap {
+    padding: 64px 20px;
+    {{ module.style.mobile_spacing.css }};
+  }
+
+  .content-wrapper-main {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .content-wrapper-main > div {
+    flex: 0 0 100%;
+  }
+
+}

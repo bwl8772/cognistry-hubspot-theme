@@ -1,0 +1,72 @@
+<section class="cg-realms">
+
+  <div class="cg-realms__inner">
+
+    {% if module.eyebrow %}
+      <p class="cg-realms__eyebrow">
+        {{ module.eyebrow }}
+      </p>
+    {% endif %}
+
+    {% if module.heading %}
+      <h2 class="cg-realms__heading">
+        {{ module.heading }}
+      </h2>
+    {% endif %}
+
+    {% if module.intro %}
+      <div class="cg-realms__intro">
+        {{ module.intro }}
+      </div>
+    {% endif %}
+
+    <div class="cg-realms__grid">
+
+      {% for realm in module.realms %}
+
+      <article class="cg-realm">
+
+        {% if realm.icon.src %}
+          <div class="cg-realm__icon">
+            <img src="{{ realm.icon.src }}" alt="{{ realm.icon.alt }}">
+          </div>
+        {% endif %}
+
+        <div class="cg-realm__content">
+
+          <h3 class="cg-realm__name">
+            {{ realm.name }}
+          </h3>
+
+          {% if realm.tagline %}
+            <p class="cg-realm__tagline">
+              {{ realm.tagline }}
+            </p>
+          {% endif %}
+
+          {% if realm.description %}
+            <div class="cg-realm__description">
+              {{ realm.description }}
+            </div>
+          {% endif %}
+
+          {% if realm.link.url.href %}
+            <a
+              class="cg-realm__link"
+              href="{{ realm.link.url.href }}"
+            >
+              {{ realm.link_text }}
+            </a>
+          {% endif %}
+
+        </div>
+
+      </article>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>

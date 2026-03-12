@@ -1,9 +1,10 @@
 {
-  "name": "craftlx-hubspot-template",
+  "name": "cognistry-hubspot-theme",
   "version": "1.0.0",
   "scripts": {
-    "hubspot:upload": "hs cms upload CraftLX theme-challenge-CraftLX",
-    "hubspot:watch": "hs cms watch CraftLX theme-challenge-CraftLX"
+    "hubspot:upload": "hs cms upload CognistryTheme \"Cognistry Theme\"",
+    "hubspot:watch": "hs cms watch CognistryTheme \"Cognistry Theme\"",
+    "hubspot:fetch": "hs cms fetch \"Cognistry Theme\" CognistryTheme"
   },
   "dependencies": {
     "@playwright/test": "^1.58.2"

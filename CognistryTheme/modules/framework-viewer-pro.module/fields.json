@@ -1,0 +1,88 @@
+[ {
+  "id" : "framework_image",
+  "name" : "framework_image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "display_width" : null,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "caption",
+  "name" : "caption",
+  "label" : "Caption / Description",
+  "required" : false,
+  "locked" : false,
+  "display_width" : null,
+  "type" : "richtext"
+}, {
+  "id" : "max_width",
+  "name" : "max_width",
+  "label" : "Maximum Image Width",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "900px"
+}, {
+  "id" : "download_url",
+  "name" : "download_url",
+  "label" : "Download URL",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG" ],
+  "display_width" : null,
+  "type" : "url",
+  "default" : {
+    "content_id" : null,
+    "href" : "",
+    "type" : "EXTERNAL"
+  }
+}, {
+  "id" : "download_text",
+  "name" : "download_text",
+  "label" : "Download Button Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text"
+}, {
+  "id" : "intro_text",
+  "name" : "intro_text",
+  "label" : "Intro Text",
+  "required" : false,
+  "locked" : false,
+  "display_width" : null,
+  "type" : "richtext"
+}, {
+  "id" : "open_in_lightbox",
+  "name" : "open_in_lightbox",
+  "label" : "Open in Lightbox",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "display_width" : null,
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "overlay_opacity",
+  "name" : "overlay_opacity",
+  "label" : "Overlay Opacity",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "step" : 1,
+  "display_width" : null,
+  "type" : "number",
+  "default" : 82
+} ]

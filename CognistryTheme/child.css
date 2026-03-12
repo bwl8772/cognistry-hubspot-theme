@@ -1,0 +1,568 @@
+/* ====================================================================== */
+/* Cognistry Theme - Child CSS Overrides                                  */
+/* Only add overrides here - tokens are in css/tools/_tokens.css          */
+/* ====================================================================== */
+
+/* --- Accessibility: Visible focus for keyboard users --- */
+a:focus-visible,
+button:focus-visible,
+.button:focus-visible,
+.cta_button:focus-visible,
+[type="submit"]:focus-visible,
+.hs-button:focus-visible {
+  outline: var(--cognistry-ring-width) solid var(--cognistry-ring);
+  outline-offset: var(--cognistry-ring-offset);
+}
+
+/* --- Accessibility: Touch-friendly minimum height for CTAs --- */
+button,
+.button,
+a.button,
+.cta_button,
+.hs-button {
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+/* ====================================================================== */
+/* Utility Classes                                                        */
+/* ====================================================================== */
+
+/* --- Elevation utilities --- */
+.hover-elevate {
+  transition: box-shadow var(--cognistry-transition);
+}
+
+.hover-elevate:hover {
+  box-shadow: var(--cognistry-shadow-md);
+}
+
+.active-elevate:active {
+  box-shadow: var(--cognistry-shadow);
+}
+
+/* --- Scrollbar utilities --- */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--cognistry-border);
+  border-radius: var(--cognistry-radius-sm);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--cognistry-text-muted);
+}
+
+/* --- Semantic panels (using token system) --- */
+.panel-info {
+  background-color: var(--cognistry-info-light);
+  border: 1px solid var(--cognistry-info-border);
+  color: var(--cognistry-info);
+  padding: var(--cognistry-space-4);
+  border-radius: var(--cognistry-radius-md);
+}
+
+.panel-success {
+  background-color: var(--cognistry-success-light);
+  border: 1px solid var(--cognistry-success-border);
+  color: var(--cognistry-success);
+  padding: var(--cognistry-space-4);
+  border-radius: var(--cognistry-radius-md);
+}
+
+.panel-warn {
+  background-color: var(--cognistry-warning-light);
+  border: 1px solid var(--cognistry-warning-border);
+  color: var(--cognistry-warning);
+  padding: var(--cognistry-space-4);
+  border-radius: var(--cognistry-radius-md);
+}
+
+.panel-danger {
+  background-color: var(--cognistry-error-light);
+  border: 1px solid var(--cognistry-error-border);
+  color: var(--cognistry-error);
+  padding: var(--cognistry-space-4);
+  border-radius: var(--cognistry-radius-md);
+}
+
+/* --- Typography utilities --- */
+.hero-title {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.hero-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.section-title {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* --- Border radius utilities --- */
+.rounded-standard {
+  border-radius: var(--cognistry-radius-md);
+}
+
+.rounded-sm {
+  border-radius: var(--cognistry-radius-sm);
+}
+
+.rounded-lg {
+  border-radius: var(--cognistry-radius-lg);
+}
+
+/* ====================================================================== */
+/* Header & Menu Styling                                                  */
+/* ====================================================================== */
+
+/* Modern system font stack for navigation */
+.navigation-primary a,
+body .navigation-primary a,
+.header__menu .header__navigation .menu-link,
+.navigation-primary .submenu.level-1 > li > a {
+  font-family: var(--cognistry-font-sans) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Active menu item styling */
+.navigation-primary a.active-item,
+body .navigation-primary a.active-item {
+  font-weight: 600 !important;
+}
+
+/* Header container spacing */
+.header__container {
+  padding-left: var(--cognistry-space-8) !important;
+  padding-right: var(--cognistry-space-8) !important;
+}
+
+/* Logo sizing and positioning */
+.header__logo {
+  padding-left: 0 !important;
+  flex-shrink: 0;
+}
+
+.header__logo img,
+.header__logo svg,
+.header__logo .logo-on-transparent img,
+.header__logo .logo-on-white img {
+  max-width: 140px !important;
+  height: auto !important;
+}
+
+/* Menu item spacing */
+.navigation-primary .submenu.level-1 > li {
+  padding: 18px 20px !important;
+}
+
+.navigation-primary .submenu.level-1 > li:first-child {
+  padding-left: 0 !important;
+}
+
+/* Tablet breakpoint (768px - 1150px) */
+@media (min-width: 768px) and (max-width: 1150px) {
+  .navigation-primary a,
+  body .navigation-primary a,
+  .header__menu .header__navigation .menu-link {
+    font-size: 13px !important;
+  }
+  
+  .header__container {
+    padding-left: var(--cognistry-space-6) !important;
+    padding-right: var(--cognistry-space-6) !important;
+  }
+  
+  .navigation-primary .submenu.level-1 > li {
+    padding: 18px 16px !important;
+  }
+  
+  .navigation-primary .submenu.level-1 > li:first-child {
+    padding-left: 0 !important;
+  }
+  
+  .header__logo img,
+  .header__logo svg,
+  .header__logo .logo-on-transparent img,
+  .header__logo .logo-on-white img {
+    max-width: 130px !important;
+  }
+}
+
+/* Mobile breakpoint (<768px) */
+@media (max-width: 767px) {
+  .navigation-primary a,
+  body .navigation-primary a,
+  .header__menu .header__navigation .menu-link {
+    font-size: 16px !important;
+  }
+  
+  .header__container {
+    padding-left: var(--cognistry-space-4) !important;
+    padding-right: var(--cognistry-space-4) !important;
+  }
+  
+  .header__logo {
+    padding-left: 0 !important;
+  }
+  
+  .header__logo img,
+  .header__logo svg,
+  .header__logo .logo-on-transparent img,
+  .header__logo .logo-on-white img {
+    max-width: 120px !important;
+  }
+}
+
+/* ====================================================================== */
+/* Content & Homepage Polish                                              */
+/* ====================================================================== */
+
+/* Hero section typography */
+.hero-section h1 {
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.hero-section h4 {
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* CTA hover elevation */
+.hero-section a.button,
+.hero-section a[class*="cta"],
+.section-base a.button,
+.section-base a[class*="cta"] {
+  transition: box-shadow var(--cognistry-transition), transform 100ms ease;
+}
+
+.hero-section a.button:hover,
+.hero-section a[class*="cta"]:hover,
+.section-base a.button:hover,
+.section-base a[class*="cta"]:hover {
+  box-shadow: var(--cognistry-shadow-primary-hover);
+  transform: translateY(var(--cognistry-btn-hover-lift));
+}
+
+/* Section labels */
+h5,
+.section-base h5 {
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* Section titles */
+h2 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: var(--cognistry-space-4);
+}
+
+/* Testimonials */
+.testimonial blockquote,
+.testimonial p {
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Footer links touch-friendly */
+footer a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ====================================================================== */
+/* Premium Visual Effects                                                 */
+/* ====================================================================== */
+
+/* Gradient text utility */
+.text-gradient {
+  background: var(--cognistry-gradient-text-subtle);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--cognistry-accent) 0%, #6ee7b7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glass card effect */
+.glass-card {
+  backdrop-filter: var(--cognistry-glass-blur);
+  -webkit-backdrop-filter: var(--cognistry-glass-blur);
+  background: var(--cognistry-glass-bg);
+  border: 1px solid var(--cognistry-glass-border);
+  border-radius: var(--cognistry-radius-xl);
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: var(--cognistry-glow-primary);
+}
+
+.glow-accent {
+  box-shadow: var(--cognistry-glow-accent);
+}
+
+.glow-soft {
+  box-shadow: var(--cognistry-glow-soft);
+}
+
+/* Premium badge */
+.premium-badge {
+  backdrop-filter: var(--cognistry-glass-blur);
+  -webkit-backdrop-filter: var(--cognistry-glass-blur);
+  background: var(--cognistry-badge-bg);
+  border: 1px solid var(--cognistry-badge-border);
+  border-radius: var(--cognistry-radius-full);
+  box-shadow: var(--cognistry-badge-glow);
+  color: var(--cognistry-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  transition: all var(--cognistry-transition);
+}
+
+.premium-badge:hover {
+  border-color: var(--cognistry-primary);
+  box-shadow: var(--cognistry-glow-soft);
+  transform: translateY(-2px);
+}
+
+/* Premium product image */
+.product-image {
+  position: relative;
+  perspective: 1000px;
+}
+
+.product-image::before {
+  background: var(--cognistry-glow-primary);
+  border-radius: 50%;
+  content: "";
+  filter: blur(60px);
+  height: 60%;
+  left: 50%;
+  opacity: 0.4;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  z-index: -1;
+}
+
+.product-image img {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--cognistry-radius-xl);
+  box-shadow: var(--cognistry-shadow-product);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.product-image:hover img {
+  box-shadow: var(--cognistry-shadow-product-hover);
+  transform: translateY(-8px);
+}
+
+/* Gradient backgrounds */
+.bg-gradient-hero {
+  background: var(--cognistry-gradient-hero);
+}
+
+.bg-gradient-mesh {
+  background: var(--cognistry-gradient-mesh);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Subtle pulse */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Premium CTA button */
+.btn-premium {
+  align-items: center;
+  background: var(--cognistry-primary);
+  border: none;
+  border-radius: var(--cognistry-radius-full);
+  box-shadow: var(--cognistry-shadow-cta);
+  color: var(--cognistry-fg-on-primary);
+  display: inline-flex;
+  font-size: var(--cognistry-btn-font-size);
+  font-weight: var(--cognistry-btn-font-weight);
+  gap: 8px;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 32px;
+  text-decoration: none;
+  transition: all var(--cognistry-transition);
+}
+
+.btn-premium:hover {
+  background: var(--cognistry-secondary);
+  box-shadow: var(--cognistry-shadow-cta-hover);
+  transform: translateY(-2px);
+}
+
+/* Ghost button */
+.btn-ghost {
+  backdrop-filter: var(--cognistry-glass-blur);
+  -webkit-backdrop-filter: var(--cognistry-glass-blur);
+  background: var(--cognistry-glass-bg);
+  border: 1px solid var(--cognistry-border);
+  border-radius: var(--cognistry-radius-full);
+  color: var(--cognistry-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--cognistry-btn-font-weight);
+  gap: 8px;
+  min-height: 54px;
+  padding: 0 32px;
+  text-decoration: none;
+  transition: all var(--cognistry-transition);
+}
+
+.btn-ghost:hover {
+  border-color: var(--cognistry-primary);
+  box-shadow: 0 0 0 3px var(--cognistry-primary-10);
+  color: var(--cognistry-primary);
+}
+
+/* ====================================================================== */
+/* Global Layout & Polish                                                 */
+/* ====================================================================== */
+
+body {
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Card hover states */
+.card,
+.section-base > div {
+  transition: transform var(--cognistry-transition), box-shadow var(--cognistry-transition);
+}
+
+/* Improved text contrast on dark backgrounds */
+.hero-section,
+[class*="bg-dark"],
+[style*="background-color: rgb"] {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Button cursor states */
+button:not(:disabled),
+.button:not(.disabled),
+a[class*="cta"]:not(.disabled) {
+  cursor: pointer;
+}
+
+button:disabled,
+.button.disabled,
+a[class*="cta"].disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Image aspect ratios */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* List readability */
+ul,
+ol {
+  line-height: 1.6;
+}
+
+/* Table spacing */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: var(--cognistry-space-3);
+  text-align: left;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

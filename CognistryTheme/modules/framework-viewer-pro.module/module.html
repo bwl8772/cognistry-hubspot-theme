@@ -1,0 +1,135 @@
+{% set image_src = "" %}
+{% set image_alt = "Framework image" %}
+{% set caption = "" %}
+{% set intro_text = "" %}
+{% set max_width = module.max_width or "1000px" %}
+{% set download_url = "" %}
+{% set download_text = module.download_text or "Download framework" %}
+{% set open_in_lightbox = true %}
+{% set overlay_opacity = module.overlay_opacity or 82 %}
+
+{% if module.framework_image is defined and module.framework_image.src %}
+  {% set image_src = module.framework_image.src %}
+{% endif %}
+
+{% if module.framework_image is defined and module.framework_image.alt %}
+  {% set image_alt = module.framework_image.alt %}
+{% endif %}
+
+{% if module.caption is defined and module.caption %}
+  {% set caption = module.caption %}
+{% endif %}
+
+{% if module.intro_text is defined and module.intro_text %}
+  {% set intro_text = module.intro_text %}
+{% endif %}
+
+{% if module.download_url is defined and module.download_url.href %}
+  {% set download_url = module.download_url.href %}
+{% endif %}
+
+{% if module.open_in_lightbox is defined %}
+  {% set open_in_lightbox = module.open_in_lightbox %}
+{% endif %}
+
+{% if module.overlay_opacity is defined and module.overlay_opacity %}
+  {% set overlay_opacity = module.overlay_opacity %}
+{% endif %}
+
+{% set modal_id = "framework-modal-" ~ name %}
+
+<div class="framework-viewer-pro" style="--framework-max-width: {{ max_width|escape_attr }}; --framework-overlay-opacity: {{ overlay_opacity }};">
+  {% if intro_text %}
+    <div class="framework-viewer-pro__intro">
+      {{ intro_text }}
+    </div>
+  {% endif %}
+
+  {% if image_src %}
+    <div class="framework-viewer-pro__media">
+      {% if open_in_lightbox %}
+        <button
+          class="framework-viewer-pro__trigger"
+          type="button"
+          aria-haspopup="dialog"
+          aria-controls="{{ modal_id|escape_attr }}"
+          aria-label="Open framework image"
+          data-framework-open="{{ modal_id|escape_attr }}"
+        >
+          <img
+            src="{{ image_src|escape_url }}"
+            alt="{{ image_alt|escape_attr }}"
+            class="framework-viewer-pro__image"
+          />
+        </button>
+      {% else %}
+        <img
+          src="{{ image_src|escape_url }}"
+          alt="{{ image_alt|escape_attr }}"
+          class="framework-viewer-pro__image"
+        />
+      {% endif %}
+    </div>
+
+    {% if caption %}
+      <div class="framework-viewer-pro__caption">
+        {{ caption }}
+      </div>
+    {% endif %}
+
+    {% if download_url %}
+      <div class="framework-viewer-pro__actions">
+        <a
+          class="framework-viewer-pro__download"
+          href="{{ download_url|escape_url }}"
+          target="_blank"
+          rel="noopener"
+        >
+          {{ download_text|escape }}
+        </a>
+      </div>
+    {% endif %}
+
+    {% if open_in_lightbox %}
+      <div
+        id="{{ modal_id|escape_attr }}"
+        class="framework-viewer-pro__lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Framework image viewer"
+        hidden
+      >
+        <div class="framework-viewer-pro__backdrop" data-framework-close></div>
+
+        <div class="framework-viewer-pro__dialog" role="document">
+          <button
+            type="button"
+            class="framework-viewer-pro__close"
+            aria-label="Close framework viewer"
+            data-framework-close
+          >
+            ×
+          </button>
+
+          <div class="framework-viewer-pro__dialog-image-wrap">
+            <img
+              src="{{ image_src|escape_url }}"
+              alt="{{ image_alt|escape_attr }}"
+              class="framework-viewer-pro__dialog-image"
+            />
+          </div>
+
+          {% if caption %}
+            <div class="framework-viewer-pro__dialog-caption">
+              {{ caption }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  {% else %}
+    <div class="framework-viewer-pro__placeholder">
+      <p>No framework image selected yet.</p>
+    </div>
+  {% endif %}
+</div>

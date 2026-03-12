@@ -1,0 +1,202 @@
+[ {
+  "id" : "realms",
+  "name" : "realms",
+  "label" : "Realms",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 3,
+    "max" : 6,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "realms.eyebrow",
+    "name" : "eyebrow",
+    "label" : "Eyebrow",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Platform architecture"
+  }, {
+    "id" : "realms.heading",
+    "name" : "heading",
+    "label" : "Heading",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Four realms. One capability system."
+  }, {
+    "id" : "realms.intro",
+    "name" : "intro",
+    "label" : "Intro",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "<p>Cognistry converts enterprise knowledge into operational capability through four connected platform realms.</p>"
+  }, {
+    "id" : "realms.icon",
+    "name" : "icon",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "display_width" : null,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "realms.realm_name",
+    "name" : "realm_name",
+    "label" : "Realm Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Signal"
+  }, {
+    "id" : "realms.tagline",
+    "name" : "tagline",
+    "label" : "Tagline",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Capture expertise"
+  }, {
+    "id" : "realms.description",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "<p>Capture expertise, evidence, and capability signals from across the enterprise.</p>"
+  }, {
+    "id" : "realms.link",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "display_width" : null,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : [ {
+    "eyebrow" : "Platform architecture",
+    "heading" : "Four realms. One capability system.",
+    "intro" : "<p>Cognistry converts enterprise knowledge into operational capability through four connected platform realms.</p>",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "realm_name" : "Signal",
+    "tagline" : "Capture expertise",
+    "description" : "<p>Capture expertise, evidence, and capability signals from across the enterprise.</p>",
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "eyebrow" : "Platform architecture",
+    "heading" : "Four realms. One capability system.",
+    "intro" : "<p>Cognistry converts enterprise knowledge into operational capability through four connected platform realms.</p>",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "realm_name" : "Signal",
+    "tagline" : "Capture expertise",
+    "description" : "<p>Capture expertise, evidence, and capability signals from across the enterprise.</p>",
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "eyebrow" : "Platform architecture",
+    "heading" : "Four realms. One capability system.",
+    "intro" : "<p>Cognistry converts enterprise knowledge into operational capability through four connected platform realms.</p>",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "realm_name" : "Signal",
+    "tagline" : "Capture expertise",
+    "description" : "<p>Capture expertise, evidence, and capability signals from across the enterprise.</p>",
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "eyebrow" : "Platform architecture",
+    "heading" : "Four realms. One capability system.",
+    "intro" : "<p>Cognistry converts enterprise knowledge into operational capability through four connected platform realms.</p>",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "realm_name" : "Signal",
+    "tagline" : "Capture expertise",
+    "description" : "<p>Capture expertise, evidence, and capability signals from across the enterprise.</p>",
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+} ]

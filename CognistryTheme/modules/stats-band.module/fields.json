@@ -1,0 +1,82 @@
+[ {
+  "id" : "eyebrow",
+  "name" : "eyebrow",
+  "label" : "Eyebrow",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Outcomes"
+}, {
+  "id" : "heading",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Outcomes that matter"
+}, {
+  "id" : "stat_one",
+  "name" : "stat_one",
+  "label" : "Stat One",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "40%"
+}, {
+  "id" : "stat_one_text",
+  "name" : "stat_one_text",
+  "label" : "Stat One Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "faster capability ramp"
+}, {
+  "id" : "stat_two",
+  "name" : "stat_two",
+  "label" : "Stat Two",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "3x"
+}, {
+  "id" : "stat_two_text",
+  "name" : "stat_two_text",
+  "label" : "Stat Two Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "more scalable expertise"
+}, {
+  "id" : "stat_three",
+  "name" : "stat_three",
+  "label" : "Stat Three",
+  "required" : false,
+  "locked" : false,
+  "placeholder" : "2x",
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Stat Three"
+}, {
+  "id" : "stat_three_text",
+  "name" : "stat_three_text",
+  "label" : "Stat Three Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "improved decision readiness"
+} ]

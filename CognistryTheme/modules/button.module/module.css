@@ -1,0 +1,36 @@
+.button-wrapper {
+  display: block;
+}
+
+.button {
+  align-items: center;
+  background: var(--cognistry-primary);
+  border: none;
+  border-radius: var(--cognistry-radius-full);
+  box-shadow: var(--cognistry-shadow-cta);
+  color: var(--cognistry-fg-on-primary);
+  display: inline-flex;
+  font-size: var(--cognistry-btn-font-size);
+  font-weight: var(--cognistry-btn-font-weight);
+  justify-content: center;
+  min-height: var(--cognistry-btn-min-height);
+  padding: var(--cognistry-btn-padding);
+  text-decoration: none;
+  transition:
+    transform var(--cognistry-transition),
+    box-shadow var(--cognistry-transition),
+    background var(--cognistry-transition);
+}
+
+.button:hover,
+.button:focus {
+  background: var(--cognistry-secondary);
+  box-shadow: var(--cognistry-shadow-cta-hover);
+  color: var(--cognistry-fg-on-primary);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}

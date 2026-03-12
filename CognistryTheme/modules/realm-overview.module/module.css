@@ -1,0 +1,154 @@
+.cg-realms {
+  padding: 80px 24px;
+  position: relative;
+}
+
+.cg-realms__inner {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.cg-realms__eyebrow {
+  color: var(--cognistry-eyebrow-color);
+  font-size: var(--cognistry-eyebrow-size);
+  font-weight: var(--cognistry-eyebrow-weight);
+  letter-spacing: var(--cognistry-eyebrow-spacing);
+  line-height: 1.4;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+.cg-realms__heading {
+  color: var(--cognistry-text);
+  font-size: clamp(2.1rem, 5vw, 3rem);
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  margin: 0 0 16px;
+}
+
+.cg-realms__intro {
+  color: var(--cognistry-text-muted);
+  font-size: 1.08rem;
+  line-height: 1.75;
+  margin: 0 0 48px;
+  max-width: 760px;
+}
+
+.cg-realms__intro p:last-child {
+  margin-bottom: 0;
+}
+
+.cg-realms__grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.cg-realm {
+  background: var(--cognistry-card-bg);
+  border: 1px solid var(--cognistry-border);
+  border-radius: var(--cognistry-radius-xl);
+  box-shadow: var(--cognistry-card-shadow);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 28px;
+  transition:
+    transform var(--cognistry-transition),
+    box-shadow var(--cognistry-transition),
+    border-color var(--cognistry-transition);
+}
+
+.cg-realm:hover,
+.cg-realm:focus-within {
+  border-color: var(--cognistry-card-border-hover);
+  box-shadow: var(--cognistry-card-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.cg-realm__icon img {
+  display: block;
+  height: auto;
+  margin-bottom: 14px;
+  max-width: 42px;
+}
+
+.cg-realm__name {
+  color: var(--cognistry-text);
+  font-size: var(--cognistry-card-title-size);
+  letter-spacing: var(--cognistry-card-title-spacing);
+  line-height: var(--cognistry-card-title-line-height);
+  margin: 0 0 6px;
+}
+
+.cg-realm__tagline {
+  color: var(--cognistry-secondary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.cg-realm__description {
+  color: var(--cognistry-text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+.cg-realm__description p:last-child {
+  margin-bottom: 0;
+}
+
+.cg-realm__link {
+  color: var(--cognistry-primary);
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  gap: 0.45rem;
+  margin-top: auto;
+  text-decoration: none;
+  transition: color var(--cognistry-transition);
+}
+
+.cg-realm__link::after {
+  content: "→";
+  transition: transform var(--cognistry-transition);
+}
+
+.cg-realm__link:hover,
+.cg-realm__link:focus {
+  color: var(--cognistry-accent);
+  text-decoration: none;
+}
+
+.cg-realm__link:hover::after,
+.cg-realm__link:focus::after {
+  transform: translateX(3px);
+}
+
+@media (max-width: 991px) {
+  .cg-realms__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .cg-realms {
+    padding: 56px 20px;
+  }
+
+  .cg-realms__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cg-realms__intro {
+    margin-bottom: 32px;
+  }
+
+  .cg-realm {
+    border-radius: 20px;
+    padding: 24px;
+  }
+}

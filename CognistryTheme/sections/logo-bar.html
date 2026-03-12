@@ -1,0 +1,110 @@
+<!--
+  templateType: section
+  label: Logo Bar
+  isAvailableForNewContent: true
+  description: "A centered logo bar for trust signals, partners, or client brands."
+-->
+
+{% set section_heading = "Trusted by leading teams" %}
+{% set logo_one = get_asset_url("../images/logo-placeholder-1.png") %}
+{% set logo_two = get_asset_url("../images/logo-placeholder-2.png") %}
+{% set logo_three = get_asset_url("../images/logo-placeholder-3.png") %}
+{% set logo_four = get_asset_url("../images/logo-placeholder-4.png") %}
+
+{% if context is defined %}
+  {% if context.heading is defined and context.heading %}
+    {% set section_heading = context.heading %}
+  {% endif %}
+  {% if context.logo_one is defined and context.logo_one %}
+    {% set logo_one = context.logo_one %}
+  {% endif %}
+  {% if context.logo_two is defined and context.logo_two %}
+    {% set logo_two = context.logo_two %}
+  {% endif %}
+  {% if context.logo_three is defined and context.logo_three %}
+    {% set logo_three = context.logo_three %}
+  {% endif %}
+  {% if context.logo_four is defined and context.logo_four %}
+    {% set logo_four = context.logo_four %}
+  {% endif %}
+{% endif %}
+
+{% dnd_section
+  padding={
+    "top": 40,
+    "bottom": 40,
+    "left": 24,
+    "right": 24
+  },
+  background_color="#FFFFFF"
+%}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html="<div style='text-align:center;'><p style='margin:0 0 24px; font-size:14px; letter-spacing:.08em; text-transform:uppercase;'>"
+          ~ section_heading ~
+          "</p></div>"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/linked_image",
+        img={
+          "src": logo_one,
+          "alt": "Logo 1",
+          "loading": "lazy",
+          "max_width": 140,
+          "size_type": "auto_custom_max"
+        },
+        offset=0,
+        width=3
+      %}
+      {% end_dnd_module %}
+
+      {% dnd_module
+        path="@hubspot/linked_image",
+        img={
+          "src": logo_two,
+          "alt": "Logo 2",
+          "loading": "lazy",
+          "max_width": 140,
+          "size_type": "auto_custom_max"
+        },
+        offset=3,
+        width=3
+      %}
+      {% end_dnd_module %}
+
+      {% dnd_module
+        path="@hubspot/linked_image",
+        img={
+          "src": logo_three,
+          "alt": "Logo 3",
+          "loading": "lazy",
+          "max_width": 140,
+          "size_type": "auto_custom_max"
+        },
+        offset=6,
+        width=3
+      %}
+      {% end_dnd_module %}
+
+      {% dnd_module
+        path="@hubspot/linked_image",
+        img={
+          "src": logo_four,
+          "alt": "Logo 4",
+          "loading": "lazy",
+          "max_width": 140,
+          "size_type": "auto_custom_max"
+        },
+        offset=9,
+        width=3
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

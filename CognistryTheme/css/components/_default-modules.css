@@ -1,0 +1,186 @@
+/* Menu and simple menu */
+
+.hs-menu-wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  gap: 0.5rem;
+}
+
+.hs-menu-wrapper li {
+  margin: 0;
+  padding: 0;
+}
+
+.hs-menu-wrapper a {
+  color: var(--cognistry-text);
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hs-menu-wrapper a:hover,
+.hs-menu-wrapper a:focus {
+  background: var(--cognistry-primary-10);
+  color: var(--cognistry-primary);
+  text-decoration: none;
+}
+
+.hs-menu-wrapper a:focus-visible {
+  outline: 2px solid var(--cognistry-accent);
+  outline-offset: 2px;
+}
+
+/* Current/active nav item */
+
+.hs-menu-wrapper .hs-menu-item.active-branch > a,
+.hs-menu-wrapper .hs-menu-item.active > a,
+.hs-menu-wrapper .hs-menu-item.hs-item-has-children.active-branch > a {
+  background: var(--cognistry-primary-10);
+  color: var(--cognistry-primary);
+}
+
+/* Horizontal menu */
+
+.hs-menu-wrapper.hs-menu-flow-horizontal .hs-menu-children-wrapper {
+  flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .hs-menu-wrapper.hs-menu-flow-horizontal ul {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .hs-menu-wrapper a {
+    border-radius: 14px;
+    padding: 0.85rem 1rem;
+    width: 100%;
+  }
+}
+
+/* Vertical menu */
+
+.hs-menu-wrapper.hs-menu-flow-vertical ul {
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Flyouts */
+
+.hs-menu-wrapper.hs-menu-flow-vertical.flyouts ul {
+  display: inline-flex;
+}
+
+@media (max-width: 767px) {
+  .hs-menu-wrapper.hs-menu-flow-vertical ul {
+    display: flex;
+  }
+}
+
+.hs-menu-wrapper.flyouts .hs-item-has-children {
+  position: relative;
+}
+
+.hs-menu-wrapper.flyouts .hs-menu-children-wrapper {
+  left: -9999px;
+  opacity: 0;
+  position: absolute;
+  top: calc(100% + 10px);
+  min-width: 220px;
+  background: var(--cognistry-bg);
+  border: 1px solid var(--cognistry-border);
+  border-radius: var(--cognistry-radius-xl);
+  box-shadow: var(--cognistry-shadow-dropdown);
+  padding: 0.45rem;
+  gap: 0.15rem;
+  z-index: var(--cognistry-z-dropdown);
+  transition: opacity var(--cognistry-transition), transform var(--cognistry-transition);
+  transform: translateY(6px);
+}
+
+.hs-menu-wrapper.flyouts .hs-menu-children-wrapper a {
+  border-radius: 12px;
+  display: flex;
+  padding: 0.75rem 0.9rem;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.hs-menu-wrapper.hs-menu-flow-horizontal.flyouts .hs-item-has-children:hover > .hs-menu-children-wrapper,
+.hs-menu-wrapper.hs-menu-flow-horizontal.flyouts .hs-item-has-children:focus-within > .hs-menu-children-wrapper {
+  left: 0;
+  opacity: 1;
+  top: calc(100% + 10px);
+  transform: translateY(0);
+}
+
+.hs-menu-wrapper.hs-menu-flow-vertical.flyouts .hs-item-has-children:hover > .hs-menu-children-wrapper,
+.hs-menu-wrapper.hs-menu-flow-vertical.flyouts .hs-item-has-children:focus-within > .hs-menu-children-wrapper {
+  left: calc(100% + 10px);
+  opacity: 1;
+  top: 0;
+  transform: translateY(0);
+}
+
+@media (max-width: 767px) {
+  .hs-menu-wrapper.flyouts .hs-menu-children-wrapper,
+  .hs-menu-wrapper.hs-menu-flow-horizontal.flyouts .hs-item-has-children:hover > .hs-menu-children-wrapper,
+  .hs-menu-wrapper.hs-menu-flow-horizontal.flyouts .hs-item-has-children:focus-within > .hs-menu-children-wrapper,
+  .hs-menu-wrapper.hs-menu-flow-vertical.flyouts .hs-item-has-children:hover > .hs-menu-children-wrapper,
+  .hs-menu-wrapper.hs-menu-flow-vertical.flyouts .hs-item-has-children:focus-within > .hs-menu-children-wrapper {
+    left: 0;
+    opacity: 1;
+    position: relative;
+    top: auto;
+    transform: none;
+    min-width: 100%;
+    margin-top: 0.35rem;
+    box-shadow: none;
+  }
+}
+
+/* CTA, logo, and rich text images */
+
+.hs_cos_wrapper_type_cta img,
+.hs_cos_wrapper_type_logo img,
+.hs_cos_wrapper_type_rich_text img {
+  height: auto;
+  max-width: 100%;
+  border-radius: 0;
+}
+
+/* Rich text defaults inside HubSpot wrappers */
+
+.hs_cos_wrapper_type_rich_text p,
+.hs_cos_wrapper_type_rich_text li {
+  color: var(--cognistry-text-muted);
+}
+
+.hs_cos_wrapper_type_rich_text h1,
+.hs_cos_wrapper_type_rich_text h2,
+.hs_cos_wrapper_type_rich_text h3,
+.hs_cos_wrapper_type_rich_text h4,
+.hs_cos_wrapper_type_rich_text h5,
+.hs_cos_wrapper_type_rich_text h6 {
+  color: var(--cognistry-text);
+}
+
+/* Default spacing polish for embedded modules */
+
+.hs_cos_wrapper_type_rich_text > *:last-child,
+.hs_cos_wrapper_type_logo > *:last-child,
+.hs_cos_wrapper_type_cta > *:last-child {
+  margin-bottom: 0;
+}

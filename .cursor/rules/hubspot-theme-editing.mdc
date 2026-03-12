@@ -1,0 +1,66 @@
+---
+description: HubSpot standalone theme editing checklist and best practices
+alwaysApply: true
+---
+
+# HubSpot Theme Editing: Always Do / Never Do & Best Practices
+
+This is a **STANDALONE theme** — all assets are self-contained. There is no parent theme.
+
+## Destination for uploads
+
+- **Local source**: `CognistryTheme/`
+- **HubSpot destination**: `Cognistry Theme/`
+
+See `.cursor/rules/hubspot-deployment.mdc` for exact upload commands.
+
+---
+
+## Always do
+
+1. **Edit files in `CognistryTheme/`** — this is the single source of truth.
+2. **Put custom CSS in `child.css`** for overrides, or edit `css/` files directly for base styles.
+3. **Use kebab-case** for all file and folder names (e.g., `hero-section.module`, `pricing-tiers.html`).
+4. **Use snake_case** for module field names in `fields.json`.
+5. **Test locally** with `hs cms watch CognistryTheme "Cognistry Theme"` before committing.
+6. **Upload after changes** — local edits don't affect HubSpot until uploaded.
+7. **Comment complex logic** in HubL templates and module HTML.
+8. **Keep modules self-contained** — each module should have its own CSS/JS in its folder.
+
+---
+
+## Never do
+
+1. **Do not edit `atlas-theme-child-cognistry`** — that's a separate (deprecated) child theme.
+2. **Do not use Title Case** for file names — use `kebab-case` consistently.
+3. **Do not use UUIDs** as field IDs in `fields.json` — use readable names.
+4. **Do not hard-code colors** — use CSS tokens from `css/tools/_tokens.css`.
+5. **Do not skip uploading** — local changes have no effect until you run `hs upload`.
+6. **Do not duplicate modules** without renaming — each module needs a unique folder name.
+
+---
+
+## Best practices
+
+- **CSS Architecture**: Load order is tokens → reset → normalize → layout → elements → components → templates → utilities.
+- **Design Tokens**: Use `--cognistry-*` CSS custom properties for colors, spacing, shadows.
+- **Module Structure**: Flat structure preferred (`module-name.module/`) over nested (`module-name/module.module/`).
+- **Template Structure**: Use `{% dnd_area %}` for editable regions, `{% dnd_section %}` / `{% dnd_module %}` for layout.
+
+---
+
+## CLI Quick Reference
+
+```bash
+# Fetch latest from HubSpot
+hs cms fetch "Cognistry Theme" CognistryTheme
+
+# Upload all changes
+hs cms upload CognistryTheme "Cognistry Theme"
+
+# Watch for live sync
+hs cms watch CognistryTheme "Cognistry Theme"
+
+# Validate theme
+hs cms validate CognistryTheme
+```

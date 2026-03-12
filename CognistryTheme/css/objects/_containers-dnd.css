@@ -1,0 +1,54 @@
+/* ====================================================================== */
+/* Cognistry Theme - DnD Container Styling                                */
+/* ====================================================================== */
+
+/* Content wrapper base */
+.content-wrapper {
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* DnD section row centering */
+.dnd-section > .row-fluid {
+  margin: 0 auto;
+}
+
+/* DnD column spacing - minimal padding to allow modules to control their own spacing */
+.dnd-section .dnd-column {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Section positioning for backgrounds */
+.dnd-section {
+  position: relative;
+}
+
+/* Vertical alignment options for sections */
+.dnd-section[class*="vertical-align-middle"] > .row-fluid {
+  align-items: center;
+}
+
+.dnd-section[class*="vertical-align-bottom"] > .row-fluid {
+  align-items: flex-end;
+}
+
+/* ====================================================================== */
+/* Section Backgrounds                                                    */
+/* ====================================================================== */
+
+/* When section has background color, add default padding */
+.dnd-section[style*="background-color"],
+.dnd-section[style*="background-image"] {
+  padding-top: var(--cognistry-space-16);
+  padding-bottom: var(--cognistry-space-16);
+}
+
+/* Mobile adjustment */
+@media (max-width: 767px) {
+  .dnd-section[style*="background-color"],
+  .dnd-section[style*="background-image"] {
+    padding-top: var(--cognistry-space-12);
+    padding-bottom: var(--cognistry-space-12);
+  }
+}

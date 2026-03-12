@@ -1,0 +1,231 @@
+.card {
+  background: var(--cognistry-card-bg);
+  text-align: center;
+}
+
+.card--pricing {
+  border: 1px solid var(--cognistry-border);
+  border-radius: var(--cognistry-radius-xl);
+  box-shadow: var(--cognistry-card-shadow);
+  padding: 2rem;
+  transition:
+    transform var(--cognistry-transition),
+    box-shadow var(--cognistry-transition),
+    border-color var(--cognistry-transition);
+}
+
+.card--pricing:hover {
+  border-color: var(--cognistry-card-border-hover);
+  box-shadow: var(--cognistry-card-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.card__header > *:last-child,
+.card__body > *:last-child {
+  margin-bottom: 0;
+}
+
+.card__subtitle,
+.card__body li {
+  font-size: 0.95rem;
+}
+
+.card__body ul,
+.card__body li {
+  padding: 0;
+}
+
+.card__features {
+  margin: 0;
+}
+
+.card__feature-item {
+  align-items: flex-start;
+  color: var(--cognistry-text-muted);
+  display: flex;
+  gap: 0.7rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  text-align: left;
+}
+
+.card__body svg {
+  display: inline-block;
+  flex: 0 0 auto;
+  margin-right: 0;
+  margin-top: 0.15rem;
+  max-width: 20px;
+}
+
+.card__price {
+  color: var(--cognistry-primary);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 1rem 0 1.25rem;
+}
+
+.card__hr {
+  border: 0;
+  height: 1px;
+  margin: 1.4rem 0;
+}
+
+.button-wrapper {
+  margin-top: 1rem;
+}
+
+.card__button.button,
+.card__button {
+  align-items: center;
+  background: var(--cognistry-primary);
+  border: none;
+  border-radius: var(--cognistry-radius-full);
+  box-shadow: var(--cognistry-shadow-cta);
+  color: var(--cognistry-fg-on-primary);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: var(--cognistry-btn-font-size);
+  font-weight: var(--cognistry-btn-font-weight);
+  justify-content: center;
+  min-height: var(--cognistry-btn-min-height);
+  padding: var(--cognistry-btn-padding);
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform var(--cognistry-transition),
+    box-shadow var(--cognistry-transition),
+    background var(--cognistry-transition);
+}
+
+.card__button.button:hover,
+.card__button.button:focus,
+.card__button:hover,
+.card__button:focus {
+  background: var(--cognistry-secondary);
+  box-shadow: var(--cognistry-shadow-cta-hover);
+  color: var(--cognistry-fg-on-primary);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* Overlay */
+
+.card__overlay-background {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: var(--cognistry-overlay-dark);
+  inset: 0;
+  opacity: 0;
+  position: fixed;
+  transition: opacity 500ms ease 0s, visibility 500ms ease 0s;
+  visibility: hidden;
+  z-index: var(--cognistry-z-modal-backdrop);
+}
+
+.card__overlay-background.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+html.card__payments--overlay-open {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card__overlay {
+  background-color: var(--cognistry-bg);
+  bottom: 0;
+  height: calc(100% - 50px);
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 100%;
+  transform: translateY(0);
+  transition: transform 500ms ease 0s, visibility 500ms ease 0s;
+  visibility: hidden;
+  width: 100vw;
+  z-index: var(--cognistry-z-modal);
+}
+
+.card__overlay.open {
+  transform: translateY(-100%);
+  visibility: visible;
+}
+
+button.card__overlay-close--top {
+  align-items: center;
+  background: var(--cognistry-bg);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  outline-color: var(--cognistry-primary);
+  padding: 6px;
+  position: absolute;
+  right: 16px;
+  top: -40px;
+  width: 36px;
+}
+
+button.card__overlay-close--top svg {
+  fill: var(--cognistry-text-muted);
+}
+
+button.card__overlay-close--top:hover svg,
+button.card__overlay-close--top:focus svg {
+  fill: var(--cognistry-primary);
+}
+
+@media screen and (min-width: 768px) {
+  button.card__overlay-close--top {
+    background: transparent;
+    top: 16px;
+    right: 16px;
+  }
+}
+
+button.card__overlay-close--bottom {
+  background: none;
+  border: none;
+  bottom: 16px;
+  color: var(--cognistry-text);
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  outline-color: var(--cognistry-primary);
+  padding: 5px;
+  position: absolute;
+  right: 16px;
+  top: initial;
+}
+
+button.card__overlay-close--bottom:focus {
+  opacity: 1;
+}
+
+.card__overlay .payments-iframe-container {
+  height: 100%;
+  width: 100%;
+}
+
+.card__overlay .payments-iframe-container iframe {
+  height: 100% !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .card--pricing {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card--pricing {
+    margin-bottom: 1.4rem;
+    padding: 1.5rem 1.1rem;
+  }
+}

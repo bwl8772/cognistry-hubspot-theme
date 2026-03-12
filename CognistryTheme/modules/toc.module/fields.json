@@ -1,0 +1,40 @@
+[
+  {
+    "id": "toc_title",
+    "name": "toc_title",
+    "label": "Title",
+    "type": "text",
+    "default": "In this article"
+  },
+  {
+    "id": "content_selector",
+    "name": "content_selector",
+    "label": "Content Selector",
+    "type": "text",
+    "default": ".blog-post__body",
+    "help_text": "CSS selector for the content container to scan for headings"
+  },
+  {
+    "id": "heading_levels",
+    "name": "heading_levels",
+    "label": "Heading Levels",
+    "type": "text",
+    "default": "h2, h3",
+    "help_text": "Comma-separated heading tags to include (e.g. h2, h3)"
+  },
+  {
+    "id": "sticky",
+    "name": "sticky",
+    "label": "Sticky Position",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "sticky_offset",
+    "name": "sticky_offset",
+    "label": "Sticky Offset (px)",
+    "type": "number",
+    "default": 100,
+    "help_text": "Distance from top when sticky"
+  }
+]

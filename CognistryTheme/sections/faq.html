@@ -1,0 +1,54 @@
+<!--
+  templateType: section
+  label: FAQ
+  isAvailableForNewContent: true
+  description: "A simple FAQ section with three question-and-answer blocks."
+-->
+
+{% set heading = "Frequently asked questions" %}
+{% set q1 = "How does Cognistry differ from a traditional LMS or knowledge base?" %}
+{% set a1 = "<p>Cognistry is built to structure capability and improve execution, not just store or distribute content.</p>" %}
+{% set q2 = "Can we use our existing content and systems?" %}
+{% set a2 = "<p>Yes. Cognistry is designed to work with existing enterprise content, signals, and operating context.</p>" %}
+{% set q3 = "Is Cognistry better suited for demos or self-serve buying?" %}
+{% set a3 = "<p>It is generally better suited for guided buying and enterprise conversations where capability impact matters.</p>" %}
+
+{% if context is defined %}
+  {% if context.heading is defined and context.heading %}{% set heading = context.heading %}{% endif %}
+  {% if context.q1 is defined and context.q1 %}{% set q1 = context.q1 %}{% endif %}
+  {% if context.a1 is defined and context.a1 %}{% set a1 = context.a1 %}{% endif %}
+  {% if context.q2 is defined and context.q2 %}{% set q2 = context.q2 %}{% endif %}
+  {% if context.a2 is defined and context.a2 %}{% set a2 = context.a2 %}{% endif %}
+  {% if context.q3 is defined and context.q3 %}{% set q3 = context.q3 %}{% endif %}
+  {% if context.a3 is defined and context.a3 %}{% set a3 = context.a3 %}{% endif %}
+{% endif %}
+
+{% dnd_section
+  padding={
+    "top": 72,
+    "bottom": 72,
+    "left": 24,
+    "right": 24
+  },
+  background_color="#F8F7FC"
+%}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module path="@hubspot/rich_text", html="<div style='text-align:center; margin-bottom:32px;'><h2>" ~ heading ~ "</h2></div>" %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module path="@hubspot/rich_text", html="<h3>" ~ q1 ~ "</h3>" ~ a1 %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module path="@hubspot/rich_text", html="<h3>" ~ q2 ~ "</h3>" ~ a2 %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module path="@hubspot/rich_text", html="<h3>" ~ q3 ~ "</h3>" ~ a3 %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

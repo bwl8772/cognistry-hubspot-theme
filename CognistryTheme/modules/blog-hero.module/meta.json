@@ -1,0 +1,13 @@
+{
+  "label": "Blog Hero",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Premium hero section for blog listing with search and category navigation",
+  "host_template_types": ["BLOG_LISTING"],
+  "icon": "../images/module-icons/blog.svg",
+  "is_available_for_new_content": true,
+  "js_assets": [],
+  "categories": ["blog"],
+  "content_tags": []
+}

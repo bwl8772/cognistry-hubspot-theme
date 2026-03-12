@@ -1,0 +1,38 @@
+<section class="cg-stats-band">
+
+  <div class="cg-stats-band__inner">
+
+    {% if module.eyebrow %}
+      <p class="cg-stats-band__eyebrow">
+        {{ module.eyebrow }}
+      </p>
+    {% endif %}
+
+    {% if module.heading %}
+      <h2 class="cg-stats-band__heading">
+        {{ module.heading }}
+      </h2>
+    {% endif %}
+
+    <div class="cg-stats-band__stats">
+
+      <div class="cg-stat">
+        <h3 class="cg-stat__value">{{ module.stat_one }}</h3>
+        <p class="cg-stat__text">{{ module.stat_one_text }}</p>
+      </div>
+
+      <div class="cg-stat">
+        <h3 class="cg-stat__value">{{ module.stat_two }}</h3>
+        <p class="cg-stat__text">{{ module.stat_two_text }}</p>
+      </div>
+
+      <div class="cg-stat">
+        <h3 class="cg-stat__value">{{ module.stat_three }}</h3>
+        <p class="cg-stat__text">{{ module.stat_three_text }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

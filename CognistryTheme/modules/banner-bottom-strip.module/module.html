@@ -1,0 +1,53 @@
+<div class="banner-column-repeater-wrap">
+  <div class="container">
+    <div class="content-wrapper-main">
+
+      <div class="content-wrap">
+        <span class="tag-banner">
+          {% for item in module.content_here.tag_here %}
+          <div class="tag-inner">
+            <span>{{ item.tag_icon }}</span> 
+            {{ item.tag_text }}
+          </div>
+          {% endfor %}
+        </span>
+
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {% scope_css %}
+  .banner-column-repeater-wrap { background:{{ module.style.background_color.color }}; {{ module.style.desktop_spacing.css }};    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    border-bottom: 1px solid rgba(0,0,0, 0.04); }
+  span.tag-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 12px;
+    border-radius: 50px;
+    color: #a1a1a1;justify-content: center;gap:30px;
+  }
+
+  span.tag-banner svg {
+    height: 12px;
+  }
+
+
+   
+
+
+  @media(max-width:767px){
+    .banner-column-repeater-wrap { {{ module.style.mobile_spacing.css }}; } 
+    .content-wrapper-main > div {
+      flex: 0 0 100%;
+    }
+
+  }
+
+  {% end_scope_css %}
+</style>
+{% end_require_css %}

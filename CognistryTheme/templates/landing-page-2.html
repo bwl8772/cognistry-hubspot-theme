@@ -1,0 +1,27 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Landing Page (Blank)
+  screenshotPath: ../images/template-previews/landing-page.png
+  description: "A blank landing page template for building custom layouts."
+-->
+{% extends "../layouts/base.html" %}
+
+{% block header %}
+  {% global_partial path="./partials/header-no-navigation.html" %}
+{% endblock header %}
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--landing-page"
+%}
+
+  {# Add sections via the page editor #}
+
+{% end_dnd_area %}
+{% endblock body %}
+
+{% block footer %}
+  {% global_partial path="/Cognistry Theme/templates/partials/footer-lp.html" %}
+{% endblock footer %}

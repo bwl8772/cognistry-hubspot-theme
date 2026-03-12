@@ -1,0 +1,113 @@
+{% set href = "#" %}
+{% set is_cta = false %}
+{% set open_new_tab = false %}
+{% set rel_value = "" %}
+{% set button_text = "Learn more" %}
+
+{% if module.content_here and module.content_here.button_here %}
+  {% set btn = module.content_here.button_here %}
+
+  {% if btn.button_text %}
+    {% set button_text = btn.button_text %}
+  {% endif %}
+
+  {% if btn.link_field %}
+
+    {% if btn.link_field.url and btn.link_field.url.type == "CALL_TO_ACTION" %}
+      {% set is_cta = true %}
+    {% endif %}
+
+    {% if btn.link_field.url and btn.link_field.url.href %}
+      {% set href = btn.link_field.url.href %}
+    {% endif %}
+
+    {% if btn.link_field.url %}
+      {% if btn.link_field.url.type == "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" ~ href %}
+      {% elif btn.link_field.url.type == "PHONE_NUMBER" %}
+        {% set href = "tel:" ~ href %}
+      {% endif %}
+    {% endif %}
+
+    {% if btn.link_field.open_in_new_tab %}
+      {% set open_new_tab = true %}
+    {% endif %}
+
+    {% if btn.link_field.rel %}
+      {% set rel_value = btn.link_field.rel %}
+    {% endif %}
+
+  {% endif %}
+{% endif %}
+
+
+<div class="content-column-repeater-wrap">
+  <div class="container">
+
+    <div class="content-wrapper-main {{ module.content_position_choice }}">
+
+      <div class="content-wrap">
+
+        {% if module.content_here.title_text %}
+        <h2>{{ module.content_here.title_text }}</h2>
+        {% endif %}
+
+        {% if module.content_here.content %}
+        {{ module.content_here.content }}
+        {% endif %}
+
+
+        {% if module.content_here.list %}
+        <div class="listing">
+
+          {% for item in module.content_here.list %}
+
+          <div class="list-inner">
+
+            {% if item.list_icon %}
+            <span class="icon">{{ item.list_icon }}</span>
+            {% endif %}
+
+            {% if item.list_title_text %}
+            <h4>{{ item.list_title_text }}</h4>
+            {% endif %}
+
+            {% if item.list_content %}
+            <div class="list-content">
+              {{ item.list_content }}
+            </div>
+            {% endif %}
+
+          </div>
+
+          {% endfor %}
+
+        </div>
+        {% endif %}
+
+
+        <div class="single">
+          <a
+            {% if is_cta %}
+              href="{{ href }}"
+            {% else %}
+              href="{{ href if href == '#' else href|escape_url }}"
+            {% endif %}
+            {% if open_new_tab %}
+              target="_blank"
+            {% endif %}
+            {% if rel_value %}
+              rel="{{ rel_value|escape_attr }}"
+            {% endif %}
+          >
+            {{ button_text|escape }}
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

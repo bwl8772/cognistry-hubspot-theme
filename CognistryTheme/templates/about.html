@@ -1,0 +1,428 @@
+<!--
+  templateType: "page"
+  label: "About"
+  screenshotPath: "../images/template-previews/about.png"
+  isAvailableForNewContent: true
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+
+{% dnd_area "about_page_dnd_area", label="About Page" %}
+
+  {# HERO #}
+  {% dnd_section %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/hero.module",
+          eyebrow="About Cognistry",
+          heading="Turning enterprise knowledge into operational decision capability",
+          hero_body="<p>Cognistry helps organizations capture expertise, structure capability development, run realistic decision practice, and connect improved judgment to operational performance.</p><p>The platform is built for teams that need more than content delivery. It is designed to turn fragmented knowledge into usable capability.</p>",
+          primary_cta_text="Request a demo",
+          primary_cta_link={
+            "url": {
+              "type": "EXTERNAL",
+              "href": "/contact"
+            },
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          secondary_cta_text="Explore the platform",
+          secondary_cta_link={
+            "url": {
+              "type": "EXTERNAL",
+              "href": "/product-signal"
+            },
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          alignment="left",
+          theme="light"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# WHAT COGNISTRY IS #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={
+      "top": 64,
+      "bottom": 64
+    }
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          eyebrow="What Cognistry is",
+          heading="A platform for capability formation, not just information delivery",
+          intro="<p>Cognistry helps organizations transform expertise, evidence, and operating context into structured systems for capability development.</p>",
+          columns="3 columns",
+          features=[
+            {
+              "image": {
+                "src": "",
+                "alt": "Signal",
+                "loading": "lazy",
+                "size_type": "auto"
+              },
+              "kicker": "Signal",
+              "title": "Capture expertise",
+              "text": "<p>Gather expert knowledge, evidence, and capability signals from across the enterprise.</p>",
+              "link_text": "Explore Signal",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": "/product-signal"
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            },
+            {
+              "image": {
+                "src": "",
+                "alt": "Forge",
+                "loading": "lazy",
+                "size_type": "auto"
+              },
+              "kicker": "Forge",
+              "title": "Structure development",
+              "text": "<p>Turn captured signals into learning architecture and decision-centered experiences.</p>",
+              "link_text": "Explore Forge",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": "/product-forge"
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            },
+            {
+              "image": {
+                "src": "",
+                "alt": "Sim",
+                "loading": "lazy",
+                "size_type": "auto"
+              },
+              "kicker": "Sim",
+              "title": "Practice decisions",
+              "text": "<p>Give teams realistic environments to rehearse judgment before performance matters live.</p>",
+              "link_text": "Explore Sim",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": "/product-sim"
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# DATA DRAG PROBLEM INTRO #}
+  {% dnd_section
+    padding={
+      "top": 72,
+      "bottom": 24
+    }
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/rich_text",
+          html="<div style='max-width:900px; margin:0 auto; text-align:center;'><p style='font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:#667085; margin-bottom:12px;'>The problem</p><h2 style='font-size:40px; line-height:1.12; margin:0 0 18px;'>Most organizations do not have a knowledge shortage. They have a capability translation problem.</h2><div style='font-size:18px; line-height:1.7; color:#475467;'><p>Critical knowledge is spread across systems, documents, expert judgment, and operating habits. That creates friction between what the organization knows and what teams can reliably do.</p></div></div>"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# DATA DRAG GRID #}
+  {% dnd_section %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          eyebrow="Data Drag",
+          heading="How Data Drag shows up",
+          intro="<p>Organizations experience Data Drag when they have access to information but lack the systems required to turn it into reliable decision capability.</p>",
+          columns="3 columns",
+          features=[
+            {
+              "image": {
+                "src": "",
+                "alt": "Expertise is trapped",
+                "loading": "lazy",
+                "size_type": "auto"
+              },
+              "kicker": "Fragmentation",
+              "title": "Expertise is trapped",
+              "text": "<p>Important knowledge remains buried in files, systems, and tacit expert behavior instead of becoming reusable capability.</p>",
+              "link_text": "",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": ""
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            },
+            {
+              "image": {
+                "src": "",
+                "alt": "Training measures activity",
+                "loading": "lazy",
+                "size_type": "auto"
+              },
+              "kicker": "Measurement",
+              "title": "Training measures activity",
+              "text": "<p>Most systems report completion rather than whether stronger decisions are actually being made in real work.</p>",
+              "link_text": "",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": ""
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            },
+            {
+              "image": {
+                "src": "",
+                "alt": "Operational readiness lags",
+                "loading": "lazy",
+                "size_type": "auto"
+              },
+              "kicker": "Readiness",
+              "title": "Operational readiness lags",
+              "text": "<p>Teams need faster capability ramp, stronger judgment practice, and better preparation before performance matters live.</p>",
+              "link_text": "",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": ""
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# FRAMEWORK VISUALIZATION #}
+  {% dnd_section
+    background_color="#0F172A",
+    padding={
+      "top": 80,
+      "bottom": 80
+    }
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/framework-viewer-pro.module",
+          framework_image={
+            "src": "",
+            "alt": "Cognistry capability architecture",
+            "loading": "lazy",
+            "size_type": "auto"
+          },
+          caption="<p><strong>Signal → Forge → Sim → Edge</strong></p><p>Cognistry is structured as a progression from captured expertise to capability design, realistic practice, and operational improvement.</p>",
+          max_width="960px",
+          download_url={
+            "type": "EXTERNAL",
+            "href": ""
+          },
+          download_text="",
+          intro_text="<p style='text-align:center;'>Capability architecture</p>",
+          open_in_lightbox=true,
+          overlay_opacity=82
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# REALM OVERVIEW #}
+  {% dnd_section
+    padding={
+      "top": 72,
+      "bottom": 56
+    }
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/realm-overview.module",
+          realms=[
+            {
+              "eyebrow": "Platform architecture",
+              "heading": "Four realms. One capability system.",
+              "intro": "<p>Cognistry converts enterprise knowledge into operational capability through four connected platform realms.</p>",
+              "icon": {
+                "src": "",
+                "alt": "Signal",
+                "loading": "lazy",
+                "size_type": "auto"
+              },
+              "realm_name": "Signal",
+              "tagline": "Capture expertise",
+              "description": "<p>Capture expertise, evidence, and capability signals from across the enterprise.</p>",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": "/product-signal"
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            },
+            {
+              "eyebrow": "Platform architecture",
+              "heading": "Four realms. One capability system.",
+              "intro": "<p>Cognistry converts enterprise knowledge into operational capability through four connected platform realms.</p>",
+              "icon": {
+                "src": "",
+                "alt": "Forge",
+                "loading": "lazy",
+                "size_type": "auto"
+              },
+              "realm_name": "Forge",
+              "tagline": "Structure development",
+              "description": "<p>Turn captured signals into structured learning architecture and capability-building experiences.</p>",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": "/product-forge"
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            },
+            {
+              "eyebrow": "Platform architecture",
+              "heading": "Four realms. One capability system.",
+              "intro": "<p>Cognistry converts enterprise knowledge into operational capability through four connected platform realms.</p>",
+              "icon": {
+                "src": "",
+                "alt": "Sim",
+                "loading": "lazy",
+                "size_type": "auto"
+              },
+              "realm_name": "Sim",
+              "tagline": "Run practice",
+              "description": "<p>Create realistic environments where teams can rehearse judgment before performance matters live.</p>",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": "/product-sim"
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            },
+            {
+              "eyebrow": "Platform architecture",
+              "heading": "Four realms. One capability system.",
+              "intro": "<p>Cognistry converts enterprise knowledge into operational capability through four connected platform realms.</p>",
+              "icon": {
+                "src": "",
+                "alt": "Edge",
+                "loading": "lazy",
+                "size_type": "auto"
+              },
+              "realm_name": "Edge",
+              "tagline": "Apply improvement",
+              "description": "<p>Connect stronger capability to live execution, operational performance, and continuous improvement.</p>",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": "/platform"
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# STATS BAND #}
+  {% dnd_section %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/stats-band.module",
+          eyebrow="Outcomes",
+          heading="Built for organizations that need stronger operational judgment",
+          stat_one="40%",
+          stat_one_text="faster capability ramp",
+          stat_two="3x",
+          stat_two_text="more scalable expertise",
+          stat_three="2x",
+          stat_three_text="improved decision readiness"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# CTA #}
+  {% dnd_section
+    padding={
+      "top": 72,
+      "bottom": 88
+    }
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "See how Cognistry can structure capability across your organization",
+            "content": "<p>Explore the platform, review the product realms, or talk with the team about your capability architecture.</p>",
+            "button_here": [
+              {
+                "button_choice": "button",
+                "link_field": {
+                  "url": {
+                    "type": "EXTERNAL",
+                    "href": "/contact"
+                  },
+                  "open_in_new_tab": false,
+                  "no_follow": false
+                },
+                "button_text": "Request a demo"
+              }
+            ],
+            "content_bottom": "<p>Start with Signal, continue through Forge and Sim, and connect capability development to operational performance.</p>"
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+
+{% endblock body %}

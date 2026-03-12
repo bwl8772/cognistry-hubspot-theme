@@ -1,0 +1,66 @@
+/* Table */
+
+table {
+  background: var(--cognistry-bg);
+  border: 1px solid var(--cognistry-border);
+  border-collapse: collapse;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  width: 100%;
+}
+
+/* Table cells */
+
+td,
+th {
+  border-bottom: 1px solid var(--cognistry-border);
+  color: var(--cognistry-text-muted);
+  padding: 0.95rem 1rem;
+  vertical-align: top;
+}
+
+/* Table header */
+
+thead th {
+  background: var(--cognistry-primary-10);
+  color: var(--cognistry-text);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  vertical-align: bottom;
+}
+
+/* Table body */
+
+tbody tr {
+  transition: background-color var(--cognistry-transition);
+}
+
+tbody tr:hover {
+  background: var(--cognistry-table-row-hover);
+}
+
+/* Table footer */
+
+tfoot td {
+  background: var(--cognistry-bg-subtle);
+  color: var(--cognistry-text);
+  font-weight: 600;
+}
+
+/* Responsive table behavior */
+
+@media (max-width: 767px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  td,
+  th {
+    padding: 0.8rem 0.9rem;
+  }
+}

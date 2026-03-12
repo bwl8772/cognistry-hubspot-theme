@@ -1,0 +1,328 @@
+/* ============================================================ */
+/* Feature Grid Module — Premium Cards                           */
+/* ============================================================ */
+
+.cg-feature-grid {
+  background: var(--cognistry-gradient-mesh);
+  padding: 100px 24px;
+  position: relative;
+}
+
+.cg-feature-grid__inner {
+  margin: 0 auto;
+  max-width: 1200px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================ */
+/* Section Header                                                */
+/* ============================================================ */
+
+.cg-feature-grid__header {
+  margin: 0 auto 56px;
+  max-width: 760px;
+  text-align: center;
+}
+
+.cg-feature-grid__eyebrow {
+  animation: eyebrowFloat 3s ease-in-out infinite;
+  backdrop-filter: var(--cognistry-glass-blur);
+  -webkit-backdrop-filter: var(--cognistry-glass-blur);
+  background: var(--cognistry-badge-bg);
+  border: 1px solid var(--cognistry-badge-border);
+  border-radius: var(--cognistry-radius-full);
+  box-shadow: var(--cognistry-badge-glow);
+  color: var(--cognistry-primary);
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  margin: 0 0 20px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+@keyframes eyebrowFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.cg-feature-grid__heading {
+  color: var(--cognistry-text);
+  font-size: clamp(2.2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin: 0 0 20px;
+}
+
+.cg-feature-grid__heading span,
+.cg-feature-grid__heading strong {
+  background: var(--cognistry-gradient-text-subtle);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cg-feature-grid__intro {
+  color: var(--cognistry-text-muted);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cg-feature-grid__intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================ */
+/* Card Grid                                                     */
+/* ============================================================ */
+
+.cg-feature-grid__grid {
+  display: grid;
+  gap: 28px;
+}
+
+.cg-feature-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cg-feature-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cg-feature-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* ============================================================ */
+/* Premium Card Design                                           */
+/* ============================================================ */
+
+.cg-feature-grid__card {
+  backdrop-filter: var(--cognistry-glass-blur);
+  -webkit-backdrop-filter: var(--cognistry-glass-blur);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--cognistry-radius-xl);
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.cg-feature-grid__card::before {
+  background: linear-gradient(
+    135deg,
+    rgba(78, 10, 119, 0.03) 0%,
+    transparent 50%
+  );
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity var(--cognistry-transition);
+  width: 100%;
+}
+
+.cg-feature-grid__card:hover,
+.cg-feature-grid__card:focus-within {
+  border-color: rgba(78, 10, 119, 0.15);
+  box-shadow: 
+    0 20px 40px rgba(78, 10, 119, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(-6px);
+}
+
+.cg-feature-grid__card:hover::before {
+  opacity: 1;
+}
+
+/* ============================================================ */
+/* Premium Icon Container                                        */
+/* ============================================================ */
+
+.cg-feature-grid__media {
+  padding: 28px 28px 0;
+}
+
+.cg-feature-grid__media img {
+  background: linear-gradient(
+    135deg,
+    var(--cognistry-primary-10) 0%,
+    rgba(123, 47, 165, 0.08) 100%
+  );
+  border: 1px solid rgba(78, 10, 119, 0.08);
+  border-radius: var(--cognistry-icon-radius);
+  box-shadow: 
+    0 4px 12px rgba(78, 10, 119, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  display: block;
+  height: auto;
+  max-width: 56px;
+  padding: 12px;
+  transition: all var(--cognistry-transition);
+}
+
+.cg-feature-grid__card:hover .cg-feature-grid__media img {
+  box-shadow: 
+    0 8px 20px rgba(78, 10, 119, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+}
+
+/* ============================================================ */
+/* Card Content                                                  */
+/* ============================================================ */
+
+.cg-feature-grid__body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 24px 28px 28px;
+}
+
+.cg-feature-grid__kicker {
+  background: var(--cognistry-badge-bg);
+  border-radius: var(--cognistry-radius-full);
+  color: var(--cognistry-primary);
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  margin: 0 0 14px;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.cg-feature-grid__card-title {
+  color: var(--cognistry-text);
+  font-size: var(--cognistry-card-title-size);
+  font-weight: 600;
+  letter-spacing: var(--cognistry-card-title-spacing);
+  line-height: var(--cognistry-card-title-line-height);
+  margin: 0 0 12px;
+}
+
+.cg-feature-grid__text {
+  color: var(--cognistry-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.cg-feature-grid__text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================ */
+/* Card Link                                                     */
+/* ============================================================ */
+
+.cg-feature-grid__link-wrap {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.cg-feature-grid__link {
+  align-items: center;
+  color: var(--cognistry-primary);
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 600;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all var(--cognistry-transition);
+}
+
+.cg-feature-grid__link::after {
+  content: "→";
+  display: inline-block;
+  transition: transform var(--cognistry-transition);
+}
+
+.cg-feature-grid__link:hover,
+.cg-feature-grid__link:focus {
+  color: var(--cognistry-accent);
+  text-decoration: none;
+}
+
+.cg-feature-grid__link:hover::after,
+.cg-feature-grid__link:focus::after {
+  transform: translateX(4px);
+}
+
+/* ============================================================ */
+/* Responsive Design                                             */
+/* ============================================================ */
+
+@media (max-width: 991px) {
+  .cg-feature-grid {
+    padding: 80px 24px;
+  }
+
+  .cg-feature-grid--4,
+  .cg-feature-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cg-feature-grid__header {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cg-feature-grid {
+    padding: 64px 20px;
+  }
+
+  .cg-feature-grid--4,
+  .cg-feature-grid--3,
+  .cg-feature-grid--2 {
+    grid-template-columns: 1fr;
+  }
+
+  .cg-feature-grid__header {
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  .cg-feature-grid__intro {
+    margin: 0;
+  }
+
+  .cg-feature-grid__card {
+    border-radius: var(--cognistry-radius-lg);
+  }
+
+  .cg-feature-grid__media {
+    padding: 24px 24px 0;
+  }
+
+  .cg-feature-grid__body {
+    padding: 20px 24px 24px;
+  }
+
+  .cg-feature-grid__eyebrow {
+    font-size: 0.75rem;
+    padding: 8px 16px;
+  }
+}

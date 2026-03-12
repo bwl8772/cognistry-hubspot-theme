@@ -1,0 +1,84 @@
+<div class="two-column-repeater-wrap">
+  <div class="container">
+
+    <div class="content-wrapper-main {{ module.content_position_choice }}">
+
+      <div class="image-wrap {{ module.image.image_or_gif_choice }}">
+
+        {% if module.image.image_or_gif_choice == "image" %}
+          {% if module.image.image_field.src %}
+            {% set sizeAttrs = 'width="{{ module.image.image_field.width|escape_attr }}" height="{{ module.image.image_field.height|escape_attr }}"' %}
+
+            {% if module.image.image_field.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ module.image.image_field.width|escape_attr }}" height="{{ module.image.image_field.height|escape_attr }}" style="max-width:100%;height:auto;"' %}
+            {% elif module.image.image_field.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ module.image.image_field.max_width|escape_attr }}" height="{{ module.image.image_field.max_height|escape_attr }}" style="max-width:100%;height:auto;"' %}
+            {% endif %}
+
+            {% set loadingAttr = module.image.image_field.loading != 'disabled' ? 'loading="{{ module.image.image_field.loading|escape_attr }}"' : '' %}
+
+            <img
+              src="{{ module.image.image_field.src|escape_url }}"
+              alt="{{ module.image.image_field.alt|escape_attr }}"
+              {{ loadingAttr }}
+              {{ sizeAttrs }}
+            >
+          {% endif %}
+        {% endif %}
+
+        {% if module.image.image_or_gif_choice == "gif" %}
+          {{ module.image.gif }}
+        {% endif %}
+
+      </div>
+
+
+      <div class="content-wrap">
+
+        {% if module.content_here.title_text %}
+          <h2>{{ module.content_here.title_text }}</h2>
+        {% endif %}
+
+        {% if module.content_here.content %}
+          {{ module.content_here.content }}
+        {% endif %}
+
+
+        {% if module.content_here.button_here %}
+          {% set btn = module.content_here.button_here %}
+          {% set href = btn.link_field.url.href %}
+
+          {% if btn.link_field.url.type == "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" ~ href %}
+          {% elif btn.link_field.url.type == "PHONE_NUMBER" %}
+            {% set href = "tel:" ~ href %}
+          {% endif %}
+
+          <div class="single">
+
+            <a
+              {% if btn.link_field.url.type == "CALL_TO_ACTION" %}
+                href="{{ href }}"
+              {% else %}
+                href="{{ href|escape_url }}"
+              {% endif %}
+              {% if btn.link_field.open_in_new_tab %}
+                target="_blank"
+              {% endif %}
+              {% if btn.link_field.rel %}
+                rel="{{ btn.link_field.rel|escape_attr }}"
+              {% endif %}
+            >
+              {{ btn.button_text|escape }}
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </div>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<!--
+  templateType: section
+  label: Testimonial
+  isAvailableForNewContent: true
+  description: "A centered testimonial with quote, name, and title."
+-->
+
+{% set quote = "Cognistry helped us move beyond content sprawl and focus on readiness, capability, and execution." %}
+{% set person_name = "Jane Doe" %}
+{% set person_title = "Chief Learning Officer" %}
+
+{% if context is defined %}
+  {% if context.quote is defined and context.quote %}{% set quote = context.quote %}{% endif %}
+  {% if context.person_name is defined and context.person_name %}{% set person_name = context.person_name %}{% endif %}
+  {% if context.person_title is defined and context.person_title %}{% set person_title = context.person_title %}{% endif %}
+{% endif %}
+
+{% dnd_section
+  padding={
+    "top": 72,
+    "bottom": 72,
+    "left": 24,
+    "right": 24
+  },
+  background_color="#FFFFFF"
+%}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html="<div style='max-width:800px; margin:0 auto; text-align:center;'><blockquote style='font-size:28px; line-height:1.4; margin:0 0 24px;'>“" ~ quote ~ "”</blockquote><p style='margin:0; font-weight:700;'>" ~ person_name ~ "</p><p style='margin:8px 0 0;'>" ~ person_title ~ "</p></div>"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

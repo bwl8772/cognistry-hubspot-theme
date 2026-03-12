@@ -1,0 +1,36 @@
+[ {
+  "id" : "framework_image",
+  "name" : "framework_image",
+  "label" : "Framework Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "display_width" : null,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "caption",
+  "name" : "caption",
+  "label" : "Caption / Description",
+  "required" : false,
+  "locked" : false,
+  "display_width" : null,
+  "type" : "richtext"
+}, {
+  "id" : "max_width",
+  "name" : "max_width",
+  "label" : "Max Image Width",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "900px"
+} ]

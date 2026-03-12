@@ -1,0 +1,232 @@
+[ {
+  "id" : "content_position_choice",
+  "name" : "content_position_choice",
+  "label" : "Content Position Choice",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "center", "Center" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "display_width" : null,
+  "type" : "choice",
+  "default" : "center"
+}, {
+  "id" : "style",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "style.desktop_spacing",
+    "name" : "desktop_spacing",
+    "label" : "Desktop Spacing",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 70,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 70,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  }, {
+    "id" : "style.mobile_spacing",
+    "name" : "mobile_spacing",
+    "label" : "Mobile Spacing",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 50,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 50,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : {
+    "desktop_spacing" : {
+      "padding" : {
+        "top" : {
+          "value" : 70,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 70,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    },
+    "mobile_spacing" : {
+      "padding" : {
+        "top" : {
+          "value" : 50,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 50,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  }
+}, {
+  "id" : "content_here",
+  "name" : "content_here",
+  "label" : "Content Here",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content_here.title_text",
+    "name" : "title_text",
+    "label" : "Title text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "The gap isn't a training problem. It's a knowledge transfer problem."
+  }, {
+    "id" : "content_here.content",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "<p>Your organization holds decades of hard-won expertise. But it lives in the heads of your best people — unstructured, uncaptured, and at risk. Every time a subject matter expert walks out the door, they take the context with them.</p>\n<p>Traditional learning tools weren't built to change that. They push content. They don't build capability.</p>"
+  }, {
+    "id" : "content_here.button_here",
+    "name" : "button_here",
+    "label" : "Button Here",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "content_here.button_here.button_choice",
+      "name" : "button_choice",
+      "label" : "Button Choice",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "single", "Single" ], [ "button", "Button" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "display_width" : null,
+      "type" : "choice"
+    }, {
+      "id" : "content_here.button_here.link_field",
+      "name" : "link_field",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+      "show_advanced_rel_options" : false,
+      "display_width" : null,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "content_here.button_here.button_text",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "Learn How We're Different"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group",
+    "default" : [ ]
+  }, {
+    "id" : "content_here.content_bottom",
+    "name" : "content_bottom",
+    "label" : "Content bottom",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "<p>This is just the beginning. We're working closely with a select group of enterprise partners to shape the platform.</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : {
+    "title_text" : "The gap isn't a training problem. It's a knowledge transfer problem.",
+    "content" : "<p>Your organization holds decades of hard-won expertise. But it lives in the heads of your best people — unstructured, uncaptured, and at risk. Every time a subject matter expert walks out the door, they take the context with them.</p>\n<p>Traditional learning tools weren't built to change that. They push content. They don't build capability.</p>",
+    "button_here" : [ ],
+    "content_bottom" : "<p>This is just the beginning. We're working closely with a select group of enterprise partners to shape the platform.</p>"
+  }
+} ]

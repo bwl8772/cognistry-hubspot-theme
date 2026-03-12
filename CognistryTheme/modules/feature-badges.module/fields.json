@@ -1,0 +1,70 @@
+[
+  {
+    "id": "badges",
+    "name": "badges",
+    "label": "Badges",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "default": 4
+    },
+    "default": [
+      {
+        "icon": "sparkles",
+        "text": "AI-Guided Authoring"
+      },
+      {
+        "icon": "document",
+        "text": "Evidence-Based Design"
+      },
+      {
+        "icon": "star",
+        "text": "Quality Experiences"
+      },
+      {
+        "icon": "rocket",
+        "text": "Publish Ready"
+      }
+    ],
+    "children": [
+      {
+        "id": "icon",
+        "name": "icon",
+        "label": "Icon",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          ["sparkles", "Sparkles (AI)"],
+          ["document", "Document"],
+          ["star", "Star"],
+          ["rocket", "Rocket"],
+          ["check", "Checkmark"],
+          ["shield", "Shield"],
+          ["lightning", "Lightning"],
+          ["chart", "Chart"]
+        ],
+        "default": "sparkles"
+      },
+      {
+        "id": "text",
+        "name": "text",
+        "label": "Text",
+        "type": "text",
+        "default": "Feature"
+      }
+    ]
+  },
+  {
+    "id": "alignment",
+    "name": "alignment",
+    "label": "Alignment",
+    "type": "choice",
+    "display": "radio",
+    "choices": [
+      ["left", "Left"],
+      ["center", "Center"]
+    ],
+    "default": "center"
+  }
+]

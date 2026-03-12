@@ -1,0 +1,77 @@
+{% set cols = module.columns|default("3") %}
+{% set grid_class = "cg-feature-grid--3" %}
+
+{% if cols == "2" %}
+  {% set grid_class = "cg-feature-grid--2" %}
+{% elif cols == "4" %}
+  {% set grid_class = "cg-feature-grid--4" %}
+{% endif %}
+
+<section class="cg-feature-grid">
+  <div class="cg-feature-grid__inner">
+    {% if module.eyebrow or module.heading or module.intro %}
+      <div class="cg-feature-grid__header">
+        {% if module.eyebrow %}
+          <p class="cg-feature-grid__eyebrow">{{ module.eyebrow }}</p>
+        {% endif %}
+        {% if module.heading %}
+          <h2 class="cg-feature-grid__heading">{{ module.heading }}</h2>
+        {% endif %}
+        {% if module.intro %}
+          <div class="cg-feature-grid__intro">
+            {{ module.intro }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if module.features %}
+      <div class="cg-feature-grid__grid {{ grid_class }}">
+        {% for item in module.features %}
+          <article class="cg-feature-grid__card">
+            {% if item.image.src %}
+              <div class="cg-feature-grid__media">
+                <img
+                  src="{{ item.image.src }}"
+                  alt="{{ item.image.alt|escape_attr }}"
+                  loading="{{ item.image.loading|default('lazy') }}"
+                  width="{{ item.image.width|default('') }}"
+                  height="{{ item.image.height|default('') }}"
+                >
+              </div>
+            {% endif %}
+
+            <div class="cg-feature-grid__body">
+              {% if item.kicker %}
+                <p class="cg-feature-grid__kicker">{{ item.kicker }}</p>
+              {% endif %}
+
+              {% if item.title %}
+                <h3 class="cg-feature-grid__card-title">{{ item.title }}</h3>
+              {% endif %}
+
+              {% if item.text %}
+                <div class="cg-feature-grid__text">
+                  {{ item.text }}
+                </div>
+              {% endif %}
+
+              {% if item.link.url.href %}
+                <div class="cg-feature-grid__link-wrap">
+                  <a
+                    class="cg-feature-grid__link"
+                    href="{{ item.link.url.href }}"
+                    {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+                    {% if item.link.rel %}rel="{{ item.link.rel|escape_attr }}"{% endif %}
+                  >
+                    {{ item.link_text|default("Learn more") }}
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>

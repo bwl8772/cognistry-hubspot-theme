@@ -1,0 +1,231 @@
+/* Form layout */
+
+.hs-form-field {
+  margin-bottom: 1.4rem;
+}
+
+/* Labels */
+
+form label {
+  color: var(--cognistry-text);
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+/* Form Title */
+
+.form-title {
+  margin-bottom: 0;
+}
+
+/* Help text */
+
+form legend {
+  font-size: 0.875rem;
+  color: var(--cognistry-text-muted);
+}
+
+/* Inputs */
+
+form input[type=text],
+form input[type=search],
+form input[type=email],
+form input[type=password],
+form input[type=tel],
+form input[type=number],
+form input[type=file],
+form select,
+form textarea {
+  appearance: none;
+  background: var(--cognistry-bg);
+  border: 1px solid var(--cognistry-border);
+  border-radius: var(--cognistry-radius-md);
+  color: var(--cognistry-text);
+  display: block;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  padding: 0.65rem 0.75rem;
+  transition: border-color var(--cognistry-transition-fast), box-shadow var(--cognistry-transition-fast);
+  width: 100%;
+}
+
+/* Focus state */
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: var(--cognistry-primary);
+  box-shadow: 0 0 0 3px var(--cognistry-primary-10);
+  outline: none;
+}
+
+/* Placeholder */
+
+::placeholder {
+  color: var(--cognistry-disabled-text);
+}
+
+/* Textarea */
+
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Fieldsets */
+
+form fieldset {
+  max-width: 100% !important;
+}
+
+/* Checkbox / radio groups */
+
+form .inputs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+form .inputs-list > li {
+  display: block;
+  margin: 0.6rem 0;
+}
+
+form .inputs-list input,
+form .inputs-list span {
+  vertical-align: middle;
+}
+
+form input[type=checkbox],
+form input[type=radio] {
+  accent-color: var(--cognistry-primary);
+  cursor: pointer;
+  margin-right: 0.35rem;
+}
+
+/* Date picker */
+
+.hs-dateinput {
+  position: relative;
+}
+
+.hs-dateinput:before {
+  content: "\01F4C5";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+/* Date picker table */
+
+.fn-date-picker .pika-table thead th {
+  color: var(--cognistry-fg-on-primary);
+}
+
+.fn-date-picker td.is-selected .pika-button {
+  border-radius: var(--cognistry-radius-sm);
+  box-shadow: none;
+}
+
+.fn-date-picker td .pika-button:hover,
+.fn-date-picker td .pika-button:focus {
+  border-radius: var(--cognistry-radius-sm) !important;
+  color: var(--cognistry-fg-on-primary);
+}
+
+/* File picker */
+
+form input[type=file] {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Rich text inside forms */
+
+form .hs-richtext,
+form .hs-richtext p {
+  color: var(--cognistry-text-muted);
+  font-size: 0.875rem;
+  margin: 0 0 1.4rem;
+}
+
+form .hs-richtext img {
+  max-width: 100% !important;
+}
+
+/* GDPR */
+
+.legal-consent-container .hs-form-booleancheckbox-display > span,
+.legal-consent-container .hs-form-booleancheckbox-display > span p {
+  margin-left: 1rem !important;
+}
+
+/* Validation */
+
+.hs-form-required {
+  color: var(--cognistry-error);
+}
+
+.hs-input.invalid.error {
+  border-color: var(--cognistry-error);
+}
+
+.hs-error-msg {
+  color: var(--cognistry-error);
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+}
+
+/* Submit button spacing */
+
+form input[type=submit],
+form .hs-button {
+  margin-top: 0.5rem;
+}
+
+/* Captcha */
+
+.grecaptcha-badge {
+  margin: 0 auto;
+}
+
+/* Search module compatibility */
+
+{% if ( get_asset_version("@hubspot/search_input") == "1" ) %}
+
+.body-container-wrapper .hs-search-field__button {
+  padding: 12px;
+}
+
+.body-container-wrapper .hs-search-field__bar--button-inline .hs-search-field__button {
+  margin-left: 6px;
+  margin-bottom: 0;
+}
+
+.body-container-wrapper .hs-search-field__button svg {
+  height: 15px;
+  fill: var(--cognistry-fg-on-primary);
+}
+
+.body-container-wrapper .hs-search-field__bar > form > .hs-search-field__input {
+  padding: 10px;
+}
+
+.body-container-wrapper .hs-search-field__suggestions li a {
+  color: var(--cognistry-text);
+  padding: 0.35rem 0.7rem;
+  text-decoration: none;
+  transition: background-color var(--cognistry-transition);
+}
+
+.body-container-wrapper .hs-search-field__suggestions li a:hover {
+  background: var(--cognistry-primary-10);
+}
+
+{% endif %}

@@ -1,0 +1,53 @@
+---
+description: HubSpot theme deployment and project naming
+alwaysApply: true
+---
+
+# HubSpot Theme Deployment & Project Naming
+
+## App Name
+
+The app/product name is **Cognistry**. Use "Cognistry" when referring to the product, site, or brand in this project.
+
+## Theme Type
+
+This is a **STANDALONE theme** (not a child theme). It does not extend any parent/marketplace theme.
+
+## Correct Theme Location
+
+When uploading files to HubSpot using the CLI, always use **`Cognistry Theme`** as the destination.
+
+### Upload Commands
+
+```bash
+# ✅ CORRECT - Upload to "Cognistry Theme"
+hs cms upload CognistryTheme/templates/about.html "Cognistry Theme/templates/about.html"
+hs cms upload CognistryTheme/child.css "Cognistry Theme/child.css"
+
+# Watch for changes
+hs cms watch CognistryTheme "Cognistry Theme"
+
+# ❌ WRONG - Do not use atlas-theme-child-cognistry (that's a different theme)
+hs cms upload CognistryTheme/templates/about.html atlas-theme-child-cognistry/templates/about.html
+```
+
+### File Structure
+
+- **Local source**: `CognistryTheme/` (local development folder)
+- **HubSpot destination**: `Cognistry Theme/` (live theme folder on HubSpot)
+
+### Key Files to Upload
+
+When updating the theme, upload to:
+- Templates: `Cognistry Theme/templates/*.html`
+- Modules: `Cognistry Theme/modules/*`
+- Sections: `Cognistry Theme/sections/*`
+- Styles: `Cognistry Theme/css/*`, `Cognistry Theme/child.css`
+- Scripts: `Cognistry Theme/js/*`
+- Config: `Cognistry Theme/theme.json`, `Cognistry Theme/fields.json`
+
+### Related
+
+- **Editing best practices**: see `hubspot-theme-editing.mdc`
+- **Theme rules**: see `docs/THEME_CONSTITUTION.md`
+- **Asset inventory**: see `docs/CANONICAL_REGISTRY.md`

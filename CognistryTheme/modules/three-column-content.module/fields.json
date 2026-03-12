@@ -1,0 +1,289 @@
+[ {
+  "id" : "content_position_choice",
+  "name" : "content_position_choice",
+  "label" : "Content Position Choice",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "center", "Center" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "display_width" : null,
+  "type" : "choice",
+  "default" : "center"
+}, {
+  "id" : "style",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "style.background_color",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "color",
+    "default" : {
+      "color" : "#09090b",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "style.desktop_spacing",
+    "name" : "desktop_spacing",
+    "label" : "Desktop Spacing",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 70,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 70,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  }, {
+    "id" : "style.mobile_spacing",
+    "name" : "mobile_spacing",
+    "label" : "Mobile Spacing",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 50,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 50,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : {
+    "background_color" : {
+      "color" : "#09090b",
+      "opacity" : 100
+    },
+    "desktop_spacing" : {
+      "padding" : {
+        "top" : {
+          "value" : 70,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 70,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    },
+    "mobile_spacing" : {
+      "padding" : {
+        "top" : {
+          "value" : 50,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 50,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  }
+}, {
+  "id" : "content_here",
+  "name" : "content_here",
+  "label" : "Content Here",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content_here.title_text",
+    "name" : "title_text",
+    "label" : "Title text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "The gap isn't a training problem. It's a knowledge transfer problem."
+  }, {
+    "id" : "content_here.content",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "<p>Your organization holds decades of hard-won expertise. But it lives in the heads of your best people — unstructured, uncaptured, and at risk. Every time a subject matter expert walks out the door, they take the context with them.</p>\n<p>Traditional learning tools weren't built to change that. They push content. They don't build capability.</p>"
+  }, {
+    "id" : "content_here.list",
+    "name" : "list",
+    "label" : "List",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "content_here.list.list_icon",
+      "name" : "list_icon",
+      "label" : "List Icon",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-target w-6 h-6 text-primary\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><circle cx=\"12\" cy=\"12\" r=\"6\"></circle><circle cx=\"12\" cy=\"12\" r=\"2\"></circle></svg>"
+    }, {
+      "id" : "content_here.list.list_title_text",
+      "name" : "list_title_text",
+      "label" : "List Title text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : ""
+    }, {
+      "id" : "content_here.list.list_content",
+      "name" : "list_content",
+      "label" : "List Content",
+      "required" : false,
+      "locked" : false,
+      "display_width" : null,
+      "type" : "richtext"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group",
+    "default" : [ ]
+  }, {
+    "id" : "content_here.button_here",
+    "name" : "button_here",
+    "label" : "Button Here",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "content_here.button_here.link_field",
+      "name" : "link_field",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+      "show_advanced_rel_options" : false,
+      "display_width" : null,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "content_here.button_here.button_text",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "Learn How We're Different"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group",
+    "default" : {
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "button_text" : "Learn How We're Different"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : {
+    "title_text" : "The gap isn't a training problem. It's a knowledge transfer problem.",
+    "content" : "<p>Your organization holds decades of hard-won expertise. But it lives in the heads of your best people — unstructured, uncaptured, and at risk. Every time a subject matter expert walks out the door, they take the context with them.</p>\n<p>Traditional learning tools weren't built to change that. They push content. They don't build capability.</p>",
+    "list" : [ ],
+    "button_here" : {
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "button_text" : "Learn How We're Different"
+    }
+  }
+} ]

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "title",
+    "name": "title",
+    "label": "Title",
+    "type": "text",
+    "default": "Insights",
+    "required": false
+  },
+  {
+    "id": "subtitle",
+    "name": "subtitle",
+    "label": "Subtitle",
+    "type": "text",
+    "default": "Thought leadership on capability, decision-making, and knowledge systems",
+    "required": false
+  },
+  {
+    "id": "show_search",
+    "name": "show_search",
+    "label": "Show Search",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "search_placeholder",
+    "name": "search_placeholder",
+    "label": "Search Placeholder",
+    "type": "text",
+    "default": "Search articles..."
+  },
+  {
+    "id": "show_categories",
+    "name": "show_categories",
+    "label": "Show Category Filters",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "categories",
+    "name": "categories",
+    "label": "Categories",
+    "type": "group",
+    "occurrence": {
+      "min": 0,
+      "max": 8,
+      "default": 4
+    },
+    "default": [
+      { "category_name": "All", "slug": "", "is_all": true },
+      { "category_name": "Capability", "slug": "capability", "is_all": false },
+      { "category_name": "Decision-Making", "slug": "decision-making", "is_all": false },
+      { "category_name": "Product", "slug": "product", "is_all": false }
+    ],
+    "children": [
+      {
+        "id": "category_name",
+        "name": "category_name",
+        "label": "Category Name",
+        "type": "text",
+        "default": "Category"
+      },
+      {
+        "id": "slug",
+        "name": "slug",
+        "label": "Category Slug (for filtering)",
+        "type": "text",
+        "default": ""
+      },
+      {
+        "id": "is_all",
+        "name": "is_all",
+        "label": "Is 'All' category",
+        "type": "boolean",
+        "default": false
+      }
+    ]
+  }
+]

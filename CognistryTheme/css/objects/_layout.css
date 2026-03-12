@@ -1,0 +1,204 @@
+/* ====================================================================== */
+/* Cognistry Theme - Layout System                                        */
+/* Modern HubSpot DnD grid with full-bleed section support                */
+/* ====================================================================== */
+
+:root {
+  --column-gap: 24px;
+  --content-max-width: 1280px;
+  --content-padding-inline: 24px;
+}
+
+/* ====================================================================== */
+/* Base Elements                                                          */
+/* ====================================================================== */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* ====================================================================== */
+/* Page Structure                                                         */
+/* ====================================================================== */
+
+body {
+  width: 100%;
+  margin: 0;
+}
+
+.body-wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.body-container-wrapper {
+  width: 100%;
+}
+
+/* ====================================================================== */
+/* Content Containers                                                     */
+/* ====================================================================== */
+
+.content-wrapper,
+.page-center,
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--content-max-width);
+  padding-left: var(--content-padding-inline);
+  padding-right: var(--content-padding-inline);
+  width: 100%;
+}
+
+/* ====================================================================== */
+/* HubSpot DnD Sections - Full viewport width                             */
+/* ====================================================================== */
+
+.dnd-section {
+  position: relative;
+  width: 100%;
+}
+
+/* Row inside section - centered with max-width */
+.dnd-section > .row-fluid,
+.dnd-section > .dnd-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: var(--content-max-width);
+  padding-left: var(--content-padding-inline);
+  padding-right: var(--content-padding-inline);
+  width: 100%;
+}
+
+/* ====================================================================== */
+/* HubSpot DnD Columns                                                    */
+/* ====================================================================== */
+
+.dnd-column {
+  flex: 1 1 100%;
+  min-width: 0;
+  padding: 0;
+}
+
+/* Desktop: Column widths based on span class */
+@media (min-width: 768px) {
+  .dnd-section > .row-fluid,
+  .dnd-section > .dnd-row {
+    flex-wrap: nowrap;
+    gap: var(--column-gap);
+  }
+
+  .dnd-column {
+    flex: 1 1 0;
+  }
+
+  /* HubSpot generates span1-12 classes on columns */
+  .dnd-column.span1 { flex: 0 0 calc(8.333% - var(--column-gap) * 11/12); }
+  .dnd-column.span2 { flex: 0 0 calc(16.666% - var(--column-gap) * 10/12); }
+  .dnd-column.span3 { flex: 0 0 calc(25% - var(--column-gap) * 9/12); }
+  .dnd-column.span4 { flex: 0 0 calc(33.333% - var(--column-gap) * 8/12); }
+  .dnd-column.span5 { flex: 0 0 calc(41.666% - var(--column-gap) * 7/12); }
+  .dnd-column.span6 { flex: 0 0 calc(50% - var(--column-gap) * 6/12); }
+  .dnd-column.span7 { flex: 0 0 calc(58.333% - var(--column-gap) * 5/12); }
+  .dnd-column.span8 { flex: 0 0 calc(66.666% - var(--column-gap) * 4/12); }
+  .dnd-column.span9 { flex: 0 0 calc(75% - var(--column-gap) * 3/12); }
+  .dnd-column.span10 { flex: 0 0 calc(83.333% - var(--column-gap) * 2/12); }
+  .dnd-column.span11 { flex: 0 0 calc(91.666% - var(--column-gap) * 1/12); }
+  .dnd-column.span12 { flex: 0 0 100%; }
+}
+
+/* ====================================================================== */
+/* Legacy Bootstrap Grid (for compatibility)                              */
+/* ====================================================================== */
+
+.row-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: var(--column-gap);
+}
+
+.row-fluid [class*="span"] {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .row-fluid {
+    flex-wrap: nowrap;
+  }
+
+  .row-fluid .span1 { flex: 0 0 calc(8.333% - var(--column-gap) * 11/12); }
+  .row-fluid .span2 { flex: 0 0 calc(16.666% - var(--column-gap) * 10/12); }
+  .row-fluid .span3 { flex: 0 0 calc(25% - var(--column-gap) * 9/12); }
+  .row-fluid .span4 { flex: 0 0 calc(33.333% - var(--column-gap) * 8/12); }
+  .row-fluid .span5 { flex: 0 0 calc(41.666% - var(--column-gap) * 7/12); }
+  .row-fluid .span6 { flex: 0 0 calc(50% - var(--column-gap) * 6/12); }
+  .row-fluid .span7 { flex: 0 0 calc(58.333% - var(--column-gap) * 5/12); }
+  .row-fluid .span8 { flex: 0 0 calc(66.666% - var(--column-gap) * 4/12); }
+  .row-fluid .span9 { flex: 0 0 calc(75% - var(--column-gap) * 3/12); }
+  .row-fluid .span10 { flex: 0 0 calc(83.333% - var(--column-gap) * 2/12); }
+  .row-fluid .span11 { flex: 0 0 calc(91.666% - var(--column-gap) * 1/12); }
+  .row-fluid .span12 { flex: 0 0 100%; }
+}
+
+/* ====================================================================== */
+/* Responsive Breakpoints                                                 */
+/* ====================================================================== */
+
+@media (min-width: 1200px) {
+  :root {
+    --column-gap: 32px;
+    --content-padding-inline: 40px;
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --content-max-width: 1400px;
+    --content-padding-inline: 48px;
+  }
+}
+
+@media (max-width: 991px) {
+  :root {
+    --column-gap: 20px;
+    --content-padding-inline: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --column-gap: 16px;
+    --content-padding-inline: 20px;
+  }
+
+  .dnd-section > .row-fluid,
+  .dnd-section > .dnd-row,
+  .row-fluid {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .dnd-column,
+  .row-fluid [class*="span"] {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* ====================================================================== */
+/* Utilities                                                              */
+/* ====================================================================== */
+
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.content-narrow { max-width: 720px; margin-left: auto; margin-right: auto; }
+.content-medium { max-width: 960px; margin-left: auto; margin-right: auto; }

@@ -1,0 +1,53 @@
+<div class="content-column-repeater-wrap">
+  <div class="container">
+
+    <div class="content-wrapper-main {{ module.content_position_choice }}">
+
+      <div class="content-wrap">
+
+        {% if module.content_here.title_text %}
+          <h2>{{ module.content_here.title_text }}</h2>
+        {% endif %}
+
+        {% if module.content_here.content %}
+          {{ module.content_here.content }}
+        {% endif %}
+
+        {% if module.content_here.list %}
+        <div class="listing">
+
+          {% for item in module.content_here.list %}
+
+          <div class="list-inner">
+
+            {% if item.list_icon %}
+            <div class="rating">
+              {% for icon in item.list_icon %}
+                <span>{{ icon }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if item.list_title_text %}
+            <h4>{{ item.list_title_text }}</h4>
+            {% endif %}
+
+            {% if item.list_content %}
+            <div class="list-content">
+              {{ item.list_content }}
+            </div>
+            {% endif %}
+
+          </div>
+
+          {% endfor %}
+
+        </div>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

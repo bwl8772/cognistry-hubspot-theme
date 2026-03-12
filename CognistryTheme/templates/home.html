@@ -1,0 +1,275 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Home
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+
+{% dnd_area "home_page_dnd_area", label="Home Page Content" %}
+
+  {# ========== HERO SECTION ========== #}
+  {% dnd_section %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/hero.module",
+          layout="split",
+          eyebrow="Enterprise Capability Platform",
+          heading="Build courses that",
+          heading_highlight="transform professionals",
+          hero_body="<p>Design evidence-based learning experiences with Cognistry. Capture expertise, structure development, and deliver capability — all in one platform.</p>",
+          hero_image={
+            "src": get_asset_url("../images/grayscale-mountain.png"),
+            "alt": "Cognistry platform screenshot",
+            "loading": "eager",
+            "size_type": "auto"
+          },
+          primary_cta_text="Request Access",
+          primary_cta_link={
+            "url": {
+              "type": "EXTERNAL",
+              "href": "/contact"
+            },
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          secondary_link_text="Already have access? Sign in",
+          secondary_link_url={
+            "url": {
+              "type": "EXTERNAL",
+              "href": "/login"
+            },
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          alignment="left",
+          theme="light"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== FEATURE BADGES ========== #}
+  {% dnd_section
+    padding={
+      "top": 0,
+      "bottom": 0
+    }
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-badges.module",
+          alignment="center",
+          badges=[
+            {
+              "icon": "sparkles",
+              "text": "AI-Guided Authoring"
+            },
+            {
+              "icon": "document",
+              "text": "Evidence-Based Design"
+            },
+            {
+              "icon": "star",
+              "text": "Quality Experiences"
+            },
+            {
+              "icon": "rocket",
+              "text": "Publish Ready"
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== PLATFORM OVERVIEW ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={
+      "top": 72,
+      "bottom": 72
+    }
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          eyebrow="Platform",
+          heading="Four realms. One capability system.",
+          intro="<p>Cognistry converts enterprise knowledge into operational capability through four connected platform realms.</p>",
+          columns="3 columns",
+          features=[
+            {
+              "image": {
+                "src": "",
+                "alt": "Signal",
+                "loading": "lazy",
+                "size_type": "auto"
+              },
+              "kicker": "Signal",
+              "title": "Capture expertise",
+              "text": "<p>Gather expert knowledge, evidence, and capability signals from across the enterprise.</p>",
+              "link_text": "Learn more",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": "/product-signal"
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            },
+            {
+              "image": {
+                "src": "",
+                "alt": "Forge",
+                "loading": "lazy",
+                "size_type": "auto"
+              },
+              "kicker": "Forge",
+              "title": "Structure development",
+              "text": "<p>Turn captured signals into learning architecture and decision-centered experiences.</p>",
+              "link_text": "Learn more",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": "/product-forge"
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            },
+            {
+              "image": {
+                "src": "",
+                "alt": "Sim",
+                "loading": "lazy",
+                "size_type": "auto"
+              },
+              "kicker": "Sim",
+              "title": "Practice decisions",
+              "text": "<p>Give teams realistic environments to rehearse judgment before performance matters.</p>",
+              "link_text": "Learn more",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": "/product-sim"
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== STATS BAND ========== #}
+  {% dnd_section
+    padding={
+      "top": 64,
+      "bottom": 64
+    }
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/stats-band.module",
+          eyebrow="Outcomes",
+          heading="Built for organizations that need stronger operational judgment",
+          stat_one="40%",
+          stat_one_text="faster capability ramp",
+          stat_two="3x",
+          stat_two_text="more scalable expertise",
+          stat_three="2x",
+          stat_three_text="improved decision readiness"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== TWO COLUMN CONTENT ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={
+      "top": 72,
+      "bottom": 72
+    }
+  %}
+    {% dnd_column width=6, offset=0 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/linked_image",
+          img={
+            "alt": "Platform visualization",
+            "loading": "lazy",
+            "max_height": 500,
+            "max_width": 600,
+            "size_type": "auto_custom_max",
+            "src": get_asset_url("../images/grayscale-mountain.png")
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% dnd_column width=6, offset=6 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/rich_text",
+          html="<p style='font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:#667085; margin-bottom:12px;'>The Problem</p><h2>Most organizations have a capability translation problem</h2><p>Critical knowledge is spread across systems, documents, expert judgment, and operating habits. That creates friction between what the organization knows and what teams can reliably do.</p><p>Cognistry bridges that gap by turning fragmented knowledge into structured, actionable capability.</p>"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== CTA SECTION ========== #}
+  {% dnd_section
+    padding={
+      "top": 72,
+      "bottom": 88
+    }
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Ready to turn knowledge into capability?",
+            "content": "<p>See how Cognistry can structure capability development across your organization.</p>",
+            "button_here": [
+              {
+                "button_choice": "button",
+                "link_field": {
+                  "url": {
+                    "type": "EXTERNAL",
+                    "href": "/contact"
+                  },
+                  "open_in_new_tab": false,
+                  "no_follow": false
+                },
+                "button_text": "Request a demo"
+              }
+            ],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+
+{% endblock body %}

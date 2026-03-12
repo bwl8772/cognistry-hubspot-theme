@@ -1,0 +1,44 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Contact
+  screenshotPath: ../images/template-previews/contact.png
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--contact"
+%}
+
+  {# Hero Section #}
+  {% dnd_section
+    padding={
+      "top": 80,
+      "bottom": 40
+    }
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/hero.module",
+          eyebrow="Contact",
+          heading="Let's discuss your capability architecture",
+          hero_body="<p>Have questions about the platform? Want to see how Cognistry can help your organization turn knowledge into operational capability? Get in touch.</p>",
+          alignment="center",
+          theme="light"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# Contact Form #}
+  {% include_dnd_partial path="../sections/lead-form-section.html" %}
+
+  {# CTA #}
+  {% include_dnd_partial path="../sections/cta-band.html" %}
+
+{% end_dnd_area %}
+{% endblock body %}

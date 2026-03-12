@@ -1,0 +1,357 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Cognistry Signal
+  description: "Landing page for Cognistry Signal — conversion optimized."
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+
+{% dnd_area "signal_page_dnd_area", label="Signal Landing Page" %}
+
+  {# 1. HERO SECTION #}
+  {% dnd_section %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/hero.module",
+          layout="split",
+          eyebrow="Cognistry Signal",
+          heading="Capture the expertise your organization depends on.",
+          hero_body="<p>Cognistry Signal turns documents, SME knowledge, and operational evidence into structured capability intelligence — so you know exactly what capability to build.</p><p><strong>Stop guessing training priorities. Start building capability from real expertise.</strong></p>",
+          hero_image={
+            "src": get_asset_url("../images/grayscale-mountain.png"),
+            "alt": "Signal Intelligence Map: Documents → Skills → Indicators → Signal Snapshot",
+            "loading": "eager",
+            "size_type": "auto"
+          },
+          primary_cta_text="Capture Expertise",
+          primary_cta_link={
+            "url": {"type": "EXTERNAL", "href": "/contact"},
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          secondary_cta_text="See Signal in Action",
+          secondary_cta_link={
+            "url": {"type": "EXTERNAL", "href": "#how-signal-works"},
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          alignment="left",
+          theme="light"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# 2. THE PROBLEM #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "The real problem isn't training. It's uncaptured expertise.",
+            "content": "<p>Most organizations already have the expertise they need.</p><p>The problem is that it exists in forms that are impossible to use at scale:</p><ul><li>buried in documents</li><li>held in the heads of experts</li><li>scattered across teams</li><li>disconnected from capability development</li></ul><p>Traditional training systems start with content creation. But without understanding capability demand, organizations end up building generic courses, slow curriculum programs, and content that never improves real performance.</p><p><strong>Signal solves this by capturing expertise first.</strong></p>"
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# 3. THE INSIGHT #}
+  {% dnd_section
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Capability development starts with signals.",
+            "content": "<p>Before you can build capability, you must understand:</p><ul><li>which skills matter</li><li>where capability gaps exist</li><li>which decisions professionals must master</li></ul><p>Signal captures this intelligence and structures it into capability signals that guide everything built in Cognistry.</p>"
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# 4. WHAT COGNISTRY SIGNAL DOES (3 columns) #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="Signal transforms expertise into capability intelligence",
+          columns="3",
+          features=[
+            {
+              "image": {"src": "", "alt": "Capture Expertise", "loading": "lazy", "size_type": "auto"},
+              "kicker": "1",
+              "title": "Capture Expertise",
+              "text": "<p>Signal ingests knowledge from across your organization.</p><p>Sources include: internal documents, operating procedures, expert frameworks, decision scenarios, and SME interviews.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Identify Skill Demand", "loading": "lazy", "size_type": "auto"},
+              "kicker": "2",
+              "title": "Identify Skill Demand",
+              "text": "<p>Signal analyzes evidence to identify: required skills, capability indicators, and operational decision patterns.</p><p>This produces a structured Skill Demand Register.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Produce Signal Snapshots", "loading": "lazy", "size_type": "auto"},
+              "kicker": "3",
+              "title": "Produce Signal Snapshots",
+              "text": "<p>Signal seals capability intelligence into Signal Snapshots.</p><p>Snapshots are immutable artifacts that power capability design across the platform.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# 5. HOW SIGNAL WORKS (3 steps) #}
+  {% dnd_section
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module path="@hubspot/rich_text", html='<div id="how-signal-works" aria-hidden="true"></div>' %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="From evidence to capability intelligence",
+          columns="3",
+          features=[
+            {
+              "image": {"src": "", "alt": "Step 1", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Step 1",
+              "title": "Ingest organizational knowledge",
+              "text": "<p>Upload documents or capture SME expertise.</p><p>Signal ingests evidence such as: reports, playbooks, training materials, and operational frameworks.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Step 2", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Step 2",
+              "title": "Extract capability signals",
+              "text": "<p>Signal synthesizes evidence to identify: skill demand, capability indicators, and decision patterns.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Step 3", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Step 3",
+              "title": "Generate Signal Snapshot",
+              "text": "<p>Signal produces a Signal Snapshot that defines the capability blueprint for development.</p><p>This becomes the official input for Cognistry Forge.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# 6. WHERE SIGNAL FITS (Signal → Forge → Sim) #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="Signal powers the Cognistry capability pipeline",
+          intro="<p>Signal → Forge → Sim</p><p>Together, these realms form the Cognistry capability development pipeline.</p>",
+          columns="3",
+          features=[
+            {
+              "image": {"src": "", "alt": "Signal", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Signal",
+              "title": "Capture expertise and define capability demand",
+              "text": "",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Forge", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Forge",
+              "title": "Convert expertise into structured capability experiences",
+              "text": "",
+              "link": {"url": {"type": "EXTERNAL", "href": "/product-forge"}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Sim", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Sim",
+              "title": "Run realistic practice environments where teams rehearse critical decisions",
+              "text": "",
+              "link": {"url": {"type": "EXTERNAL", "href": "/product-sim"}, "open_in_new_tab": false, "no_follow": false}
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# 7. WHY ENTERPRISES USE SIGNAL (4 benefits) #}
+  {% dnd_section
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="Why leading organizations start with Signal",
+          columns="4",
+          features=[
+            {
+              "image": {"src": "", "alt": "Eliminate guesswork", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Eliminate guesswork",
+              "text": "<p>Signal reveals the real capability gaps hidden inside operational evidence.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Capture expert knowledge", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Capture expert knowledge",
+              "text": "<p>Turn SME insight into structured intelligence that can scale.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Accelerate capability design", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Accelerate capability design",
+              "text": "<p>Signal Snapshots allow capability programs to be scaffolded instantly in Forge.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Create traceable capability systems", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Create traceable capability systems",
+              "text": "<p>Every program in Cognistry can be traced back to the expertise that informed it.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# 8. EXAMPLE USE CASES (4 items) #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="Where Signal delivers immediate value",
+          columns="4",
+          features=[
+            {
+              "image": {"src": "", "alt": "Enterprise capability mapping", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Enterprise capability mapping",
+              "text": "<p>Capture domain expertise and identify the capabilities required across teams.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "AI workforce enablement", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "AI workforce enablement",
+              "text": "<p>Identify decision patterns professionals must master in AI-enabled workflows.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Operational transformation", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Operational transformation",
+              "text": "<p>Translate operational knowledge into capability blueprints.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Expert knowledge capture", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Expert knowledge capture",
+              "text": "<p>Preserve expertise from senior professionals before it disappears.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# 9. TRUST SECTION #}
+  {% dnd_section
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Built for enterprise capability development",
+            "content": "<ul style='list-style:none; padding:0;'><li>✔ Evidence-based capability design</li><li>✔ AI-guided expertise synthesis</li><li>✔ Immutable capability artifacts</li><li>✔ Traceable development pipeline</li></ul>"
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# 10. FINAL CTA #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 88}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Start with the right signals",
+            "content": "<p>Before you build capability, you must understand it.</p><p>Cognistry Signal captures expertise, identifies skill demand, and produces the intelligence required to design effective capability programs.</p>",
+            "button_here": [
+              {
+                "button_choice": "button",
+                "link_field": {
+                  "url": {"type": "EXTERNAL", "href": "/contact"},
+                  "open_in_new_tab": false,
+                  "no_follow": false
+                },
+                "button_text": "Capture Expertise with Signal"
+              }
+            ]
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+
+{% endblock body %}

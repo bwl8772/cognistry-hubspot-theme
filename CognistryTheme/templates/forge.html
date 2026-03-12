@@ -1,0 +1,410 @@
+<!--
+  templateType: page
+  label: Cognistry Forge
+  isAvailableForNewContent: true
+  description: "Conversion-optimized landing page for Cognistry Forge — the capability construction engine."
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+
+{% dnd_area "forge_page_dnd_area", label="Forge Landing Page" %}
+
+  {# ========== 1. HERO SECTION ========== #}
+  {% dnd_section %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/hero.module",
+          layout="split",
+          eyebrow="Cognistry Forge",
+          heading="Turn expertise into capability — at enterprise scale.",
+          hero_body="<p>Cognistry Forge converts captured expertise into structured capability experiences, decision simulations, and validated learning programs.</p><p><strong>Design real capability — not generic training content.</strong></p>",
+          hero_image={
+            "src": "",
+            "alt": "Capability Pipeline: Signal → Forge → Sim — Forge transforms expertise into structured capability development",
+            "loading": "lazy",
+            "size_type": "auto"
+          },
+          primary_cta_text="See Forge in Action",
+          primary_cta_link={
+            "url": {"type": "EXTERNAL", "href": "/contact"},
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          secondary_cta_text="Explore Capability Design",
+          secondary_cta_link={
+            "url": {"type": "EXTERNAL", "href": "#what-forge-does"},
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          alignment="left",
+          theme="light"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# Hero visual caption: Forge transforms expertise into structured capability development. #}
+
+  {# ========== 2. PROBLEM SECTION ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Most organizations cannot turn expertise into capability.",
+            "content": "<p>Organizations often know what expertise exists — but converting that expertise into scalable capability programs is extremely difficult.</p><p>Traditional learning systems rely on:</p><ul><li>manual curriculum design</li><li>slow SME workshops</li><li>disconnected training tools</li><li>generic content generation</li></ul><p>The result:</p><ul><li>months of development time</li><li>inconsistent learning design</li><li>training that never translates into performance</li></ul><p>What organizations need is a system for building capability.</p>",
+            "button_here": [],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 3. THE INSIGHT ========== #}
+  {% dnd_section
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Capability cannot be improvised. It must be designed.",
+            "content": "<p>Capability development requires structured experiences where professionals:</p><ul><li>encounter real decisions</li><li>apply judgment under pressure</li><li>practice realistic scenarios</li></ul><p>Forge provides the design system that makes this possible.</p><p>It converts expertise into structured capability experiences that can be practiced, measured, and improved.</p>",
+            "button_here": [],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 4. WHAT FORGE DOES (3 columns) ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="Forge is the capability construction engine",
+          columns="3 columns",
+          features=[
+            {
+              "image": {"src": "", "alt": "Structure Capability", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Structure Capability",
+              "text": "<p>Forge converts expertise into structured programs:</p><ul><li>courses</li><li>modules</li><li>interactions</li><li>decision environments</li></ul><p>This creates a repeatable architecture for capability development.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Design Decision Experiences", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Design Decision Experiences",
+              "text": "<p>Forge creates decision interactions where professionals practice the decisions they will face in real work.</p><p>These interactions become the building blocks of capability.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Validate Capability Programs", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Validate Capability Programs",
+              "text": "<p>Forge applies quality gates and validation before release.</p><p>Programs must meet capability design standards before they are deployed.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 5. HOW FORGE WORKS (4 steps) ========== #}
+  {% dnd_section
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="From expertise to capability experiences",
+          columns="4",
+          features=[
+            {
+              "image": {"src": "", "alt": "Step 1", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Step 1",
+              "title": "Apply Signal Snapshot",
+              "text": "<p>Forge begins with a Signal Snapshot that defines the capability demand.</p><p>This snapshot includes: skill demand, capability indicators, SME expertise.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Step 2", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Step 2",
+              "title": "Build Capability Architecture",
+              "text": "<p>Forge structures the program into:</p><p>Course → Modules → Sections → Interactions</p><p>Each interaction represents a decision learning moment.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Step 3", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Step 3",
+              "title": "Design Practice Environments",
+              "text": "<p>Forge builds practice environments where learners: analyze scenarios, make decisions, apply frameworks, practice judgment.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Step 4", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Step 4",
+              "title": "Validate and Release",
+              "text": "<p>Forge runs quality and capability checks before generating a Release Package for execution in Sim.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 5b. MID-PAGE CTA ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 56, "bottom": 56}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "",
+            "content": "",
+            "button_here": [
+              {
+                "button_choice": "button",
+                "link_field": {
+                  "url": {"type": "EXTERNAL", "href": "/contact"},
+                  "open_in_new_tab": false,
+                  "no_follow": false
+                },
+                "button_text": "See Capability Design in Action"
+              }
+            ],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 6. FORGE DESIGN SYSTEM ========== #}
+  {% dnd_section
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "A design system for capability development",
+            "content": "<p><strong>Capability Architecture</strong></p><p style='font-size:1.1rem; letter-spacing:0.02em;'>Course → Module → Section → Interaction → Decision Practice</p><p>Forge structures capability programs through this hierarchy.</p><p>This ensures capability development is repeatable, structured, and scalable.</p>",
+            "button_here": [],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 7. WHY FORGE IS DIFFERENT (Comparison table) ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Forge is not a content tool.",
+            "content": "<p>Forge focuses on forming professional judgment, not just delivering content.</p><div class='content-wrap' style='overflow-x:auto;'><table style='width:100%; max-width:800px; margin:2rem auto; border-collapse:collapse;'><thead><tr style='background:var(--cognistry-surface-2, #f1f5f9);'><th style='padding:12px 16px; text-align:left; border:1px solid #e2e8f0;'>Traditional LMS</th><th style='padding:12px 16px; text-align:left; border:1px solid #e2e8f0;'>AI Content Tools</th><th style='padding:12px 16px; text-align:left; border:1px solid #e2e8f0;'>Cognistry Forge</th></tr></thead><tbody><tr><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Deliver courses</td><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Generate content</td><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Build capability</td></tr><tr style='background:rgba(0,0,0,0.02);'><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Track completion</td><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Write lessons</td><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Design decision experiences</td></tr><tr><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Static learning</td><td style='padding:12px 16px; border:1px solid #e2e8f0;'>AI text output</td><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Structured capability architecture</td></tr></tbody></table></div>",
+            "button_here": [],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 8. KEY CAPABILITIES ========== #}
+  {% dnd_section
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="Powerful capability design tools",
+          columns="2 columns",
+          features=[
+            {
+              "image": {"src": "", "alt": "Capability Architecture Builder", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Capability Architecture Builder",
+              "text": "<p>Structure capability programs in minutes instead of months.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Decision Interaction Design", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Decision Interaction Design",
+              "text": "<p>Create realistic decision scenarios that build judgment.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "AI-Guided Authoring", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "AI-Guided Authoring",
+              "text": "<p>LEXI AI assists with content development and refinement.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Quality Assurance Gates", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Quality Assurance Gates",
+              "text": "<p>Programs must pass capability checks before release.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Release Packages", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Release Packages",
+              "text": "<p>Forge produces validated release artifacts ready for execution.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 9. ENTERPRISE USE CASES ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="Where Forge delivers immediate value",
+          columns="2 columns",
+          features=[
+            {
+              "image": {"src": "", "alt": "Enterprise capability academies", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Enterprise capability academies",
+              "text": "<p>Build structured programs for leadership, operations, or transformation.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "AI workforce enablement", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "AI workforce enablement",
+              "text": "<p>Prepare professionals for decision-making in AI-enabled environments.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Operational transformation", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Operational transformation",
+              "text": "<p>Turn operational expertise into scalable capability development.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Expert knowledge transfer", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Expert knowledge transfer",
+              "text": "<p>Convert SME knowledge into repeatable capability programs.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 10. TRUST / PROOF SECTION ========== #}
+  {% dnd_section
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Built for organizations that need real capability development",
+            "content": "<ul style='list-style:none; padding:0; max-width:600px; margin:0 auto;'><li style='margin-bottom:12px;'>✔ AI-guided capability design</li><li style='margin-bottom:12px;'>✔ Evidence-based expertise capture</li><li style='margin-bottom:12px;'>✔ Decision-based learning experiences</li><li style='margin-bottom:12px;'>✔ Enterprise-scale capability architecture</li></ul>",
+            "button_here": [],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 11. FINAL CTA ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 88}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Build real capability — not just training content",
+            "content": "<p>Cognistry Forge transforms captured expertise into structured capability development.</p><p>Design experiences where professionals practice the decisions that define performance.</p>",
+            "button_here": [
+              {
+                "button_choice": "button",
+                "link_field": {
+                  "url": {"type": "EXTERNAL", "href": "/contact"},
+                  "open_in_new_tab": false,
+                  "no_follow": false
+                },
+                "button_text": "Explore Cognistry Forge"
+              }
+            ],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+
+{% endblock body %}

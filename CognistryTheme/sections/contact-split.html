@@ -14,7 +14,7 @@
   },
   background_color="#ffffff"
 %}
-  {% dnd_column width=6 %}
+  {% dnd_column width=6, offset=0 %}
     {% dnd_row %}
       {% dnd_module
         path="@hubspot/rich_text",
@@ -64,7 +64,7 @@
     {% end_dnd_row %}
   {% end_dnd_column %}
 
-  {% dnd_column width=6, class="contact-form-column" %}
+  {% dnd_column width=6, offset=6, class="contact-form-column" %}
     {% dnd_row %}
       {% dnd_module
         path="@hubspot/rich_text",

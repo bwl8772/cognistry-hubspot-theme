@@ -462,6 +462,7 @@ footer a {
 .btn-premium:hover {
   background: var(--cognistry-secondary);
   box-shadow: var(--cognistry-shadow-cta-hover);
+  color: var(--cognistry-fg-on-primary);
   transform: translateY(-2px);
 }
 

@@ -59,24 +59,28 @@
 
 .button a {
   align-items: center;
-  background: linear-gradient(
-    135deg,
-    var(--cognistry-primary) 0%,
-    var(--cognistry-secondary) 100%
-  );
+  background: var(--cognistry-primary);
   border-radius: var(--cognistry-radius-full);
+  box-shadow: var(--cognistry-shadow-cta);
   color: var(--cognistry-fg-on-primary);
   display: inline-flex;
-  font-weight: 700;
+  font-size: var(--cognistry-btn-font-size);
+  font-weight: var(--cognistry-btn-font-weight);
   gap: 8px;
-  padding: 14px 24px;
+  min-height: var(--cognistry-btn-min-height);
+  padding: var(--cognistry-btn-padding);
   text-decoration: none;
-  transition: transform var(--cognistry-transition), box-shadow var(--cognistry-transition);
+  transition:
+    background var(--cognistry-transition),
+    transform var(--cognistry-transition),
+    box-shadow var(--cognistry-transition);
 }
 
 .button a:hover {
+  background: var(--cognistry-secondary);
+  box-shadow: var(--cognistry-shadow-cta-hover);
+  color: var(--cognistry-fg-on-primary);
   transform: translateY(-2px);
-  box-shadow: var(--cognistry-shadow-primary-hover);
 }
 
 .button a span {

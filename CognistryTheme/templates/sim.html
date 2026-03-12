@@ -1,0 +1,386 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Cognistry Sim
+  description: "Conversion-optimized landing page for Cognistry Sim — capability practice environments."
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+
+{% dnd_area "sim_page_dnd_area", label="Sim Landing Page" %}
+
+  {# ========== 1. HERO SECTION ========== #}
+  {% dnd_section %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/hero.module",
+          layout="split",
+          eyebrow="Cognistry Sim",
+          heading="Let teams practice critical decisions before they face them live.",
+          hero_body="<p>Cognistry Sim runs realistic decision environments where professionals apply judgment, practice complex scenarios, and demonstrate capability under pressure.</p><p><strong>Move beyond training completion.<br>Prove real capability.</strong></p><p><em>Scenario → Decision → Feedback → Insight</em></p><p><small>Sim delivers realistic practice environments where capability is proven.</small></p>",
+          hero_image={
+            "src": "",
+            "alt": "Decision Simulation Loop: Scenario → Decision → Feedback → Insight",
+            "loading": "eager",
+            "size_type": "auto"
+          },
+          primary_cta_text="See Sim in Action",
+          primary_cta_link={
+            "url": {"type": "EXTERNAL", "href": "/contact"},
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          secondary_cta_text="Explore Decision Simulations",
+          secondary_cta_link={
+            "url": {"type": "EXTERNAL", "href": "#how-sim-works"},
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          alignment="left",
+          theme="light"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 2. PROBLEM SECTION ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Most training never proves real capability.",
+            "content": "<p>Traditional training measures:</p><ul><li>course completion</li><li>quiz scores</li><li>participation</li></ul><p>But these signals rarely prove that someone can perform under real conditions.</p><p>Professionals must operate in environments with:</p><ul><li>ambiguity</li><li>time pressure</li><li>conflicting information</li><li>real consequences</li></ul><p>Without practicing decisions in these environments, capability remains theoretical.</p><p><strong>Sim solves this by creating practice environments where decisions matter.</strong></p>",
+            "button_here": [],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 3. THE INSIGHT ========== #}
+  {% dnd_section
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Capability is proven through practice.",
+            "content": "<p>Capability is the ability to perform under constraint.</p><p>To develop that ability, professionals must:</p><ul><li>encounter realistic scenarios</li><li>apply judgment</li><li>make decisions under pressure</li><li>observe the consequences</li></ul><p>Sim delivers these experiences through structured decision environments designed in Forge.</p>",
+            "button_here": [],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 4. WHAT SIM DOES (3 columns) ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="Sim executes capability experiences",
+          columns="3",
+          features=[
+            {
+              "image": {"src": "", "alt": "Run Decision Environments", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Run Decision Environments",
+              "text": "<p>Sim delivers scenarios where professionals must analyze situations and choose actions.</p><p>These environments simulate real decision contexts.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Capture Performance Signals", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Capture Performance Signals",
+              "text": "<p>Sim captures signals from learner behavior including:</p><ul><li>decision paths</li><li>time to decision</li><li>mistakes</li><li>confidence levels</li></ul><p>These signals provide insight into real capability.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Produce Capability Evidence", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Produce Capability Evidence",
+              "text": "<p>Sim produces evidence of performance that organizations can analyze and improve.</p><p>This moves training beyond completion metrics toward demonstrated capability.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 5. HOW SIM WORKS (4 steps) ========== #}
+  {% dnd_section
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="From capability design to real practice",
+          columns="4",
+          features=[
+            {
+              "image": {"src": "", "alt": "Step 1", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Step 1",
+              "title": "Receive Release Package",
+              "text": "<p>Sim consumes the Release Package produced in Forge.</p><p>This package contains: capability structure, decision scenarios, learning experiences.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Step 2", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Step 2",
+              "title": "Deliver Practice Environments",
+              "text": "<p>Sim delivers capability programs through interactive environments where learners engage with scenarios and apply judgment.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Step 3", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Step 3",
+              "title": "Capture Telemetry",
+              "text": "<p>Sim records learner behavior and decision outcomes.</p><p>These telemetry events capture how professionals actually respond to real scenarios.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Step 4", "loading": "lazy", "size_type": "auto"},
+              "kicker": "Step 4",
+              "title": "Generate Capability Evidence",
+              "text": "<p>The resulting signals show whether capability is developing and where improvement is needed.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 5b. MID-PAGE CTA ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 56, "bottom": 56}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "",
+            "content": "",
+            "button_here": [
+              {
+                "button_choice": "button",
+                "link_field": {
+                  "url": {"type": "EXTERNAL", "href": "#decision-environments"},
+                  "open_in_new_tab": false,
+                  "no_follow": false
+                },
+                "button_text": "See Decision Simulations"
+              }
+            ],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 6. DECISION PRACTICE ENVIRONMENTS ========== #}
+  {% dnd_section
+    id="decision-environments"
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Practice the decisions that define performance",
+            "content": "<p>Sim environments can include:</p><ul><li>operational decision scenarios</li><li>stakeholder conversations</li><li>strategic tradeoff exercises</li><li>problem-diagnosis simulations</li></ul><p>These environments allow teams to rehearse the kinds of decisions they will face in real work.</p>",
+            "button_here": [],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 7. WHY SIM IS DIFFERENT (Comparison table) ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Sim is not a quiz engine",
+            "content": "<p>Sim focuses on demonstrated performance, not just knowledge.</p><div class='content-wrap' style='overflow-x:auto;'><table style='width:100%; max-width:800px; margin:2rem auto; border-collapse:collapse;'><thead><tr style='background:var(--cognistry-surface-2, #f1f5f9);'><th style='padding:12px 16px; text-align:left; border:1px solid #e2e8f0;'>Traditional LMS</th><th style='padding:12px 16px; text-align:left; border:1px solid #e2e8f0;'>Scenario Tools</th><th style='padding:12px 16px; text-align:left; border:1px solid #e2e8f0;'>Cognistry Sim</th></tr></thead><tbody><tr><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Deliver courses</td><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Static scenarios</td><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Interactive decision environments</td></tr><tr style='background:rgba(0,0,0,0.02);'><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Track completion</td><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Simple branching</td><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Real decision practice</td></tr><tr><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Quiz results</td><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Narrative outcomes</td><td style='padding:12px 16px; border:1px solid #e2e8f0;'>Behavioral telemetry</td></tr></tbody></table></div>",
+            "button_here": [],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 8. WHAT SIM MEASURES ========== #}
+  {% dnd_section
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Understand how professionals actually perform",
+            "content": "<p>Sim captures signals such as:</p><ul><li>decision path</li><li>time to decision</li><li>retry attempts</li><li>confidence levels</li><li>mistakes and corrections</li></ul><p>These signals reveal how judgment develops over time.</p>",
+            "button_here": [],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 9. ENTERPRISE USE CASES ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="Where Sim delivers measurable value",
+          columns="4",
+          features=[
+            {
+              "image": {"src": "", "alt": "Leadership decision development", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Leadership decision development",
+              "text": "<p>Practice strategic decision-making before leaders face real situations.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "AI workforce enablement", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "AI workforce enablement",
+              "text": "<p>Train teams to make effective decisions with AI tools.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Operational scenario training", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Operational scenario training",
+              "text": "<p>Prepare teams for complex operational challenges.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            },
+            {
+              "image": {"src": "", "alt": "Stakeholder communication", "loading": "lazy", "size_type": "auto"},
+              "kicker": "",
+              "title": "Stakeholder communication",
+              "text": "<p>Practice high-stakes conversations with simulated stakeholders.</p>",
+              "link": {"url": {"type": "EXTERNAL", "href": ""}, "open_in_new_tab": false, "no_follow": false}
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 10. TRUST SECTION ========== #}
+  {% dnd_section
+    padding={"top": 72, "bottom": 72}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Built for enterprise capability development",
+            "content": "<ul style='list-style:none; padding:0; max-width:600px; margin:0 auto;'><li style='margin-bottom:12px;'>✔ Decision-based practice environments</li><li style='margin-bottom:12px;'>✔ Behavioral performance signals</li><li style='margin-bottom:12px;'>✔ Evidence of capability development</li><li style='margin-bottom:12px;'>✔ Integrated capability pipeline</li></ul>",
+            "button_here": [],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== 11. FINAL CTA ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={"top": 72, "bottom": 88}
+  %}
+    {% dnd_column width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Prove capability before it matters",
+            "content": "<p>Cognistry Sim gives teams a safe environment to practice the decisions that define performance.</p><p>Capture real performance signals and build professionals who are ready for real situations.</p>",
+            "button_here": [
+              {
+                "button_choice": "button",
+                "link_field": {
+                  "url": {"type": "EXTERNAL", "href": "/contact"},
+                  "open_in_new_tab": false,
+                  "no_follow": false
+                },
+                "button_text": "Explore Cognistry Sim"
+              },
+              {
+                "button_choice": "single",
+                "link_field": {
+                  "url": {"type": "EXTERNAL", "href": "/"},
+                  "open_in_new_tab": false,
+                  "no_follow": false
+                },
+                "button_text": "See the Full Cognistry Platform"
+              }
+            ],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+
+{% endblock body %}

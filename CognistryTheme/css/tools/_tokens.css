@@ -136,7 +136,7 @@
   --cognistry-table-row-hover: rgba(78, 10, 119, 0.03);
 
   /* --- Button Styles (unified) --- */
-  --cognistry-btn-gradient: linear-gradient(135deg, var(--cognistry-primary) 0%, var(--cognistry-secondary) 100%);
+  /* NOTE: Gradient buttons deprecated - use solid colors for consistent hover states */
   --cognistry-btn-min-height: 48px;
   --cognistry-btn-min-height-sm: 44px;
   --cognistry-btn-padding: 0 1.25rem;

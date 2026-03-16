@@ -320,6 +320,7 @@
 .cg-hero__button--primary:focus {
   background: var(--cognistry-secondary);
   box-shadow: var(--cognistry-shadow-cta-hover);
+  color: var(--cognistry-fg-on-primary);
   transform: translateY(-2px);
 }
 
@@ -401,6 +402,7 @@
 .cg-hero--dark .cg-hero__button--primary:focus {
   background: var(--cognistry-accent-hover);
   box-shadow: var(--cognistry-shadow-accent-hover);
+  color: var(--cognistry-fg-on-accent);
 }
 
 .cg-hero--dark .cg-hero__button--secondary {

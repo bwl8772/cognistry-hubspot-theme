@@ -1,0 +1,52 @@
+<!--
+  templateType: section
+  label: Platform Differentiation
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/platform-differentiation.png
+  description: "Explains what makes Cognistry different from other learning platforms."
+-->
+{% set heading = "What Makes Cognistry Different" %}
+{% set intro = "<p>Most platforms help you publish learning content. Cognistry is designed to engineer professional capability.</p>" %}
+{% set columns = "3 columns" %}
+{% set features = [
+  {
+    "title": "Capture expertise before building content",
+    "text": "<p>Organizations usually start by building courses. Cognistry starts by specifying the capability first.</p><p>SME knowledge, documents, value streams, and skill demand are captured and sealed as a Signal Snapshot.</p>"
+  },
+  {
+    "title": "Engineer learning experiences by contract",
+    "text": "<p>Most course tools assemble content. Cognistry engineers capability development.</p><p>Every interaction has defined objectives, modalities, and design contracts.</p>"
+  },
+  {
+    "title": "Prove capability before it reaches real work",
+    "text": "<p>Learning systems usually measure completion. Cognistry measures capability evidence.</p><p>Teams practice decision environments before facing them live.</p>"
+  }
+] %}
+
+{% if context is defined %}
+  {% if context.heading is defined and context.heading %}{% set heading = context.heading %}{% endif %}
+  {% if context.intro is defined and context.intro %}{% set intro = context.intro %}{% endif %}
+  {% if context.columns is defined and context.columns %}{% set columns = context.columns %}{% endif %}
+  {% if context.features is defined and context.features %}{% set features = context.features %}{% endif %}
+{% endif %}
+
+{% dnd_section
+  background_color="#F8FAFC",
+  padding={
+    "top": 72,
+    "bottom": 72
+  }
+%}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="/Cognistry Theme/modules/feature-grid.module",
+        heading=heading,
+        intro=intro,
+        columns=columns,
+        features=features
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

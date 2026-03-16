@@ -1,0 +1,81 @@
+<!--
+  templateType: section
+  label: Platform Capability System
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/platform-capability-system.png
+  description: "Three realms of the Cognistry capability system: Signal, Forge, and Sim."
+-->
+{% set heading = "The Cognistry Capability System" %}
+{% set intro = "<p>Three realms. One capability system.</p>" %}
+{% set columns = "3 columns" %}
+{% set features = [
+  {
+    "kicker": "Signal",
+    "title": "Capture expertise",
+    "text": "<p>Capture expertise across the enterprise and seal it into an immutable Signal Snapshot.</p>",
+    "link_text": "Learn more",
+    "link": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "/platform/signal"
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "kicker": "Forge",
+    "title": "Structure development",
+    "text": "<p>Convert Signal expertise into structured capability architecture.</p>",
+    "link_text": "Learn more",
+    "link": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "/platform/forge"
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "kicker": "Sim",
+    "title": "Practice decisions",
+    "text": "<p>Practice decisions in realistic environments before performance matters.</p>",
+    "link_text": "Learn more",
+    "link": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "/platform/sim"
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  }
+] %}
+
+{% if context is defined %}
+  {% if context.heading is defined and context.heading %}{% set heading = context.heading %}{% endif %}
+  {% if context.intro is defined and context.intro %}{% set intro = context.intro %}{% endif %}
+  {% if context.columns is defined and context.columns %}{% set columns = context.columns %}{% endif %}
+  {% if context.features is defined and context.features %}{% set features = context.features %}{% endif %}
+{% endif %}
+
+{% dnd_section
+  padding={
+    "top": 72,
+    "bottom": 72
+  }
+%}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="/Cognistry Theme/modules/feature-grid.module",
+        heading=heading,
+        intro=intro,
+        columns=columns,
+        features=features
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

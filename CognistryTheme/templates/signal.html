@@ -11,7 +11,12 @@
 {% dnd_area "signal_page_dnd_area", label="Signal Landing Page" %}
 
   {# 1. HERO SECTION #}
-  {% dnd_section %}
+  {% dnd_section
+    padding={
+      "top": 0,
+      "bottom": 0
+    }
+  %}
     {% dnd_column width=12 %}
       {% dnd_row %}
         {% dnd_module
@@ -95,7 +100,7 @@
         {% dnd_module
           path="/Cognistry Theme/modules/feature-grid.module",
           heading="Signal transforms expertise into capability intelligence",
-          columns="3",
+          columns="3 columns",
           features=[
             {
               "image": {"src": "", "alt": "Capture Expertise", "loading": "lazy", "size_type": "auto"},
@@ -138,7 +143,7 @@
         {% dnd_module
           path="/Cognistry Theme/modules/feature-grid.module",
           heading="From evidence to capability intelligence",
-          columns="3",
+          columns="3 columns",
           features=[
             {
               "image": {"src": "", "alt": "Step 1", "loading": "lazy", "size_type": "auto"},
@@ -179,7 +184,7 @@
           path="/Cognistry Theme/modules/feature-grid.module",
           heading="Signal powers the Cognistry capability pipeline",
           intro="<p>Signal → Forge → Sim</p><p>Together, these realms form the Cognistry capability development pipeline.</p>",
-          columns="3",
+          columns="3 columns",
           features=[
             {
               "image": {"src": "", "alt": "Signal", "loading": "lazy", "size_type": "auto"},
@@ -218,7 +223,7 @@
         {% dnd_module
           path="/Cognistry Theme/modules/feature-grid.module",
           heading="Why leading organizations start with Signal",
-          columns="4",
+          columns="4 columns",
           features=[
             {
               "image": {"src": "", "alt": "Eliminate guesswork", "loading": "lazy", "size_type": "auto"},
@@ -265,7 +270,7 @@
         {% dnd_module
           path="/Cognistry Theme/modules/feature-grid.module",
           heading="Where Signal delivers immediate value",
-          columns="4",
+          columns="4 columns",
           features=[
             {
               "image": {"src": "", "alt": "Enterprise capability mapping", "loading": "lazy", "size_type": "auto"},

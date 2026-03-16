@@ -33,19 +33,29 @@
     
     {# Dynamic Tag Filter using blog_tags() #}
     {% if module.show_tag_filter %}
-      {% set all_tags = blog_tags(group.id, 250) %}
-      {% if all_tags %}
-        <nav class="blog-hero__tags" aria-label="Filter by topic">
-          <a href="{{ group.absolute_url }}" 
-             class="blog-hero__tag {% if not request.query_dict.tag %}blog-hero__tag--active{% endif %}">
-            All
-          </a>
-          {% for tag in all_tags %}
-            <a href="{{ blog_tag_url(group.id, tag.slug) }}" 
-               class="blog-hero__tag {% if request.query_dict.tag == tag.slug %}blog-hero__tag--active{% endif %}">
-              {{ tag.name }}
+      {% if group is defined and group.id %}
+        {% set all_tags = blog_tags(group.id, 250) %}
+        {% if all_tags %}
+          <nav class="blog-hero__tags" aria-label="Filter by topic">
+            <a href="{{ group.absolute_url }}" 
+               class="blog-hero__tag {% if not request.query_dict.tag %}blog-hero__tag--active{% endif %}">
+              All
             </a>
-          {% endfor %}
+            {% for tag in all_tags %}
+              <a href="{{ blog_tag_url(group.id, tag.slug) }}" 
+                 class="blog-hero__tag {% if request.query_dict.tag == tag.slug %}blog-hero__tag--active{% endif %}">
+                {{ tag.name }}
+              </a>
+            {% endfor %}
+          </nav>
+        {% endif %}
+      {% else %}
+        {# Preview mode - show placeholder #}
+        <nav class="blog-hero__tags" aria-label="Filter by topic">
+          <a href="#" class="blog-hero__tag blog-hero__tag--active">All</a>
+          <a href="#" class="blog-hero__tag">Capability</a>
+          <a href="#" class="blog-hero__tag">Decision-Making</a>
+          <a href="#" class="blog-hero__tag">Product</a>
         </nav>
       {% endif %}
     {% endif %}
@@ -55,12 +65,12 @@
       <nav class="blog-hero__categories" aria-label="Blog categories">
         {% for cat in module.categories %}
           {% if cat.is_all %}
-            <a href="{{ group.absolute_url }}" 
+            <a href="{% if group is defined and group.absolute_url %}{{ group.absolute_url }}{% else %}#{% endif %}" 
                class="blog-hero__category {% if not request.query_dict.tag %}blog-hero__category--active{% endif %}">
               {{ cat.category_name }}
             </a>
           {% else %}
-            <a href="{{ blog_tag_url(group.id, cat.slug) }}" 
+            <a href="{% if group is defined and group.id %}{{ blog_tag_url(group.id, cat.slug) }}{% else %}#{% endif %}" 
                class="blog-hero__category {% if request.query_dict.tag == cat.slug %}blog-hero__category--active{% endif %}">
               {{ cat.category_name }}
             </a>

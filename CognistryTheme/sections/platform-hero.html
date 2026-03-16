@@ -1,0 +1,59 @@
+<!--
+  templateType: section
+  label: Platform Hero
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/platform-hero.png
+  description: "Platform page hero with eyebrow, heading, body text, and dual CTAs."
+-->
+{% set eyebrow = "Cognistry Platform" %}
+{% set heading = "Build capability —" %}
+{% set heading_highlight = "not just courses" %}
+{% set hero_body = "<p>Design evidence-based learning experiences with Cognistry. Capture expertise, engineer capability development, and deliver decision-ready teams — all in one system.</p>" %}
+{% set primary_cta_text = "Request Access" %}
+{% set primary_cta_href = "/request-access" %}
+{% set secondary_link_text = "Sign in" %}
+{% set secondary_link_href = "/login" %}
+
+{% if context is defined %}
+  {% if context.eyebrow is defined and context.eyebrow %}{% set eyebrow = context.eyebrow %}{% endif %}
+  {% if context.heading is defined and context.heading %}{% set heading = context.heading %}{% endif %}
+  {% if context.heading_highlight is defined and context.heading_highlight %}{% set heading_highlight = context.heading_highlight %}{% endif %}
+  {% if context.hero_body is defined and context.hero_body %}{% set hero_body = context.hero_body %}{% endif %}
+  {% if context.primary_cta_text is defined and context.primary_cta_text %}{% set primary_cta_text = context.primary_cta_text %}{% endif %}
+  {% if context.primary_cta_href is defined and context.primary_cta_href %}{% set primary_cta_href = context.primary_cta_href %}{% endif %}
+  {% if context.secondary_link_text is defined and context.secondary_link_text %}{% set secondary_link_text = context.secondary_link_text %}{% endif %}
+  {% if context.secondary_link_href is defined and context.secondary_link_href %}{% set secondary_link_href = context.secondary_link_href %}{% endif %}
+{% endif %}
+
+{% dnd_section %}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="/Cognistry Theme/modules/hero.module",
+        eyebrow=eyebrow,
+        heading=heading,
+        heading_highlight=heading_highlight,
+        hero_body=hero_body,
+        primary_cta_text=primary_cta_text,
+        primary_cta_link={
+          "url": {
+            "type": "EXTERNAL",
+            "href": primary_cta_href
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        },
+        secondary_link_text=secondary_link_text,
+        secondary_link_url={
+          "url": {
+            "type": "EXTERNAL",
+            "href": secondary_link_href
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

@@ -1,0 +1,41 @@
+<!--
+  templateType: section
+  label: Platform Why Use
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/platform-why-use.png
+  description: "Explains why organizations choose Cognistry - key pain points addressed."
+-->
+{% set heading = "Why Organizations Use Cognistry" %}
+{% set columns = "2 columns" %}
+{% set features = [
+  { "title": "Expertise trapped in documents and SMEs" },
+  { "title": "Long curriculum design cycles" },
+  { "title": "Generic AI-generated content" },
+  { "title": "Training completion without measurable capability" }
+] %}
+
+{% if context is defined %}
+  {% if context.heading is defined and context.heading %}{% set heading = context.heading %}{% endif %}
+  {% if context.columns is defined and context.columns %}{% set columns = context.columns %}{% endif %}
+  {% if context.features is defined and context.features %}{% set features = context.features %}{% endif %}
+{% endif %}
+
+{% dnd_section
+  background_color="#F8FAFC",
+  padding={
+    "top": 72,
+    "bottom": 72
+  }
+%}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="/Cognistry Theme/modules/feature-grid.module",
+        heading=heading,
+        columns=columns,
+        features=features
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

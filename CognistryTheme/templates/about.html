@@ -8,10 +8,15 @@
 
 {% block body %}
 
-{% dnd_area "about_page_dnd_area", label="About Page" %}
+{% dnd_area "main_content", label="About Page Content" %}
 
-  {# HERO #}
-  {% dnd_section %}
+  {# ========== HERO ========== #}
+  {% dnd_section
+    padding={
+      "top": 0,
+      "bottom": 0
+    }
+  %}
     {% dnd_column width=12 %}
       {% dnd_row %}
         {% dnd_module
@@ -45,12 +50,12 @@
     {% end_dnd_column %}
   {% end_dnd_section %}
 
-  {# WHAT COGNISTRY IS #}
+  {# ========== WHAT COGNISTRY IS ========== #}
   {% dnd_section
     background_color="#F8FAFC",
     padding={
-      "top": 64,
-      "bottom": 64
+      "top": 72,
+      "bottom": 72
     }
   %}
     {% dnd_column width=12 %}
@@ -129,11 +134,11 @@
     {% end_dnd_column %}
   {% end_dnd_section %}
 
-  {# DATA DRAG PROBLEM INTRO #}
+  {# ========== DATA DRAG PROBLEM INTRO ========== #}
   {% dnd_section
     padding={
       "top": 72,
-      "bottom": 24
+      "bottom": 72
     }
   %}
     {% dnd_column width=12 %}
@@ -147,8 +152,14 @@
     {% end_dnd_column %}
   {% end_dnd_section %}
 
-  {# DATA DRAG GRID #}
-  {% dnd_section %}
+  {# ========== DATA DRAG GRID ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={
+      "top": 72,
+      "bottom": 72
+    }
+  %}
     {% dnd_column width=12 %}
       {% dnd_row %}
         {% dnd_module
@@ -366,8 +377,13 @@
     {% end_dnd_column %}
   {% end_dnd_section %}
 
-  {# STATS BAND #}
-  {% dnd_section %}
+  {# ========== STATS BAND ========== #}
+  {% dnd_section
+    padding={
+      "top": 64,
+      "bottom": 64
+    }
+  %}
     {% dnd_column width=12 %}
       {% dnd_row %}
         {% dnd_module
@@ -386,8 +402,9 @@
     {% end_dnd_column %}
   {% end_dnd_section %}
 
-  {# CTA #}
+  {# ========== CTA ========== #}
   {% dnd_section
+    background_color="#F8FAFC",
     padding={
       "top": 72,
       "bottom": 88

@@ -1,0 +1,311 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Platform
+  screenshotPath: ../images/template-previews/platform.png
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+
+{% dnd_area "main_content" %}
+
+  {# ========== HERO ========== #}
+  {% dnd_section
+    padding={
+      "top": 0,
+      "bottom": 0
+    }
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/hero.module",
+          layout="split",
+          eyebrow="Cognistry Platform",
+          heading="Build capability —",
+          heading_highlight="not just courses",
+          hero_body="<p>Design evidence-based learning experiences with Cognistry. Capture expertise, engineer capability development, and deliver decision-ready teams — all in one system.</p>",
+          hero_image={
+            "src": get_asset_url("../images/grayscale-mountain.png"),
+            "alt": "Cognistry platform visualization",
+            "loading": "eager",
+            "size_type": "auto"
+          },
+          primary_cta_text="Request Access",
+          primary_cta_link={
+            "url": {
+              "type": "EXTERNAL",
+              "href": "/request-access"
+            },
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          secondary_link_text="Sign in",
+          secondary_link_url={
+            "url": {
+              "type": "EXTERNAL",
+              "href": "/login"
+            },
+            "open_in_new_tab": false,
+            "no_follow": false
+          },
+          alignment="left",
+          theme="light"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== FEATURE BADGES ========== #}
+  {% dnd_section
+    padding={
+      "top": 0,
+      "bottom": 0
+    }
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-badges.module",
+          alignment="center",
+          badges=[
+            {
+              "icon": "sparkles",
+              "text": "AI-Guided Authoring"
+            },
+            {
+              "icon": "document",
+              "text": "Evidence-Based Design"
+            },
+            {
+              "icon": "star",
+              "text": "Quality Experiences"
+            },
+            {
+              "icon": "rocket",
+              "text": "Publish Ready"
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== WHAT MAKES COGNISTRY DIFFERENT ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={
+      "top": 72,
+      "bottom": 72
+    }
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="What Makes Cognistry Different",
+          intro="<p>Most platforms help you publish learning content. Cognistry is designed to engineer professional capability.</p>",
+          columns="3 columns",
+          features=[
+            {
+              "title": "Capture expertise before building content",
+              "text": "<p>Organizations usually start by building courses. Cognistry starts by specifying the capability first.</p><p>SME knowledge, documents, value streams, and skill demand are captured and sealed as a Signal Snapshot.</p>"
+            },
+            {
+              "title": "Engineer learning experiences by contract",
+              "text": "<p>Most course tools assemble content. Cognistry engineers capability development.</p><p>Every interaction has defined objectives, modalities, and design contracts.</p>"
+            },
+            {
+              "title": "Prove capability before it reaches real work",
+              "text": "<p>Learning systems usually measure completion. Cognistry measures capability evidence.</p><p>Teams practice decision environments before facing them live.</p>"
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== COGNISTRY CAPABILITY SYSTEM ========== #}
+  {% dnd_section
+    padding={
+      "top": 72,
+      "bottom": 72
+    }
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="The Cognistry Capability System",
+          intro="<p>Three realms. One capability system.</p>",
+          columns="3 columns",
+          features=[
+            {
+              "kicker": "Signal",
+              "title": "Capture expertise",
+              "text": "<p>Capture expertise across the enterprise and seal it into an immutable Signal Snapshot.</p>",
+              "link_text": "Learn more",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": "/platform/signal"
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            },
+            {
+              "kicker": "Forge",
+              "title": "Structure development",
+              "text": "<p>Convert Signal expertise into structured capability architecture.</p>",
+              "link_text": "Learn more",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": "/platform/forge"
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            },
+            {
+              "kicker": "Sim",
+              "title": "Practice decisions",
+              "text": "<p>Practice decisions in realistic environments before performance matters.</p>",
+              "link_text": "Learn more",
+              "link": {
+                "url": {
+                  "type": "EXTERNAL",
+                  "href": "/platform/sim"
+                },
+                "open_in_new_tab": false,
+                "no_follow": false
+              }
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== WHY ORGANIZATIONS USE COGNISTRY ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={
+      "top": 72,
+      "bottom": 72
+    }
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="Why Organizations Use Cognistry",
+          columns="2 columns",
+          features=[
+            { "title": "Expertise trapped in documents and SMEs" },
+            { "title": "Long curriculum design cycles" },
+            { "title": "Generic AI-generated content" },
+            { "title": "Training completion without measurable capability" }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== OUTCOMES ========== #}
+  {% dnd_section
+    padding={
+      "top": 64,
+      "bottom": 64
+    }
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/stats-band.module",
+          eyebrow="Outcomes",
+          heading="Built for organizations that need stronger operational judgment and execution",
+          stat_one="40%",
+          stat_one_text="faster capability ramp",
+          stat_two="3×",
+          stat_two_text="more scalable expertise",
+          stat_three="2×",
+          stat_three_text="improved decision readiness"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== PROCESS ========== #}
+  {% dnd_section
+    padding={
+      "top": 72,
+      "bottom": 72
+    }
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="How Cognistry Translates Knowledge into Capability",
+          columns="2 columns",
+          features=[
+            { "title": "Capture expertise from documents and SMEs" },
+            { "title": "Structure capability development into engineered learning experiences" },
+            { "title": "Run practice environments where teams rehearse decisions" },
+            { "title": "Collect evidence that capability was formed" }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== CTA ========== #}
+  {% dnd_section
+    padding={
+      "top": 72,
+      "bottom": 88
+    }
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Ready to turn knowledge into capability?",
+            "content": "<p>See how Cognistry structures capability development across your organization.</p>",
+            "button_here": [
+              {
+                "button_choice": "button",
+                "link_field": {
+                  "url": {
+                    "type": "EXTERNAL",
+                    "href": "/request-demo"
+                  },
+                  "open_in_new_tab": false,
+                  "no_follow": false
+                },
+                "button_text": "Request a demo"
+              }
+            ],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+
+{% endblock body %}

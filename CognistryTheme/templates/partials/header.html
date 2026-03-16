@@ -216,17 +216,23 @@
         {# Header navigation row two #}
 
         <div class="header__row-2">
-          <div class="header--toggle header__navigation--toggle"></div>
-          {% if content.translated_content|length or is_listing_view and group.translations %}
-          <div class="header--toggle header__language-switcher--toggle"></div>
-          {% endif %}
-          {#<div class="header--toggle header__search--toggle"></div>#}
-          <div class="header__close--toggle"></div>
-          <div class="header__navigation header--element">
+          <button
+            class="header__navigation--toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="main-navigation"
+          ></button>
+          <button
+            class="header__close--toggle"
+            type="button"
+            aria-label="Close menu"
+          ></button>
+          <div id="main-navigation" class="header__navigation">
             {% module "navigation-primary"
-            path="../../modules/menu.module",
-            label="Primary navigation"
-          %}
+              path="../../modules/menu.module",
+              label="Primary navigation"
+            %}
           </div>
         </div>
 

@@ -2,7 +2,7 @@
   templateType: page
   isAvailableForNewContent: true
   label: Landing Page (Blank)
-  screenshotPath: ../images/template-previews/landing-page.png
+  screenshotPath: ../images/template-previews/landing-page-2.png
   description: "A blank landing page template for building custom layouts."
 -->
 {% extends "../layouts/base.html" %}
@@ -12,14 +12,13 @@
 {% endblock header %}
 
 {% block body %}
-{% dnd_area "dnd_area"
-  label="Main section",
-  class="body-container body-container--landing-page"
-%}
+
+{% dnd_area "main_content", label="Landing Page Content" %}
 
   {# Add sections via the page editor #}
 
 {% end_dnd_area %}
+
 {% endblock body %}
 
 {% block footer %}

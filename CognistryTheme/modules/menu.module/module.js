@@ -1,59 +1,102 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const desktopParentItems = document.querySelectorAll(".menu--desktop .menu__item--has-submenu");
-  const mobileChildToggles = document.querySelectorAll(".menu--mobile .menu__child-toggle");
+/**
+ * Menu Module - Responsive navigation with hover (desktop) and click (mobile) behavior
+ */
+(function() {
+  "use strict";
 
-  desktopParentItems.forEach((item) => {
-    const link = item.querySelector("a");
-    const button = item.querySelector(".menu__child-toggle");
-    let closeTimer;
+  const MOBILE_BREAKPOINT = 768;
+  const HOVER_CLOSE_DELAY = 150;
 
-    const openMenu = () => {
-      window.clearTimeout(closeTimer);
-      item.classList.add("menu__item--open");
-      if (link) link.setAttribute("aria-expanded", "true");
-      if (button) button.setAttribute("aria-expanded", "true");
-    };
+  function initMenu() {
+    const menuItems = document.querySelectorAll(".menu__item--has-submenu");
 
-    const closeMenu = () => {
-      item.classList.remove("menu__item--open");
-      if (link) link.setAttribute("aria-expanded", "false");
-      if (button) button.setAttribute("aria-expanded", "false");
-    };
+    menuItems.forEach((item) => {
+      const toggle = item.querySelector(":scope > .menu__toggle");
+      if (!toggle) return;
 
-    item.addEventListener("mouseenter", openMenu);
-    item.addEventListener("mouseleave", () => {
-      closeTimer = window.setTimeout(closeMenu, 120);
+      let closeTimer = null;
+
+      const openSubmenu = () => {
+        clearTimeout(closeTimer);
+        item.classList.add("menu__item--open");
+        toggle.setAttribute("aria-expanded", "true");
+      };
+
+      const closeSubmenu = () => {
+        item.classList.remove("menu__item--open");
+        toggle.setAttribute("aria-expanded", "false");
+      };
+
+      const closeWithDelay = () => {
+        closeTimer = setTimeout(closeSubmenu, HOVER_CLOSE_DELAY);
+      };
+
+      const isDesktop = () => window.innerWidth >= MOBILE_BREAKPOINT;
+
+      toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = item.classList.contains("menu__item--open");
+        if (isOpen) {
+          closeSubmenu();
+        } else {
+          openSubmenu();
+        }
+      });
+
+      item.addEventListener("mouseenter", () => {
+        if (isDesktop()) {
+          openSubmenu();
+        }
+      });
+
+      item.addEventListener("mouseleave", () => {
+        if (isDesktop()) {
+          closeWithDelay();
+        }
+      });
+
+      item.addEventListener("focusin", () => {
+        if (isDesktop()) {
+          openSubmenu();
+        }
+      });
+
+      item.addEventListener("focusout", (e) => {
+        if (isDesktop() && !item.contains(e.relatedTarget)) {
+          closeSubmenu();
+        }
+      });
     });
 
-    item.addEventListener("focusin", openMenu);
-    item.addEventListener("focusout", (event) => {
-      if (!item.contains(event.relatedTarget)) {
-        closeMenu();
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".menu")) {
+        document.querySelectorAll(".menu__item--open").forEach((item) => {
+          item.classList.remove("menu__item--open");
+          const toggle = item.querySelector(":scope > .menu__toggle");
+          if (toggle) {
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
       }
     });
 
-    if (button) {
-      button.addEventListener("click", () => {
-        const isOpen = item.classList.contains("menu__item--open");
-        window.clearTimeout(closeTimer);
-        item.classList.toggle("menu__item--open", !isOpen);
-        if (link) link.setAttribute("aria-expanded", String(!isOpen));
-        button.setAttribute("aria-expanded", String(!isOpen));
-      });
-    }
-  });
-
-  mobileChildToggles.forEach((toggle) => {
-    toggle.addEventListener("click", () => {
-      const parent = toggle.parentNode;
-      const link = parent.querySelector("a");
-      const isOpen = parent.classList.contains("menu__item--open");
-
-      toggle.classList.toggle("menu__child-toggle--open", !isOpen);
-      parent.classList.toggle("menu__item--open", !isOpen);
-
-      if (link) link.setAttribute("aria-expanded", String(!isOpen));
-      toggle.setAttribute("aria-expanded", String(!isOpen));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        document.querySelectorAll(".menu__item--open").forEach((item) => {
+          item.classList.remove("menu__item--open");
+          const toggle = item.querySelector(":scope > .menu__toggle");
+          if (toggle) {
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
     });
-  });
-});
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMenu);
+  } else {
+    initMenu();
+  }
+})();

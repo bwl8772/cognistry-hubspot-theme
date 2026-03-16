@@ -5,7 +5,13 @@
   screenshotPath: ../images/section-previews/feature-grid.png
   description: "Centered heading above three feature cards with image and text."
 -->
-{% dnd_section %}
+{% dnd_section
+  background_color="#F8FAFC",
+  padding={
+    "top": 72,
+    "bottom": 72
+  }
+%}
   {% dnd_column %}
     {% dnd_row %}
       {% dnd_module

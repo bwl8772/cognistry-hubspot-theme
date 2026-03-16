@@ -11,33 +11,110 @@
 {% endblock header %}
 
 {% block body %}
-{% dnd_area "dnd_area"
-  label="Main section",
-  class="body-container body-container--landing-page"
-%}
 
-  {# Hero banner #}
+{% dnd_area "main_content", label="Landing Page Content" %}
 
-  {% include_dnd_partial
-    path="../sections/hero-banner.html"
-    context={
-      "content": "<h1>Download your free eBook</h1><p>Use this space to tell everyone what your eBook is all about.</p>"
+  {# ========== HERO SECTION ========== #}
+  {% dnd_section
+    padding={
+      "top": 0,
+      "bottom": 0
     }
   %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/hero.module",
+          eyebrow="Free Resource",
+          heading="Download your",
+          heading_highlight="free eBook",
+          hero_body="<p>Use this space to tell everyone what your eBook is all about.</p>",
+          cta_type="form",
+          form_button_text="Download Now",
+          alignment="center",
+          theme="light"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
 
-  {# Feature grid #}
-
-  {% include_dnd_partial
-    path="../sections/feature-grid.html",
-    context={
-      "background_color": "#FFFFFF"
+  {# ========== FEATURE GRID ========== #}
+  {% dnd_section
+    background_color="#F8FAFC",
+    padding={
+      "top": 72,
+      "bottom": 72
     }
   %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="What you'll learn",
+          intro="<p>This resource covers the essential topics you need to know.</p>",
+          columns="3 columns",
+          features=[
+            {
+              "title": "Key insight one",
+              "text": "<p>Explain the first major benefit or learning outcome.</p>"
+            },
+            {
+              "title": "Key insight two",
+              "text": "<p>Explain the second major benefit or learning outcome.</p>"
+            },
+            {
+              "title": "Key insight three",
+              "text": "<p>Explain the third major benefit or learning outcome.</p>"
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ========== CTA SECTION ========== #}
+  {% dnd_section
+    padding={
+      "top": 72,
+      "bottom": 88
+    }
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="/Cognistry Theme/modules/cta.module",
+          content_position_choice="center",
+          content_here={
+            "title_text": "Ready to get started?",
+            "content": "<p>Download the resource and start learning today.</p>",
+            "button_here": [
+              {
+                "button_choice": "button",
+                "link_field": {
+                  "url": {
+                    "type": "EXTERNAL",
+                    "href": "#"
+                  },
+                  "open_in_new_tab": false,
+                  "no_follow": false
+                },
+                "button_text": "Download Now"
+              }
+            ],
+            "content_bottom": ""
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
 
 {% end_dnd_area %}
+
 {% endblock body %}
 
 {% block footer %}
 {% global_partial path="/Cognistry Theme/templates/partials/footer-lp.html" %}
-
 {% endblock footer %}

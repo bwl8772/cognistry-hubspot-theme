@@ -11,7 +11,12 @@
 {% dnd_area "forge_page_dnd_area", label="Forge Landing Page" %}
 
   {# ========== 1. HERO SECTION ========== #}
-  {% dnd_section %}
+  {% dnd_section
+    padding={
+      "top": 0,
+      "bottom": 0
+    }
+  %}
     {% dnd_column width=12 %}
       {% dnd_row %}
         {% dnd_module
@@ -45,8 +50,6 @@
       {% end_dnd_row %}
     {% end_dnd_column %}
   {% end_dnd_section %}
-
-  {# Hero visual caption: Forge transforms expertise into structured capability development. #}
 
   {# ========== 2. PROBLEM SECTION ========== #}
   {% dnd_section
@@ -140,7 +143,7 @@
         {% dnd_module
           path="/Cognistry Theme/modules/feature-grid.module",
           heading="From expertise to capability experiences",
-          columns="4",
+          columns="4 columns",
           features=[
             {
               "image": {"src": "", "alt": "Step 1", "loading": "lazy", "size_type": "auto"},

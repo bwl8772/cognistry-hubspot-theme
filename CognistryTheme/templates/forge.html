@@ -59,13 +59,21 @@
     {% dnd_column width=12 %}
       {% dnd_row %}
         {% dnd_module
-          path="/Cognistry Theme/modules/cta.module",
-          content_position_choice="center",
+          path="/Cognistry Theme/modules/two-column.module",
+          content_position_choice="left_image_right_content",
+          image={
+            "image_or_gif_choice": "image",
+            "image_field": {
+              "src": get_asset_url("../images/grayscale-mountain.png"),
+              "alt": "Capability development challenge",
+              "loading": "lazy",
+              "size_type": "auto"
+            }
+          },
           content_here={
             "title_text": "Most organizations cannot turn expertise into capability.",
             "content": "<p>Organizations often know what expertise exists — but converting that expertise into scalable capability programs is extremely difficult.</p><p>Traditional learning systems rely on:</p><ul><li>manual curriculum design</li><li>slow SME workshops</li><li>disconnected training tools</li><li>generic content generation</li></ul><p>The result:</p><ul><li>months of development time</li><li>inconsistent learning design</li><li>training that never translates into performance</li></ul><p>What organizations need is a system for building capability.</p>",
-            "button_here": [],
-            "content_bottom": ""
+            "button_here": {}
           }
         %}
         {% end_dnd_module %}
@@ -80,13 +88,21 @@
     {% dnd_column width=12 %}
       {% dnd_row %}
         {% dnd_module
-          path="/Cognistry Theme/modules/cta.module",
-          content_position_choice="center",
+          path="/Cognistry Theme/modules/two-column.module",
+          content_position_choice="right_image_left_content",
+          image={
+            "image_or_gif_choice": "image",
+            "image_field": {
+              "src": get_asset_url("../images/grayscale-mountain.png"),
+              "alt": "Capability design system",
+              "loading": "lazy",
+              "size_type": "auto"
+            }
+          },
           content_here={
             "title_text": "Capability cannot be improvised. It must be designed.",
             "content": "<p>Capability development requires structured experiences where professionals:</p><ul><li>encounter real decisions</li><li>apply judgment under pressure</li><li>practice realistic scenarios</li></ul><p>Forge provides the design system that makes this possible.</p><p>It converts expertise into structured capability experiences that can be practiced, measured, and improved.</p>",
-            "button_here": [],
-            "content_bottom": ""
+            "button_here": {}
           }
         %}
         {% end_dnd_module %}
@@ -362,14 +378,27 @@
     {% dnd_column width=12 %}
       {% dnd_row %}
         {% dnd_module
-          path="/Cognistry Theme/modules/cta.module",
-          content_position_choice="center",
-          content_here={
-            "title_text": "Built for organizations that need real capability development",
-            "content": "<ul style='list-style:none; padding:0; max-width:600px; margin:0 auto;'><li style='margin-bottom:12px;'>✔ AI-guided capability design</li><li style='margin-bottom:12px;'>✔ Evidence-based expertise capture</li><li style='margin-bottom:12px;'>✔ Decision-based learning experiences</li><li style='margin-bottom:12px;'>✔ Enterprise-scale capability architecture</li></ul>",
-            "button_here": [],
-            "content_bottom": ""
-          }
+          path="/Cognistry Theme/modules/feature-grid.module",
+          heading="Built for organizations that need real capability development",
+          columns="2 columns",
+          features=[
+            {
+              "title": "AI-guided capability design",
+              "text": "<p>LEXI AI assists with content development, interaction design, and quality assurance.</p>"
+            },
+            {
+              "title": "Evidence-based expertise capture",
+              "text": "<p>Start with Signal Snapshots that define capability demand from real expertise.</p>"
+            },
+            {
+              "title": "Decision-based learning experiences",
+              "text": "<p>Build interactions where professionals practice the decisions that define performance.</p>"
+            },
+            {
+              "title": "Enterprise-scale capability architecture",
+              "text": "<p>Structure programs through repeatable course → module → section → interaction hierarchy.</p>"
+            }
+          ]
         %}
         {% end_dnd_module %}
       {% end_dnd_row %}
